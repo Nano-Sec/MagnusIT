@@ -1340,3 +1340,264 @@ Caused by: org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.mag
 03-04-2018 10:36:18.183 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter.afterSingletonsInstantiated - Registering beans for JMX exposure on startup
 03-04-2018 10:36:18.226 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.start - Tomcat started on port(s): 8080 (http)
 03-04-2018 10:36:18.230 [main] INFO  com.magnus.MagnusItApplication.logStarted - Started MagnusItApplication in 5.086 seconds (JVM running for 5.662)
+03-04-2018 14:41:22.690 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+03-04-2018 14:41:22.690 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.doClose - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 10:36:13 IST 2018]; root of context hierarchy
+03-04-2018 14:41:22.693 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter.destroy - Unregistering JMX-exposed beans on shutdown
+03-04-2018 14:41:22.696 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 14:41:33.335 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on DHPC-MUM020 with PID 3208 (C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT\target\classes started by DarkHorse in C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT)
+03-04-2018 14:41:33.389 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+03-04-2018 14:41:33.536 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 14:41:33 IST 2018]; root of context hierarchy
+03-04-2018 14:41:35.576 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b2afd26b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+03-04-2018 14:41:37.551 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 8080 (http)
+03-04-2018 14:41:37.612 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-04-2018 14:41:37.614 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+03-04-2018 14:41:38.396 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-04-2018 14:41:38.397 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 4898 ms
+03-04-2018 14:41:38.546 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+03-04-2018 14:41:38.547 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+03-04-2018 14:41:38.547 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+03-04-2018 14:41:38.548 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+03-04-2018 14:41:38.549 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+03-04-2018 14:41:38.549 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+03-04-2018 14:41:40.853 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+03-04-2018 14:41:40.881 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+03-04-2018 14:41:41.838 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+03-04-2018 14:41:41.839 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+03-04-2018 14:41:41.889 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+03-04-2018 14:41:42.650 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+03-04-2018 14:41:43.299 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+03-04-2018 14:41:46.939 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate.execute - HHH000228: Running hbm2ddl schema update
+03-04-2018 14:41:48.463 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 14:41:49.846 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory
+03-04-2018 14:41:50.449 [main] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueService': Unsatisfied dependency expressed through field 'repo'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List com.magnus.repositories.IssueRepository.getUserIssues(long)!
+03-04-2018 14:41:50.450 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 14:41:50.454 [main] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+03-04-2018 14:41:50.507 [main] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer.logAutoConfigurationReport - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+03-04-2018 14:41:50.516 [main] ERROR o.s.boot.SpringApplication.reportFailure - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueController': Unsatisfied dependency expressed through field 'service'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueService': Unsatisfied dependency expressed through field 'repo'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List com.magnus.repositories.IssueRepository.getUserIssues(long)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.magnus.MagnusItApplication.main(MagnusItApplication.java:16)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'issueService': Unsatisfied dependency expressed through field 'repo'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List com.magnus.repositories.IssueRepository.getUserIssues(long)!
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'issueRepository': Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List com.magnus.repositories.IssueRepository.getUserIssues(long)!
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585)
+	... 32 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Validation failed for query for method public abstract java.util.List com.magnus.repositories.IssueRepository.getUserIssues(long)!
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:92)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.<init>(SimpleJpaQuery.java:62)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromMethodWithQueryString(JpaQueryFactory.java:72)
+	at org.springframework.data.jpa.repository.query.JpaQueryFactory.fromQueryAnnotation(JpaQueryFactory.java:53)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$DeclaredQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:138)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:205)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:77)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.<init>(RepositoryFactorySupport.java:449)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:222)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.initAndReturn(RepositoryFactoryBeanSupport.java:277)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:263)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:101)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 42 common frames omitted
+Caused by: java.lang.IllegalArgumentException: org.hibernate.QueryException: illegal attempt to dereference collection [employee1_.employee_number.projects] with element property reference [id] [select i from com.magnus.entities.Issue i where i.project in(select e.projects.id from com.magnus.entities.Employee e where e.id=:id)]
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1679)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1602)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.convert(AbstractEntityManagerImpl.java:1608)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:294)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.springframework.orm.jpa.ExtendedEntityManagerCreator$ExtendedEntityManagerInvocationHandler.invoke(ExtendedEntityManagerCreator.java:347)
+	at com.sun.proxy.$Proxy101.createQuery(Unknown Source)
+	at org.springframework.data.jpa.repository.query.SimpleJpaQuery.validateQuery(SimpleJpaQuery.java:86)
+	... 55 common frames omitted
+Caused by: org.hibernate.QueryException: illegal attempt to dereference collection [employee1_.employee_number.projects] with element property reference [id] [select i from com.magnus.entities.Issue i where i.project in(select e.projects.id from com.magnus.entities.Employee e where e.id=:id)]
+	at org.hibernate.QueryException.generateQueryException(QueryException.java:120)
+	at org.hibernate.QueryException.wrapWithQueryString(QueryException.java:103)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:218)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.compile(QueryTranslatorImpl.java:142)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:115)
+	at org.hibernate.engine.query.spi.HQLQueryPlan.<init>(HQLQueryPlan.java:76)
+	at org.hibernate.engine.query.spi.QueryPlanCache.getHQLQueryPlan(QueryPlanCache.java:150)
+	at org.hibernate.internal.AbstractSessionImpl.getHQLQueryPlan(AbstractSessionImpl.java:302)
+	at org.hibernate.internal.AbstractSessionImpl.createQuery(AbstractSessionImpl.java:240)
+	at org.hibernate.internal.SessionImpl.createQuery(SessionImpl.java:1894)
+	at org.hibernate.jpa.spi.AbstractEntityManagerImpl.createQuery(AbstractEntityManagerImpl.java:291)
+	... 62 common frames omitted
+Caused by: org.hibernate.QueryException: illegal attempt to dereference collection [employee1_.employee_number.projects] with element property reference [id]
+	at org.hibernate.hql.internal.ast.tree.DotNode$1.buildIllegalCollectionDereferenceException(DotNode.java:57)
+	at org.hibernate.hql.internal.ast.tree.DotNode.checkLhsIsNotCollection(DotNode.java:607)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolve(DotNode.java:241)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:109)
+	at org.hibernate.hql.internal.ast.tree.FromReferenceNode.resolve(FromReferenceNode.java:104)
+	at org.hibernate.hql.internal.ast.tree.DotNode.resolveSelectExpression(DotNode.java:719)
+	at org.hibernate.hql.internal.ast.HqlSqlWalker.resolveSelectExpression(HqlSqlWalker.java:954)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectExpr(HqlSqlBaseWalker.java:2288)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectExprList(HqlSqlBaseWalker.java:2225)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectClause(HqlSqlBaseWalker.java:1496)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:581)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.collectionFunctionOrSubselect(HqlSqlBaseWalker.java:4915)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.inRhs(HqlSqlBaseWalker.java:4816)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.comparisonExpr(HqlSqlBaseWalker.java:4483)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.logicalExpr(HqlSqlBaseWalker.java:2131)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.whereClause(HqlSqlBaseWalker.java:810)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.query(HqlSqlBaseWalker.java:605)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.selectStatement(HqlSqlBaseWalker.java:309)
+	at org.hibernate.hql.internal.antlr.HqlSqlBaseWalker.statement(HqlSqlBaseWalker.java:257)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.analyze(QueryTranslatorImpl.java:262)
+	at org.hibernate.hql.internal.ast.QueryTranslatorImpl.doCompile(QueryTranslatorImpl.java:190)
+	... 70 common frames omitted
+03-04-2018 14:51:30.607 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on DHPC-MUM020 with PID 2540 (C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT\target\classes started by DarkHorse in C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT)
+03-04-2018 14:51:30.610 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+03-04-2018 14:51:30.652 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 14:51:30 IST 2018]; root of context hierarchy
+03-04-2018 14:51:31.463 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ea239f15] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+03-04-2018 14:51:31.741 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 8080 (http)
+03-04-2018 14:51:31.751 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-04-2018 14:51:31.752 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+03-04-2018 14:51:31.851 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-04-2018 14:51:31.852 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 1202 ms
+03-04-2018 14:51:31.992 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+03-04-2018 14:51:31.993 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+03-04-2018 14:51:31.993 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+03-04-2018 14:51:31.994 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+03-04-2018 14:51:31.995 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+03-04-2018 14:51:31.995 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+03-04-2018 14:51:32.449 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+03-04-2018 14:51:32.459 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+03-04-2018 14:51:32.506 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+03-04-2018 14:51:32.507 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+03-04-2018 14:51:32.508 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+03-04-2018 14:51:32.540 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+03-04-2018 14:51:32.725 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+03-04-2018 14:51:33.186 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate.execute - HHH000228: Running hbm2ddl schema update
+03-04-2018 14:51:34.045 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 14:51:34.253 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory
+03-04-2018 14:51:34.692 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter.initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 14:51:30 IST 2018]; root of context hierarchy
+03-04-2018 14:51:34.741 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/user]}" onto public java.lang.Object com.magnus.controllers.EmployeeController.getLoggedInUser()
+03-04-2018 14:51:34.742 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Employee>> com.magnus.controllers.EmployeeController.getAllEmployees()
+03-04-2018 14:51:34.742 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/employee/view],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee()
+03-04-2018 14:51:34.743 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/view/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee(long)
+03-04-2018 14:51:34.744 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/insert/{type}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.EmployeeController.addEmployee(com.magnus.entities.Employee) throws com.fasterxml.jackson.core.JsonParseException,com.fasterxml.jackson.databind.JsonMappingException,java.io.IOException
+03-04-2018 14:51:34.744 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/update/{type}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.updateEmployee(com.magnus.entities.Employee)
+03-04-2018 14:51:34.745 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.getIssue(long)
+03-04-2018 14:51:34.746 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issues/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Issue>> com.magnus.controllers.IssueController.getAllIssues()
+03-04-2018 14:51:34.746 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addIssue(com.magnus.entities.Issue)
+03-04-2018 14:51:34.748 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+03-04-2018 14:51:34.748 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+03-04-2018 14:51:34.771 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 14:51:34.772 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 14:51:34.800 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 14:51:34.819 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping.<init> - Adding welcome page: class path resource [static/index.html]
+03-04-2018 14:51:35.227 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+03-04-2018 14:51:35.284 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4217bce6, org.springframework.security.web.context.SecurityContextPersistenceFilter@3962ec84, org.springframework.security.web.header.HeaderWriterFilter@7336fd8f, org.springframework.security.web.authentication.logout.LogoutFilter@2cae5fa7, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6fb0261e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bdab835, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71369e1a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@aa752bb, org.springframework.security.web.session.SessionManagementFilter@539fc5d1, org.springframework.security.web.access.ExceptionTranslationFilter@448cdb47, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@722787b5]
+03-04-2018 14:51:35.288 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@652e345, org.springframework.security.web.context.SecurityContextPersistenceFilter@677cb96e, org.springframework.security.web.header.HeaderWriterFilter@730bea0, org.springframework.security.web.authentication.logout.LogoutFilter@53cb0bcb, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@51fe7f15, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1b1252c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@19d53ab4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7574d4ad, org.springframework.security.web.session.SessionManagementFilter@41a16eb3, org.springframework.security.web.access.ExceptionTranslationFilter@203b953c, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@41f964f9]
+03-04-2018 14:51:35.403 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter.afterSingletonsInstantiated - Registering beans for JMX exposure on startup
+03-04-2018 14:51:35.546 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.start - Tomcat started on port(s): 8080 (http)
+03-04-2018 14:51:35.551 [main] INFO  com.magnus.MagnusItApplication.logStarted - Started MagnusItApplication in 5.142 seconds (JVM running for 5.931)
+03-04-2018 16:40:12.321 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring FrameworkServlet 'dispatcherServlet'
+03-04-2018 16:40:12.335 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization started
+03-04-2018 16:40:12.376 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization completed in 41 ms
+03-04-2018 16:41:28.855 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.a.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin.shutdown - Application shutdown requested.
+03-04-2018 16:41:28.856 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.doClose - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 14:51:30 IST 2018]; root of context hierarchy
+03-04-2018 16:41:28.858 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter.destroy - Unregistering JMX-exposed beans on shutdown
+03-04-2018 16:41:28.860 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 16:41:33.560 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on DHPC-MUM020 with PID 9028 (C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT\target\classes started by DarkHorse in C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT)
+03-04-2018 16:41:33.563 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+03-04-2018 16:41:33.617 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 16:41:33 IST 2018]; root of context hierarchy
+03-04-2018 16:41:34.457 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d4910595] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+03-04-2018 16:41:34.770 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 8080 (http)
+03-04-2018 16:41:34.780 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-04-2018 16:41:34.781 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+03-04-2018 16:41:34.875 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-04-2018 16:41:34.875 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 1260 ms
+03-04-2018 16:41:35.015 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+03-04-2018 16:41:35.016 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+03-04-2018 16:41:35.016 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+03-04-2018 16:41:35.016 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+03-04-2018 16:41:35.017 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+03-04-2018 16:41:35.018 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+03-04-2018 16:41:35.461 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+03-04-2018 16:41:35.471 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+03-04-2018 16:41:35.530 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+03-04-2018 16:41:35.531 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+03-04-2018 16:41:35.532 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+03-04-2018 16:41:35.563 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+03-04-2018 16:41:35.656 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+03-04-2018 16:41:36.153 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate.execute - HHH000228: Running hbm2ddl schema update
+03-04-2018 16:41:39.099 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 16:41:39.618 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory
+03-04-2018 16:41:40.344 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter.initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 16:41:33 IST 2018]; root of context hierarchy
+03-04-2018 16:41:40.402 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/user]}" onto public java.lang.Object com.magnus.controllers.EmployeeController.getLoggedInUser()
+03-04-2018 16:41:40.403 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Employee>> com.magnus.controllers.EmployeeController.getAllEmployees()
+03-04-2018 16:41:40.403 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/employee/view],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee()
+03-04-2018 16:41:40.405 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/view/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee(long)
+03-04-2018 16:41:40.405 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/insert/{type}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.EmployeeController.addEmployee(com.magnus.entities.Employee) throws com.fasterxml.jackson.core.JsonParseException,com.fasterxml.jackson.databind.JsonMappingException,java.io.IOException
+03-04-2018 16:41:40.405 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/update/{type}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.updateEmployee(com.magnus.entities.Employee)
+03-04-2018 16:41:40.407 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.getIssue(long)
+03-04-2018 16:41:40.407 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issues/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Issue>> com.magnus.controllers.IssueController.getAllIssues()
+03-04-2018 16:41:40.407 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addIssue(com.magnus.entities.Issue)
+03-04-2018 16:41:40.409 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+03-04-2018 16:41:40.410 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+03-04-2018 16:41:40.433 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 16:41:40.433 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 16:41:40.463 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 16:41:40.481 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping.<init> - Adding welcome page: class path resource [static/index.html]
+03-04-2018 16:41:40.906 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+03-04-2018 16:41:40.964 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1b31af02, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b8aebd0, org.springframework.security.web.header.HeaderWriterFilter@161d95c6, org.springframework.security.web.authentication.logout.LogoutFilter@532dacf5, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@112c2930, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3181d4de, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4c04216f, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2bb31455, org.springframework.security.web.session.SessionManagementFilter@3962ec84, org.springframework.security.web.access.ExceptionTranslationFilter@51424203, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1a497286]
+03-04-2018 16:41:40.968 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6060146b, org.springframework.security.web.context.SecurityContextPersistenceFilter@51fe7f15, org.springframework.security.web.header.HeaderWriterFilter@19d53ab4, org.springframework.security.web.authentication.logout.LogoutFilter@63dda940, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@41f964f9, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5873f3f0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@684372d0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33627576, org.springframework.security.web.session.SessionManagementFilter@53cb0bcb, org.springframework.security.web.access.ExceptionTranslationFilter@1b1252c8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@713999c2]
+03-04-2018 16:41:41.088 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter.afterSingletonsInstantiated - Registering beans for JMX exposure on startup
+03-04-2018 16:41:41.136 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.start - Tomcat started on port(s): 8080 (http)
+03-04-2018 16:41:41.140 [main] INFO  com.magnus.MagnusItApplication.logStarted - Started MagnusItApplication in 7.846 seconds (JVM running for 9.25)
+03-04-2018 16:41:43.199 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring FrameworkServlet 'dispatcherServlet'
+03-04-2018 16:41:43.199 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization started
+03-04-2018 16:41:43.215 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms

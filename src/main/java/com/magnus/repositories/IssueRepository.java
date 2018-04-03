@@ -9,6 +9,6 @@ import org.springframework.data.repository.query.Param;
 import com.magnus.entities.Issue;
 
 public interface IssueRepository extends CrudRepository<Issue, Long> {
-	@Query("select i from Issue i where  ")
+	@Query("select i from Issue i where i.project in(select e.projects from Employee e where e.id=:id)")
 	List<Issue> getUserIssues(@Param("id") long id);
 }
