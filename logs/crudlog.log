@@ -1226,3 +1226,117 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 02-04-2018 15:49:29.691 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.doClose - Closing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Mon Apr 02 15:10:09 IST 2018]; root of context hierarchy
 02-04-2018 15:49:29.695 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.j.e.a.AnnotationMBeanExporter.destroy - Unregistering JMX-exposed beans on shutdown
 02-04-2018 15:49:29.699 [RMI TCP Connection(2)-127.0.0.1] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 10:33:51.797 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on DHPC-MUM020 with PID 4700 (C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT\target\classes started by DarkHorse in C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT)
+03-04-2018 10:33:51.811 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+03-04-2018 10:33:51.893 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 10:33:51 IST 2018]; root of context hierarchy
+03-04-2018 10:33:52.706 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a261923e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+03-04-2018 10:33:53.007 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 8080 (http)
+03-04-2018 10:33:53.016 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-04-2018 10:33:53.017 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+03-04-2018 10:33:53.108 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-04-2018 10:33:53.109 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 1219 ms
+03-04-2018 10:33:53.253 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+03-04-2018 10:33:53.253 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+03-04-2018 10:33:53.254 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+03-04-2018 10:33:53.254 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+03-04-2018 10:33:53.255 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+03-04-2018 10:33:53.255 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+03-04-2018 10:33:53.740 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+03-04-2018 10:33:53.749 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+03-04-2018 10:33:53.794 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+03-04-2018 10:33:53.795 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+03-04-2018 10:33:53.796 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+03-04-2018 10:33:53.824 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+03-04-2018 10:33:53.908 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+03-04-2018 10:33:54.063 [main] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.magnus.entities.Employee.projects references an unknown entity: java.util.List
+03-04-2018 10:33:54.067 [main] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+03-04-2018 10:33:54.082 [main] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer.logAutoConfigurationReport - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+03-04-2018 10:33:54.095 [main] ERROR o.s.boot.SpringApplication.reportFailure - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaAutoConfiguration.class]: Invocation of init method failed; nested exception is org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.magnus.entities.Employee.projects references an unknown entity: java.util.List
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1080)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:857)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.magnus.MagnusItApplication.main(MagnusItApplication.java:16)
+Caused by: org.hibernate.AnnotationException: @OneToOne or @ManyToOne on com.magnus.entities.Employee.projects references an unknown entity: java.util.List
+	at org.hibernate.cfg.ToOneFkSecondPass.doSecondPass(ToOneFkSecondPass.java:97)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processEndOfQueue(InFlightMetadataCollectorImpl.java:1786)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processFkSecondPassesInOrder(InFlightMetadataCollectorImpl.java:1730)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.processSecondPasses(InFlightMetadataCollectorImpl.java:1617)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:278)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:847)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:874)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:60)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:360)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:382)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:371)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:336)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 16 common frames omitted
+03-04-2018 10:36:13.337 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on DHPC-MUM020 with PID 6008 (C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT\target\classes started by DarkHorse in C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT)
+03-04-2018 10:36:13.340 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+03-04-2018 10:36:13.380 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 10:36:13 IST 2018]; root of context hierarchy
+03-04-2018 10:36:14.135 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$3d16cb7f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+03-04-2018 10:36:14.403 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 8080 (http)
+03-04-2018 10:36:14.413 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+03-04-2018 10:36:14.414 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+03-04-2018 10:36:14.510 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+03-04-2018 10:36:14.510 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 1133 ms
+03-04-2018 10:36:14.648 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+03-04-2018 10:36:14.649 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+03-04-2018 10:36:14.649 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+03-04-2018 10:36:14.649 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+03-04-2018 10:36:14.652 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+03-04-2018 10:36:14.652 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+03-04-2018 10:36:15.062 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+03-04-2018 10:36:15.071 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+03-04-2018 10:36:15.116 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+03-04-2018 10:36:15.117 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+03-04-2018 10:36:15.118 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+03-04-2018 10:36:15.147 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+03-04-2018 10:36:15.231 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+03-04-2018 10:36:15.674 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate.execute - HHH000228: Running hbm2ddl schema update
+03-04-2018 10:36:15.902 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl.processGetTableResults - HHH000262: Table not found: employee_projects
+03-04-2018 10:36:15.905 [main] INFO  o.h.t.s.e.i.InformationExtractorJdbcDatabaseMetaDataImpl.processGetTableResults - HHH000262: Table not found: employee_projects
+03-04-2018 10:36:16.875 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+03-04-2018 10:36:17.064 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory
+03-04-2018 10:36:17.462 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter.initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5d740a0f: startup date [Tue Apr 03 10:36:13 IST 2018]; root of context hierarchy
+03-04-2018 10:36:17.508 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/user]}" onto public java.lang.Object com.magnus.controllers.EmployeeController.getLoggedInUser()
+03-04-2018 10:36:17.509 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Employee>> com.magnus.controllers.EmployeeController.getAllEmployees()
+03-04-2018 10:36:17.509 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/employee/view],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee()
+03-04-2018 10:36:17.511 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/view/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee(long)
+03-04-2018 10:36:17.511 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/insert/{type}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.EmployeeController.addEmployee(com.magnus.entities.Employee) throws com.fasterxml.jackson.core.JsonParseException,com.fasterxml.jackson.databind.JsonMappingException,java.io.IOException
+03-04-2018 10:36:17.511 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/update/{type}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.updateEmployee(com.magnus.entities.Employee)
+03-04-2018 10:36:17.512 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.getIssue(long)
+03-04-2018 10:36:17.513 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issues/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Issue>> com.magnus.controllers.IssueController.getAllIssues()
+03-04-2018 10:36:17.513 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addIssue(com.magnus.entities.Issue)
+03-04-2018 10:36:17.515 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+03-04-2018 10:36:17.515 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+03-04-2018 10:36:17.539 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 10:36:17.539 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 10:36:17.567 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+03-04-2018 10:36:18.010 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+03-04-2018 10:36:18.067 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@660b1a9d, org.springframework.security.web.context.SecurityContextPersistenceFilter@25533bba, org.springframework.security.web.header.HeaderWriterFilter@4b4a2fa8, org.springframework.security.web.authentication.logout.LogoutFilter@30159886, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@6682e6a5, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@100bba26, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5dcf0772, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6fb0261e, org.springframework.security.web.session.SessionManagementFilter@685d7ba5, org.springframework.security.web.access.ExceptionTranslationFilter@55bf35e5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@39f42d0e]
+03-04-2018 10:36:18.070 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4357524b, org.springframework.security.web.context.SecurityContextPersistenceFilter@61853c7e, org.springframework.security.web.header.HeaderWriterFilter@7523d5a1, org.springframework.security.web.authentication.logout.LogoutFilter@13ca16bf, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@5be4be74, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32e5af53, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5980fa73, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@104a287c, org.springframework.security.web.session.SessionManagementFilter@2bfc2f8b, org.springframework.security.web.access.ExceptionTranslationFilter@621624b1, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@27bcb4ad]
+03-04-2018 10:36:18.183 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter.afterSingletonsInstantiated - Registering beans for JMX exposure on startup
+03-04-2018 10:36:18.226 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.start - Tomcat started on port(s): 8080 (http)
+03-04-2018 10:36:18.230 [main] INFO  com.magnus.MagnusItApplication.logStarted - Started MagnusItApplication in 5.086 seconds (JVM running for 5.662)

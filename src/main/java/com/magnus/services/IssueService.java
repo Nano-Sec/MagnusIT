@@ -23,6 +23,9 @@ public class IssueService {
 	public List<Issue> getAllIssues(){
 		return (List<Issue>) repo.findAll();
 	}
+	public List<Issue> getUserIssues(long id){
+		return repo.getUserIssues(id);
+	}
 	public void addIssue(Issue issue) {
 		repo.save(issue);
 		LOGGER.info("Issue "+ issue.getIssueNumber()+" added");

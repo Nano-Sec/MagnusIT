@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
@@ -44,6 +45,8 @@ public class Employee implements UserDetails{
 	private String password;
 	@JsonView(Views.Employee.class)
 	Date dateOfJoining;
+	@ManyToMany
+	List<Project> projects;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	private List<UserRole> userRoles;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Employee.class)

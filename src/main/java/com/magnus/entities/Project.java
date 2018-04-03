@@ -10,8 +10,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -37,7 +37,7 @@ public class Project {
 	boolean isPublic;
 	@JsonView(Views.Project.class)
 	String description;
-	@OneToMany
+	@ManyToMany
 	List<Employee> members;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Project.class)
     protected Employee createdBy;
