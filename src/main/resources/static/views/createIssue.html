@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>Create Issue</title>
+        <link rel="stylesheet" type="text/css" href="../css/createIssue.css">
+    </head>
+    
+    <body>
+        <form action="#">
+            <div class = "form-container">                
+                <div class="description-container">
+                    <div class="issue-no">
+                       Issue No: #54363
+                    </div>
+                    <div class="issue-title">
+                        <input type="text" placeholder="Title">
+                    </div>
+                    <div class="issue-description">
+                        <textarea rows="18" cols="100" placeholder="Description"></textarea>
+                    </div>
+                </div>
+                <div class="dropdown-container">
+                    <div class="dropdown" id="project-dropdown">
+                        Select Project<br>
+                        <select name="project-name">
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+                    <div class="dropdown">
+                        Select Category<br>
+                        <select name="category">
+                            <option value="none">None</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="submit-container">
+                    <div class="button-container">
+                        <input type="submit" value="Report">
+                        <input type="reset" value="Cancel">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </body>
+</html>
