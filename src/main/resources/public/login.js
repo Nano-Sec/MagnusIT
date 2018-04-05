@@ -1,23 +1,43 @@
 (function (){
     var app=angular.module('myapp');
-    app.controller('ctrl',ctrl);
-    app.factory('AuthInterceptor', [function() {
-        return {
-            'request': function(config) {
-                config.headers = config.headers || {};
-                var encodedString = btoa(userName+":"+password);
-                config.headers.Authorization = 'Basic '+encodedString;
-               return config;
-            }
-        };
-    }]);
-    app.config(['$httpProvider', function($httpProvider) {
-        $httpProvider.interceptors.push('AuthInterceptor');
-    }]);
-    function ctrl (){
-    	var main= this;
-    	main.test= function(){
-    		alert('dgfdg');
-    	}
+    
+    app.controller('login',
+
+    function($rootScope, $scope, $http, $state) {
+
+    var authenticate = function(credentials, callback) {
+
+        var headers = credentials ? {authorization : "Basic "
+            + btoa(credentials.username + ":" + credentials.password)
+        } : {};
+
+        $http.get('/user', {headers : headers})
+        .then(function(response) {
+        if (response.data) {
+            $rootScope.authenticated = true;
+        } else {
+            $rootScope.authenticated = false;
+        }
+        callback && callback();
+        })
+        .catch(function() {
+        $rootScope.authenticated = false;
+        callback && callback();
+        });
+
     }
+
+    $scope.credentials = {};
+    $scope.auth = function() {
+        authenticate($scope.credentials, function() {
+            if ($rootScope.authenticated) {
+            $state.go("home");
+            $scope.error = false;
+            } else {
+            $state.go("login");
+            $scope.error = true;
+            }
+        });
+    };
+    });
 })();

@@ -2,6 +2,7 @@
     //ui.router and not ui-router
     var app=angular.module('myapp',['ui.router']);
     app.config(Routesconfig);
+
     //inject manually for minified versions to work
     Routesconfig.$inject=['$stateProvider','$urlRouterProvider'];
 
@@ -23,6 +24,10 @@
         .state('login',{
             url: '/login',
             templateUrl: 'login.html'
+        })
+        .state('home',{
+            url: '/home',
+            templateUrl: '/views/home.html'
         })
         .state('404',{
             url: '/error/404',
