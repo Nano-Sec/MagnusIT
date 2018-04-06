@@ -14,6 +14,7 @@
         $http.get('/user', {headers : headers})
         .then(function(response) {
         if (response.data) {
+            $rootScope.user= response.data;
             $rootScope.authenticated = true;
         } else {
             $rootScope.authenticated = false;

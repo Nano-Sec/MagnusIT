@@ -31,7 +31,9 @@ public class EmployeeController {
 	EmployeeService service;
 	@Autowired
 	private AuthService authService;
-	@RequestMapping("/user")
+	
+	//Get logged in user
+	@RequestMapping("/user") @JsonView(Views.Employee.class)
 	public Object getLoggedInUser() {
 		return authService.getLoggedInUser();
 	}

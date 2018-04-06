@@ -1,0 +1,114 @@
+<html>
+    <head>
+        <title>Issue List</title>
+    </head>
+    <style>
+        body {
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        .view-container{
+            margin: auto;
+            height: 560px;
+            width: 1000px;
+            overflow:auto;
+            border: lightgrey solid 2px;
+            /* background-color: black; */
+            /* background: transparent; */
+        }
+        .filter{
+            height: 20%;
+            width: 100%;
+            /* background-color: rgb(212, 227, 255); */
+        }
+        .list-container{
+            height: 80%;
+            width: 100%;
+        }
+        .heading{
+            width: 99%;
+            float: left;
+            padding: 0.5% 0.5%;
+            background-color: rgb(224, 224, 224);
+        }
+        .search-bar{
+            float: right;
+        }
+        .filter-box{
+            float: left;
+            width: 24.6%;
+            padding: 3.8px 0;
+            border: lightgrey solid 2px;
+        }
+        input[type=text]{
+            width: 98%;
+            padding: 6px 10px;
+            border:lightgrey solid 1px;
+            border-radius: 4px;
+        }
+        table{
+            border: rgb(104, 104, 104) .5px solid;
+            border-collapse: collapse;
+            width:100%;
+        }
+        tr, td, th{
+            border: rgb(170, 165, 165) .5px solid;
+            /* border-spacing: 0px; */
+        }
+        td.category, th.category {
+            background-color: #effdfc !important;
+            color: #494949;
+            vertical-align: top;
+            text-align: left;
+        }
+        td{
+            background-color: rgb(255, 255, 255);
+        }
+    
+    </style>
+    <body>
+        <div class="view-container" ng-controller="IssueController as ctrl">
+            <div class="filter">
+                <div class="heading">
+                    Filters
+                    <div class="search-bar"><input type="text" placeholder="Search" ng-model="ctrl.search"></div>
+                </div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+                <div class="filter-box"><input type="checkbox">Filter #1</div>
+            </div>
+            <div class="list-container">
+                <div class="heading">Issues</div>
+                <div class="issue-list">
+                    <table class="table table-bordered table-condensed">
+                        <tbody>
+                            <tr>
+                                <th class="category" width="5%">Issue No.</th>
+                                <th class="category" width="5%">Category</th>
+                                <th class="category" width="5%">Priority</th>
+                                <th class="category" width="5%">Status</th>
+                                <th class="category" width="10%">Last Updated</th>
+                                <th class="category" width="30%">Title</th>
+                            </tr>
+                            <tr>
+                                <td>#4194</td>
+                                <td>Hardware</td>
+                                <td>Normal</td>
+                                <td>public</td>
+                                <td>2018-03-30 21:42</td>
+                                <td>This is Issue Title jksdehfsuihjd sgh kuh kjs dhkj fshdk</td>
+                            </tr>
+                            <tr ng-repeat="issue in issues | filter : ctrl.search">
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

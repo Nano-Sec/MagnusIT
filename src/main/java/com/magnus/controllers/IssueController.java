@@ -41,7 +41,6 @@ public class IssueController {
 	//View issue list
 	@JsonView(Views.Issue.class)
 	@GetMapping(value = "/issues/")
-	//List all employees
 	public ResponseEntity<List<Issue>> getAllIssues(){
 		List <Issue> list= service.getAllIssues();
 		if(list.isEmpty()) {

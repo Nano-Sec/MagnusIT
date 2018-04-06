@@ -19,15 +19,31 @@
         //define states
         $stateProvider
         .state('/',{
-            templateUrl: 'login.html'
+            templateUrl: 'public/login.html'
         })
         .state('login',{
             url: '/login',
-            templateUrl: 'login.html'
+            templateUrl: 'public/login.html'
         })
         .state('home',{
             url: '/home',
             templateUrl: '/views/home.html'
+        })
+        .state('home.dashboard',{
+            url: '/dashboard',
+            templateUrl: '/views/dashboard.html'
+        })
+        .state('home.createIssue',{
+            url: '/createIssue',
+            templateUrl: '/views/createIssue.html'
+        })
+        .state('home.viewIssueList',{
+            url: '/IssueList',
+            templateUrl: '/views/issueList.html'
+        })
+        .state('home.viewIssue',{
+            url: '/Issue',
+            templateUrl: '/views/viewIssue.html'
         })
         .state('404',{
             url: '/error/404',

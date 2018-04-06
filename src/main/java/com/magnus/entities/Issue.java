@@ -71,20 +71,20 @@ public class Issue {
 	public void setIssueNumber(int issueNumber) {
 		this.issueNumber = issueNumber;
 	}
-	public String getProject() {
-		return project.getName();
+	public long getProject() {
+		return project.getId();
 	}
 	public void setProject(Project project) {
-		this.project = project;
+		this.project= project;
 	}
-	public String getReporter() {
-		return reporter.getUsername();
+	public long getReporter() {
+		return reporter.getEmployeeNumber();
 	}
 	public void setReporter(Employee reporter) {
-		this.reporter = reporter;
+		this.reporter= reporter;
 	}
-	public String getAssignedTo() {
-		return assignedTo.getUsername();
+	public long getAssignedTo() {
+		return assignedTo.getEmployeeNumber();
 	}
 	public void setAssignedTo(Employee assignedTo) {
 		this.assignedTo = assignedTo;
@@ -131,8 +131,8 @@ public class Issue {
 	public void setDueDate(Date dueDate) {
 		this.dueDate = dueDate;
 	}
-	public String getCreatedBy() {
-		return createdBy.getUsername();
+	public long getCreatedBy() {
+		return createdBy.getEmployeeNumber();
 	}
 	public void setCreatedBy(Employee createdBy) {
 		this.createdBy = createdBy;
@@ -143,8 +143,8 @@ public class Issue {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public String getLastModifiedBy() {
-		return lastModifiedBy.getUsername();
+	public long getLastModifiedBy() {
+		return lastModifiedBy.getEmployeeNumber();
 	}
 	public void setLastModifiedBy(Employee lastModifiedBy) {
 		this.lastModifiedBy = lastModifiedBy;
