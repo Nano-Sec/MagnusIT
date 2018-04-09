@@ -7,9 +7,8 @@
             font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
         }
         .view-container{
-            margin: auto;
-            height: 560px;
-            width: 1000px;
+            height: 100%;
+            /* width: 100%; */
             overflow:auto;
             border: lightgrey solid 2px;
             /* background-color: black; */
@@ -25,23 +24,25 @@
             width: 100%;
         }
         .heading{
-            width: 99%;
+            width: 100%;
             float: left;
-            padding: 0.5% 0.5%;
+            text-align: left;
+            /* padding: 0.5% 0.5%; */
             background-color: rgb(224, 224, 224);
         }
         .search-bar{
             float: right;
+            margin-right: 1%;
         }
         .filter-box{
             float: left;
             width: 24.6%;
-            padding: 3.8px 0;
+            /* padding: 3.8px 0; */
             border: lightgrey solid 2px;
         }
         input[type=text]{
             width: 98%;
-            padding: 6px 10px;
+            padding: 6px 2px;
             border:lightgrey solid 1px;
             border-radius: 4px;
         }
@@ -52,7 +53,6 @@
         }
         tr, td, th{
             border: rgb(170, 165, 165) .5px solid;
-            /* border-spacing: 0px; */
         }
         td.category, th.category {
             background-color: #effdfc !important;
@@ -94,16 +94,13 @@
                                 <th class="category" width="10%">Last Updated</th>
                                 <th class="category" width="30%">Title</th>
                             </tr>
-                            <tr>
-                                <td>#4194</td>
-                                <td>Hardware</td>
-                                <td>Normal</td>
-                                <td>public</td>
-                                <td>2018-03-30 21:42</td>
-                                <td>This is Issue Title jksdehfsuihjd sgh kuh kjs dhkj fshdk</td>
-                            </tr>
-                            <tr ng-repeat="issue in issues | filter : ctrl.search">
-
+                            <tr ng-repeat="issue in ctrl.issues | filter : ctrl.search">
+                                <td>#{{issue.issueNumber}}</td>
+                                <td>{{issue.category}}</td>
+                                <td>{{issue.priority}}</td>
+                                <td>{{issue.status}}</td>
+                                <td>{{issue.lastModifiedDate | date:'fullDate'}}</td>
+                                <td>{{issue.title}}</td>
                             </tr>
                         </tbody>
                     </table>

@@ -1,45 +1,94 @@
 <html>
-
-<head>
-    <link rel="stylesheet" href="../css/home.css">
-</head>
-
-<body>
-
-    <div class="wrapper">
-        <div class="header">
-            <div class="title">
-                Magnus Issue Tracker
-            </div>
-            <div class="profile">
-                Profile
-            </div>
-        </div>
-        <div class="container">
-            <div class="left-bar">
-                <ul>
-                    <li> <a ui-sref='home.dashboard'>Dashboard</a></li>
-                    <li> <a ui-sref='home.viewIssueList'>View Issues</a></li>
-                    <li> <a>3</a></li>
-                    <li> <a>4</a></li>
-                    <li> <a>5</a></li>
-                </ul>
-            </div>
-            <div class="view" ui-view>
-            </div>
-            <!-- <div class="right-bar">
-                <div class="right-bar-title">
-                    <h2>timeline</h2>
+    <head>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css"
+        integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+        <style>
+            body{
+                margin: 0%;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva,
+                Verdana, sans-serif;
+            }
+            .createIssueButton button{
+                width: 10%;
+                background-color:rgb(241, 93, 67);
+                color: white;
+                padding: 8px 10px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            .wrapper{
+                width: 100%;
+                height: 100%;
+                min-height: 600px;
+                min-width: 1280px;
+                background:transparent;
+            }
+            .header{
+                height: 15%;
+                background:transparent;
+            }
+            .smallbar{
+                height: 25%;
+                color: white;
+                background-color: #2a8dff;
+            }
+            .navigation{
+                height: 75%;
+                color: #494d4b;
+                overflow: hidden;
+            }
+            .tabs{
+                height: 100%;
+                width: 20%;
+                padding: 2% 0;
+                float: left;
+                text-align: center;
+            }
+            .tabs:hover{
+                cursor: pointer;
+                background: #2a8dff;
+                color: ghostwhite;
+            }
+            .product-name{
+                width: 25%;
+                height: 100%;
+                text-align: center;
+                font-size: 3em;
+                float: left;
+            }
+            .navbar{
+                width: 75%;
+                height: 100%;
+                float: left;
+            }
+            .view{
+                min-height: 550px;
+                margin: 0% 0.5%;
+                border: #2a8dff 1px solid;
+                background:transparent;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">    
+            <div class="header">
+                <div class="smallbar">
+                    My Account
                 </div>
-            </div> -->
-            <div class="footer">
-                C Team Magnus.
+                <div class="navigation">
+                    <div class="product-name">
+                        MagnusIT
+                    </div>
+                    <div class="navbar">
+                        <div class="tabs" ui-sref="home.dashboard">Dashboard <i class="fas fa-angle-down"></i></div>
+                        <div class="tabs" ui-sref="home.viewIssueList">View Issues <i class="fas fa-angle-down"></i></div>
+                        <div class="tabs">My projects <i class="fas fa-angle-down"></i></div>
+                    </div>
+                </div>
             </div>
+            <div class="view" ui-view></div>
         </div>
-
-    </div>
-
-</body>
-
-
+    </body>
 </html>

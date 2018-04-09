@@ -1,27 +1,29 @@
-angular.module('myapp').controller('IssueController', ['$scope', 'IssueService', function($scope, IssueService) {
+angular.module('myapp').controller('IssueController', ['IssueService', function(IssueService) {
     var self = this;
-    self.issueNumber=Math.floor(Math.random() * 1000);
-    self.issue={'issueNumber':self.issueNumber,'project':{'id': ''},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
+    self.issueNumber=Math.floor(Math.random() * 10000);
+    self.postissue={'issueNumber':self.issueNumber,'project':{'id': ''},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
     self.issues=[];
-
-    self.createIssue = function createIssue(){
-        IssueService.createIssue(self.issue)
-            .then(
-                console.log('Issue created.'),
-            function(errResponse){
-                console.error('Error while creating Issue');
-            }
-        );
-    }
  
     self.fetchAllIssues = function fetchAllIssues(){
         IssueService.fetchAllIssues()
             .then(
             function(data) {
-                self.issues = data;
+                self.issues= data;
             },
             function(errResponse){
                 console.error('Error while fetching Issues');
+            }
+        );
+    }
+
+    self.fetchAllIssues();
+
+    self.createIssue = function createIssue(){
+        IssueService.createIssue(self.postissue)
+            .then(
+                self.fetchAllIssues,
+            function(errResponse){
+                console.error('Error while creating Issue');
             }
         );
     }
@@ -30,7 +32,7 @@ angular.module('myapp').controller('IssueController', ['$scope', 'IssueService',
         IssueService.fetchIssue(issueId)
             .then(
                 function(data){
-                    self.issue = data;
+                    console.log(JSON.stringify(data));
                 },
                 function(errResponse){
                     console.error('Error while fetching issue: '+issueId);

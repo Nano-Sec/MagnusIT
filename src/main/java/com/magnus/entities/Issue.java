@@ -84,6 +84,9 @@ public class Issue {
 		this.reporter= reporter;
 	}
 	public long getAssignedTo() {
+		if(assignedTo==null) {
+			return -1;
+		}
 		return assignedTo.getEmployeeNumber();
 	}
 	public void setAssignedTo(Employee assignedTo) {
