@@ -11,22 +11,22 @@
                        New Issue <i class="fas fa-exclamation-circle"></i>
                     </div>
                     <div class="issue-title">
-                        <input type="text" ng-model="ctrl.postissue.title" placeholder="Title" >
+                        <input type="text" ng-model="ctrl.postissue.title" placeholder="Title" maxlength="50" required>
                     </div>
                     <div class="issue-description">
-                        <textarea rows="17" cols="100" ng-model="ctrl.postissue.description" placeholder="Description"></textarea>
+                        <textarea rows="17" cols="100" ng-model="ctrl.postissue.description" placeholder="Description" maxlength="500" required></textarea>
                     </div>
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown" id="project-dropdown">
                         Select Project<br>
-                        <select name="project-name" ng-model="ctrl.postissue.project.id">
+                        <select name="project-name" ng-model="ctrl.postissue.project.id" required>
                             <option value=1>Default</option>
                         </select>
                     </div>
                     <div class="dropdown">
                         Select Category<br>
-                        <select name="category" ng-model="ctrl.postissue.category">
+                        <select name="category" ng-model="ctrl.postissue.category" required>
                             <option value="Hardware">Hardware</option>
                         </select>
                     </div>

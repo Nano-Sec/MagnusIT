@@ -1,8 +1,21 @@
-angular.module('myapp').controller('IssueController', ['IssueService', function(IssueService) {
+angular.module('myapp').controller('IssueController', ['$stateParams','$state','IssueService', function($stateParams,$state,IssueService) {
     var self = this;
     self.issueNumber=Math.floor(Math.random() * 10000);
     self.postissue={'issueNumber':self.issueNumber,'project':{'id': ''},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
+    self.postcomment={'issue':{'issueNumber':self.issueNumber},'user':{'employeeNumber': 1},'body':''};
+    self.currentIssue;
     self.issues=[];
+    self.comments=[];
+    self.commentflag= false;
+
+    self.setCommentFlag= function setCommentFlag(){
+        self.commentflag=true;
+    }
+
+    self.goToIssue= function(id){
+        IssueService.setCurrentIssue(id);
+        $state.go('home.viewIssue');
+    }
  
     self.fetchAllIssues = function fetchAllIssues(){
         IssueService.fetchAllIssues()
@@ -12,6 +25,18 @@ angular.module('myapp').controller('IssueController', ['IssueService', function(
             },
             function(errResponse){
                 console.error('Error while fetching Issues');
+            }
+        );
+    }
+
+    self.fetchAllComments = function fetchAllComments(number){
+        IssueService.fetchAllComments(number)
+            .then(
+            function(data) {
+                self.comments= data;
+            },
+            function(errResponse){
+                console.error('Error while fetching comments');
             }
         );
     }
@@ -27,17 +52,34 @@ angular.module('myapp').controller('IssueController', ['IssueService', function(
             }
         );
     }
+
+    self.createComment = function createComment(){
+        IssueService.createComment(self.postcomment)
+            .then(
+                self.fetchAllComments,
+            function(errResponse){
+                console.error('Error while posting comment');
+            }
+        );
+    }
  
     self.fetchIssue = function fetchIssue(issueId){
         IssueService.fetchIssue(issueId)
             .then(
                 function(data){
-                    console.log(JSON.stringify(data));
+                    self.currentIssue= data;
                 },
                 function(errResponse){
                     console.error('Error while fetching issue: '+issueId);
                 }
             );
+    }
+
+    if(IssueService.getCurrentIssue()!=null){
+        self.fetchIssue(IssueService.getCurrentIssue());
+    }
+    if(self.currentIssue.issueNumber!=null){
+        self.fetchAllComments(self.currentIssue.issueNumber);
     }
 
     // function fetchUserProjects(id){

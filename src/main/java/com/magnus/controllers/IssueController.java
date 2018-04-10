@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.fasterxml.jackson.annotation.JsonView;
+import com.magnus.entities.Comment;
 import com.magnus.entities.Issue;
 import com.magnus.services.IssueService;
 import com.magnus.utils.Views;
@@ -28,8 +29,8 @@ public class IssueController {
 	
 	//View issue
 	@JsonView(Views.Issue.class)
-	@GetMapping(value = "/issue/{id}")
-    public ResponseEntity<Issue> getIssue(@PathVariable("id") long id) {
+	@GetMapping(value = "/issue/{number}")
+    public ResponseEntity<Issue> getIssue(@PathVariable("number") int id) {
         Issue issue= service.getIssue(id);
 		if(issue == null) {
         	LOGGER.error("Issue with id " + id + " not found");
@@ -49,6 +50,17 @@ public class IssueController {
 		return new ResponseEntity<List<Issue>>(list, HttpStatus.OK);
 	}
 	
+	//View comment list
+	@JsonView(Views.Comment.class)
+	@GetMapping(value = "/comments/{number}")
+	public ResponseEntity<List<Comment>> getAllComments(@PathVariable("number") int number){
+		List <Comment> list= service.getAllComments(number);
+		if(list.isEmpty()) {
+			return new ResponseEntity<List<Comment>>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<List<Comment>>(list, HttpStatus.OK);
+	}
+	
 	//Insert issue
 	@PostMapping(value="/issue/")
 	public ResponseEntity<Void> addIssue(@RequestBody Issue issue){
@@ -58,6 +70,14 @@ public class IssueController {
             return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
         service.addIssue(issue);
+        return new ResponseEntity<Void>(HttpStatus.CREATED);
+	}
+	
+	//Insert comment
+	@PostMapping(value="/comment/")
+	public ResponseEntity<Void> addComment(@RequestBody Comment comment){
+		LOGGER.info("Creating comment " + comment.getId());
+        service.addComment(comment);
         return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
 }
