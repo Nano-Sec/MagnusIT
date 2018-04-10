@@ -2,7 +2,7 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
     var self = this;
     self.issueNumber=Math.floor(Math.random() * 10000);
     self.postissue={'issueNumber':self.issueNumber,'project':{'id': ''},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
-    self.postcomment={'issue':{'issueNumber':self.issueNumber},'user':{'employeeNumber': 1},'body':''};
+    self.postcomment={'issue':self.currentIssue,'user':{'employeeNumber': 1},'body':''};
     self.currentIssue;
     self.issues=[];
     self.comments=[];
@@ -10,6 +10,10 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
 
     self.setCommentFlag= function setCommentFlag(){
         self.commentflag=true;
+    }
+
+    self.cancelComment= function cancelComment(){
+        self.commentflag=false;
     }
 
     self.goToIssue= function(id){
@@ -56,7 +60,7 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
     self.createComment = function createComment(){
         IssueService.createComment(self.postcomment)
             .then(
-                self.fetchAllComments,
+                self.fetchAllComments(self.currentIssue.issueNumber),
             function(errResponse){
                 console.error('Error while posting comment');
             }
@@ -78,7 +82,7 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
     if(IssueService.getCurrentIssue()!=null){
         self.fetchIssue(IssueService.getCurrentIssue());
     }
-    if(self.currentIssue.issueNumber!=null){
+    if(self.currentIssue!=null){
         self.fetchAllComments(self.currentIssue.issueNumber);
     }
 

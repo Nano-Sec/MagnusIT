@@ -66,7 +66,7 @@ angular.module('myapp').factory('IssueService', ['$rootScope','$http', '$q', fun
 
     function fetchAllComments(number) {
         var deferred = $q.defer();
-        $http.get('comments/'+number)
+        $http.get('comments/'+ number)
             .then(
             function (response) {
                 deferred.resolve(response.data);

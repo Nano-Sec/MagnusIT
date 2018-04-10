@@ -76,7 +76,7 @@ public class IssueController {
 	//Insert comment
 	@PostMapping(value="/comment/")
 	public ResponseEntity<Void> addComment(@RequestBody Comment comment){
-		LOGGER.info("Creating comment " + comment.getId());
+		LOGGER.info("Creating comment by user id " + comment.getUser());
         service.addComment(comment);
         return new ResponseEntity<Void>(HttpStatus.CREATED);
 	}
