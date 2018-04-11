@@ -59,6 +59,9 @@
                     </tbody>
                 </table>
                 <br>
+                <div class="issueButton">
+                    <button ng-click="ctrl.updateIssue(ctrl.currentIssue.issueNumber)">Update issue</button>
+                </div>
                 <table>
                     <tbody>
                         <tr>
@@ -71,17 +74,17 @@
                             </td>
                         </tr>
                         <tr ng-repeat="comment in ctrl.comments | filter : ctrl.search">
-                            <th class="bug-description category">{{comment.user.employeeNumber}}</th>
+                            <th class="bug-description category">{{comment.user}}</th>
                             <td class="bug-description" >
-                                <p>{{comment.user.body}}</p>
+                                <p>{{comment.body}}</p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
             </div>
             <div class="comments">
-                <div class="commentButton"><button ng-click="ctrl.setCommentFlag()">Comment</button></div>
-                <div class="commentForm" ng-show="ctrl.commentflag">
+                <div class="issueButton"><button ng-click="ctrl.setCommentFlag()">Comment</button></div>
+                <div class="commentForm" ng-show= ctrl.commentflag>
                     <form ng-submit="ctrl.createComment()">
                         <div class="newComment">
                             <h3> New Comment <i class="fas fa-comments"></i></h3>
@@ -92,7 +95,7 @@
                         <div class="submit-container">
                             <div class="button-container">
                                 <input type="submit" value="Post comment">
-                                <input type="reset" value="Cancel" ng-click="ctrl.cancelComment">
+                                <input type="reset" value="Cancel" ng-click="ctrl.cancelComment()">
                             </div>
                         </div>
                     </form>

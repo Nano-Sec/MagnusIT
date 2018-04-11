@@ -12,11 +12,11 @@ body {
     min-height: .01%;
     overflow-x: auto;
 }
-.commentButton{
+.issueButton{
     margin: 5px;
     text-align: right;
 }
-.commentButton button,input[type=submit],[type=reset]{
+.issueButton button,input[type=submit],[type=reset]{
     /* background-color:white;
     color: #4484ce; */
     background-color:rgb(241, 93, 67);

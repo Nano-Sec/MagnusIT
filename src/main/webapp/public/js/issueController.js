@@ -2,9 +2,12 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
     var self = this;
     self.issueNumber=Math.floor(Math.random() * 10000);
     self.postissue={'issueNumber':self.issueNumber,'project':{'id': ''},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
-    self.postcomment={'issue':self.currentIssue,'user':{'employeeNumber': 1},'body':''};
-    self.currentIssue;
+    self.currentIssue= {"id": null, "issueNumber": '', "project": '', "reporter": '', "assignedTo": '', "category": '',
+        "status": '', "priority": '', "title": '', "description": '', "dueDate": '',
+        "createdBy": '', "creationDate": '', "lastModifiedBy": '', "lastModifiedDate": ''
+    };
     self.issues=[];
+    self.postcomment={'issue':{'id':self.currentIssue.id},'user':{'employeeNumber': 1},'body':''};
     self.comments=[];
     self.commentflag= false;
 
@@ -19,6 +22,10 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
     self.goToIssue= function(id){
         IssueService.setCurrentIssue(id);
         $state.go('home.viewIssue');
+    }
+    self.updateIssue= function(id){
+        IssueService.setCurrentIssue(id);
+        $state.go('home.updateIssue');
     }
  
     self.fetchAllIssues = function fetchAllIssues(){
@@ -58,6 +65,7 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
     }
 
     self.createComment = function createComment(){
+        self.postcomment.issue.id= self.currentIssue.id;
         IssueService.createComment(self.postcomment)
             .then(
                 self.fetchAllComments(self.currentIssue.issueNumber),
@@ -72,6 +80,7 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
             .then(
                 function(data){
                     self.currentIssue= data;
+                    self.fetchAllComments(self.currentIssue.issueNumber);
                 },
                 function(errResponse){
                     console.error('Error while fetching issue: '+issueId);
@@ -82,7 +91,7 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
     if(IssueService.getCurrentIssue()!=null){
         self.fetchIssue(IssueService.getCurrentIssue());
     }
-    if(self.currentIssue!=null){
+    if(self.currentIssue.id!=null){
         self.fetchAllComments(self.currentIssue.issueNumber);
     }
 

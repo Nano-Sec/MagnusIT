@@ -28,6 +28,7 @@ public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
+	@JsonView(Views.Issue.class)
 	private Long id;
 	@JsonView(Views.Issue.class)
 	int issueNumber;

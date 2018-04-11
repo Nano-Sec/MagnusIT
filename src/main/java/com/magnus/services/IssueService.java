@@ -18,7 +18,7 @@ import com.magnus.utils.Enums.IssueStatus;
 
 @Service
 public class IssueService {
-	public static final Logger LOGGER= LoggerFactory.getLogger(EmployeeController.class);
+	public static final Logger LOGGER= LoggerFactory.getLogger(IssueService.class);
 	@Autowired
 	IssueRepository issueRepo;
 	@Autowired
@@ -28,6 +28,9 @@ public class IssueService {
 	
 	public Issue getIssue(int id) {
 		return issueRepo.findByIssueNumber(id);
+	}
+	public Comment getComment(long id){
+		return commentRepo.findOne(id);
 	}
 	public List<Issue> getAllIssues(){
 		return (List<Issue>) issueRepo.findAll();
@@ -49,5 +52,9 @@ public class IssueService {
 		comment.setUser((Employee)service.getLoggedInUser());
 		commentRepo.save(comment);
 		LOGGER.info("Comment "+ comment.getId() +" added");
+	}
+	public void updateIssue(Issue issue) {
+		issueRepo.save(issue);
+		LOGGER.info("Issue "+issue.getId()+" updated");
 	}
 }
