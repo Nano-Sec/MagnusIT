@@ -41,6 +41,8 @@ public class Issue {
 	/*@OneToOne @JsonView(Views.Issue.class)
 	Issue duplicate;*/
 	@JsonView(Views.Issue.class)
+	boolean isPublic;
+	@JsonView(Views.Issue.class)
 	IssueCategory category;
 	@JsonView(Views.Issue.class)
 	IssueStatus status;
@@ -105,6 +107,15 @@ public class Issue {
 	public void setCategory(IssueCategory category) {
 		this.category = category;
 	}
+
+	public boolean isPublic() {
+		return isPublic;
+	}
+
+	public void setPublic(boolean aPublic) {
+		isPublic = aPublic;
+	}
+
 	public IssueStatus getStatus() {
 		return status;
 	}

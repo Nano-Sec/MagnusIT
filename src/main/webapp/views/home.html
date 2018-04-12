@@ -6,10 +6,11 @@
         <link rel="stylesheet" href="../css/home.css">
     </head>
     <body>
-        <div class="wrapper">    
+        <div class="wrapper" ng-controller="login">
             <div class="header">
                 <div class="smallbar">
-                    My Account
+                    <label><i class="fas fa-user"></i> My Account |</label>
+                    <label ng-click="logout()"> <i class="fas fa-sign-out-alt"></i>Logout</label>
                 </div>
                 <div class="navigation">
                     <div class="product-name">

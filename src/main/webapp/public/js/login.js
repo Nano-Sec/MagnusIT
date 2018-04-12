@@ -28,11 +28,24 @@
 
     }
 
+    $scope.logout= function(){
+        $http.get('/logout')
+            .then(function (response) {
+                if(response.data){
+                    $rootScope.authenticated= false;
+                    $state.go("login");
+                }
+            })
+            .catch(function() {
+                console.log('logout failure');
+            });
+    }
+
     $scope.credentials = {};
     $scope.auth = function() {
         authenticate($scope.credentials, function() {
             if ($rootScope.authenticated) {
-            $state.go("home");
+            $state.go("home.dashboard");
             $scope.error = false;
             } else {
             $state.go("login");

@@ -1,32 +1,19 @@
-angular.module('myapp').controller('IssueController', ['$stateParams','$state','IssueService', function($stateParams,$state,IssueService) {
+angular.module('myapp').controller('IssueController', ['$window','$state','IssueService', function($window,$state,IssueService) {
     var self = this;
     self.issueNumber=Math.floor(Math.random() * 10000);
     self.postissue={'issueNumber':self.issueNumber,'project':{'id': ''},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
-    self.currentIssue= {"id": null, "issueNumber": '', "project": '', "reporter": '', "assignedTo": '', "category": '',
+    self.currentIssue= {"id": null, "issueNumber": '', "project": '', "reporter": '', "assignedTo": '', "isPublic": '',"category": '',
         "status": '', "priority": '', "title": '', "description": '', "dueDate": '',
         "createdBy": '', "creationDate": '', "lastModifiedBy": '', "lastModifiedDate": ''
+    };
+    self.putIssue={"id": null, "issueNumber": '', "project": {'id': ''}, "reporter": {'employeeNumber': 1}, "assignedTo": {'employeeNumber': 1}, "isPublic": '',"category": '',
+        "status": '', "priority": '', "title": '', "description": '', "dueDate": '',
+        "createdBy": {'employeeNumber': 1}, "creationDate": '', "lastModifiedBy": {'employeeNumber': 1}, "lastModifiedDate": ''
     };
     self.issues=[];
     self.postcomment={'issue':{'id':self.currentIssue.id},'user':{'employeeNumber': 1},'body':''};
     self.comments=[];
     self.commentflag= false;
-
-    self.setCommentFlag= function setCommentFlag(){
-        self.commentflag=true;
-    }
-
-    self.cancelComment= function cancelComment(){
-        self.commentflag=false;
-    }
-
-    self.goToIssue= function(id){
-        IssueService.setCurrentIssue(id);
-        $state.go('home.viewIssue');
-    }
-    self.updateIssue= function(id){
-        IssueService.setCurrentIssue(id);
-        $state.go('home.updateIssue');
-    }
  
     self.fetchAllIssues = function fetchAllIssues(){
         IssueService.fetchAllIssues()
@@ -38,7 +25,22 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
                 console.error('Error while fetching Issues');
             }
         );
-    }
+    };
+
+    self.fetchAllIssues();
+
+    self.fetchIssue = function fetchIssue(issueId){
+        IssueService.fetchIssue(issueId)
+            .then(
+            function(data){
+                self.currentIssue= data;
+                self.fetchAllComments(self.currentIssue.issueNumber);
+            },
+            function(errResponse){
+                console.error('Error while fetching issue: '+issueId);
+            }
+            );
+    };
 
     self.fetchAllComments = function fetchAllComments(number){
         IssueService.fetchAllComments(number)
@@ -50,9 +52,11 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
                 console.error('Error while fetching comments');
             }
         );
-    }
+    };
 
-    self.fetchAllIssues();
+    if(localStorage.getItem("number")!=null){
+        self.fetchIssue(localStorage.getItem("number"));
+    }
 
     self.createIssue = function createIssue(){
         IssueService.createIssue(self.postissue)
@@ -62,7 +66,8 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
                 console.error('Error while creating Issue');
             }
         );
-    }
+        $state.go("home.dashboard");
+    };
 
     self.createComment = function createComment(){
         self.postcomment.issue.id= self.currentIssue.id;
@@ -73,27 +78,84 @@ angular.module('myapp').controller('IssueController', ['$stateParams','$state','
                 console.error('Error while posting comment');
             }
         );
-    }
- 
-    self.fetchIssue = function fetchIssue(issueId){
-        IssueService.fetchIssue(issueId)
+        alert("Your comment has been posted.");
+        self.cancelComment();
+        $window.location.reload();
+    };
+
+    self.updateIssue= function(){
+        self.transformToPut();
+        IssueService.updateIssue(self.putIssue)
             .then(
-                function(data){
-                    self.currentIssue= data;
-                    self.fetchAllComments(self.currentIssue.issueNumber);
-                },
+                self.fetchAllIssues,
                 function(errResponse){
-                    console.error('Error while fetching issue: '+issueId);
+                    console.error('Error while updating Issue');
                 }
             );
-    }
+        alert('Issue successfully updated');
+        $state.go('home.dashboard');
+    };
 
-    if(IssueService.getCurrentIssue()!=null){
-        self.fetchIssue(IssueService.getCurrentIssue());
-    }
-    if(self.currentIssue.id!=null){
-        self.fetchAllComments(self.currentIssue.issueNumber);
-    }
+    self.transformToPut= function(){
+        self.putIssue.id= self.currentIssue.id;
+        self.putIssue.issueNumber= self.currentIssue.issueNumber;
+        self.putIssue.project.id= self.currentIssue.project;
+        self.putIssue.reporter.employeeNumber= parseInt( self.currentIssue.reporter);
+        self.putIssue.assignedTo.employeeNumber= parseInt(self.currentIssue.assignedTo);
+        self.putIssue.isPublic= self.currentIssue.isPublic;
+        self.putIssue.category= self.currentIssue.category;
+        self.putIssue.status= self.currentIssue.status;
+        self.putIssue.priority= self.currentIssue.priority;
+        self.putIssue.title= self.currentIssue.title;
+        self.putIssue.description= self.currentIssue.description;
+        self.putIssue.dueDate= self.currentIssue.dueDate;
+        self.putIssue.createdBy.employeeNumber= parseInt(self.currentIssue.createdBy);
+        self.putIssue.creationDate= self.currentIssue.creationDate;
+        self.putIssue.lastModifiedBy.employeeNumber= parseInt(self.currentIssue.lastModifiedBy);
+        self.putIssue.lastModifiedDate= self.currentIssue.lastModifiedDate;
+    };
+
+    self.confirmIssue= function(){
+        var check= confirm('Are you sure you want to confirm issue '+ self.currentIssue.issueNumber+'?');
+        if(check){
+            self.currentIssue.status= 'CONFIRMED';
+            self.updateIssue();
+        }
+    };
+
+    self.rejectIssue= function(){
+        var check= confirm('Are you sure you want to reject issue '+ self.currentIssue.issueNumber+'?');
+        if(check){
+            self.currentIssue.status= 'REJECTED';
+            self.updateIssue();
+        }
+    };
+
+    self.markAsFixed= function(){
+        var check= confirm('Are you sure you want to mark issue '+ self.currentIssue.issueNumber+' as fixed?');
+        if(check){
+            self.currentIssue.status= 'RESOLVED';
+            self.updateIssue();
+        }
+    };
+
+    self.goToIssue= function(id){
+        localStorage.setItem("number",id);
+        $state.go('home.viewIssue');
+    };
+
+    self.goToUpdateIssue= function(id){
+        localStorage.setItem("number",id);
+        $state.go('home.updateIssue');
+    };
+
+    self.setCommentFlag= function setCommentFlag(){
+        self.commentflag=true;
+    };
+
+    self.cancelComment= function cancelComment(){
+        self.commentflag=false;
+    };
 
     // function fetchUserProjects(id){
     //     IssueService.fetchUserProjects(id)

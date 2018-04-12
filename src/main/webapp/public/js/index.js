@@ -26,6 +26,7 @@
             templateUrl: 'public/login.html'
         })
         .state('home',{
+            abstract: true,
             url: '/home',
             templateUrl: '/views/home.html'
         })

@@ -3,8 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <title>Update Issue</title>
+    <link rel="stylesheet" href="../css/updateIssue.css">
 </head>
 <body>
-    Content here
+    <div class="updateContainer" ng-controller="IssueController as ctrl">
+        <div class="heading">
+            <h3>Update issue {{ctrl.currentIssue.issueNumber}} <i class="fas fa-edit"></i></h3>
+        </div>
+        <div class="actions">
+            <button ng-click="ctrl.confirmIssue()">Confirm issue</button>
+            <button ng-click="ctrl.rejectIssue()">Reject issue</button>
+            <button ng-click="ctrl.markAsFixed()">Mark as fixed</button>
+        </div>
+        <form ng-submit="ctrl.updateIssue()">
+            <div class="row">
+                <div class="rowElement">Issue number:<br> <input type="text" ng-model="ctrl.currentIssue.issueNumber" ng-disabled="true"></div>
+                <div class="rowElement">Reporter: <br><input type="text" ng-model="ctrl.currentIssue.reporter" ng-disabled="true"></div>
+                <div class="rowElement">Project:<br> <select>
+                        <option>Default</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="rowElement">
+                    Category:<br> <select ng-model="ctrl.currentIssue.category">
+                    <option value="Hardware">Hardware</option>
+                    <option value="Server">Server</option>
+                    <option value="Client">Client</option>
+                    <option value="Security">Security</option>
+                    <option value="Performance">Performance</option>
+                    <option value="Documentation">Documentation</option>
+                </select>
+                </div>
+                <div class="rowElement">
+                    Priority: <br><select ng-model="ctrl.currentIssue.priority">
+                        <option value="URGENT">Urgent</option>
+                        <option value="HIGH">High</option>
+                        <option value="MEDIUM">Medium</option>
+                        <option value="LOW">Low</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="rowElement">
+                    Public:<br> <select data-ng-model="ctrl.currentIssue.isPublic">
+                    <option data-ng-value="true">true</option>
+                    <option data-ng-value="false">false</option>
+                </select>
+                </div>
+                <div class="rowElement">
+                    Assigned to: <br><select data-ng-model="ctrl.currentIssue.assignedTo" required convert-to-number>
+                    <option value=1>Default</option>
+                </select>
+                </div>
+            </div>
+            <div class="text">
+                Summary:<br><input type="text" ng-model="ctrl.currentIssue.title" placeholder="Title" maxlength="50" required>
+            </div>
+            <div class="text">
+                Description:<br> <textarea rows="17" cols="100" ng-model="ctrl.currentIssue.description" placeholder="Description" maxlength="250" required></textarea>
+            </div>
+            <div class="formButtons">
+                <div class="buttonContainer">
+                    <input type="submit" value="Update">
+                    <input type="reset" value="Cancel">
+                </div>
+            </div>
+        </form>
+    </div>
 </body>
 </html>

@@ -8,51 +8,51 @@
             <div class="table-container">
                 <table class="table table-bordered table-condensed">
                     <tbody>
-                        <tr class="bug-header">
-                            <th class="bug-id category" width="15%">Issue No.</th>
-                            <th class="bug-project category" width="20%">Project</th>
-                            <th class="bug-category category" width="15%">Category</th>
-                            <th class="bug-view-status category" width="15%">View Status</th>
-                            <th class="bug-date-submitted category" width="18%">Date Submitted</th>
-                            <th class="bug-last-modified category" width="20%">Last Update</th>
+                        <tr class="issue-header">
+                            <th class="issue-id category" width="15%">Issue No.</th>
+                            <th class="issue-project category" width="20%">Project</th>
+                            <th class="issue-category category" width="15%">Category</th>
+                            <th class="issue-view-status category" width="15%">Public</th>
+                            <th class="issue-date-submitted category" width="18%">Date Submitted</th>
+                            <th class="issue-last-modified category" width="20%">Last Update</th>
                         </tr>
-                        <tr class="bug-header-data">
-                            <td class="bug-id">{{ctrl.currentIssue.issueNumber}}</td>
-                            <td class="bug-project">{{ctrl.currentIssue.project}}</td>
-                            <td class="bug-category">{{ctrl.currentIssue.category}}</td>
-                            <td class="bug-view-status">{{ctrl.currentIssue.status}}</td>
-                            <td class="bug-date-submitted">{{ctrl.currentIssue.creationDate | date:'fullDate'}}</td>
-                            <td class="bug-last-modified">{{ctrl.currentIssue.lastModifiedDate | date:'fullDate'}}</td>
-                        </tr>
-                        <tr class="spacer">
-                            <td colspan="6"></td>
-                        </tr>
-                        <tr class="hidden"></tr>
-                        <tr>
-                            <th class="bug-reporter category">Reporter</th>
-                            <td class="bug-reporter">{{ctrl.currentIssue.reporter}}</td>
-                            <th class="bug-assigned-to category">Assigned to</th>
-                            <td class="bug-assigned-to" colspan="3">{{ctrl.currentIssue.assignedTo}}</td>
-                        </tr>
-                        <tr>
-                            <th class="bug-status category">Status</th>
-                            <td class="bug-status"><i class="fa fa-square fa-status-box status-80-color"></i>{{ctrl.currentIssue.status}}</td>
-                            <th class="bug-priority category">Priority</th>
-                            <td class="bug-priority">{{ctrl.currentIssue.priority}}</td>
-                            <th class="bug-resolution category">Lifecycle</th>
-                            <td class="bug-resolution"></td>
+                        <tr class="issue-header-data">
+                            <td class="issue-id">{{ctrl.currentIssue.issueNumber}}</td>
+                            <td class="issue-project">{{ctrl.currentIssue.project}}</td>
+                            <td class="issue-category">{{ctrl.currentIssue.category}}</td>
+                            <td class="issue-view-status">{{ctrl.currentIssue.isPublic}}</td>
+                            <td class="issue-date-submitted">{{ctrl.currentIssue.creationDate | date:'fullDate'}}</td>
+                            <td class="issue-last-modified">{{ctrl.currentIssue.lastModifiedDate | date:'fullDate'}}</td>
                         </tr>
                         <tr class="spacer">
                             <td colspan="6"></td>
                         </tr>
                         <tr class="hidden"></tr>
                         <tr>
-                            <th class="bug-summary category">Summary</th>
-                            <td class="bug-summary" colspan="5">{{ctrl.currentIssue.title}}</td>
+                            <th class="issue-reporter category">Reporter</th>
+                            <td class="issue-reporter">{{ctrl.currentIssue.reporter}}</td>
+                            <th class="issue-assigned-to category">Assigned to</th>
+                            <td class="issue-assigned-to" colspan="3">{{ctrl.currentIssue.assignedTo}}</td>
                         </tr>
                         <tr>
-                            <th class="bug-description category">Description</th>
-                            <td class="bug-description" colspan="5">
+                            <th class="issue-status category">Status</th>
+                            <td class="issue-status"><i class="fa fa-square fa-status-box status-80-color"></i>{{ctrl.currentIssue.status}}</td>
+                            <th class="issue-priority category">Priority</th>
+                            <td class="issue-priority">{{ctrl.currentIssue.priority}}</td>
+                            <th class="issue-resolution category">Lifecycle</th>
+                            <td class="issue-resolution"></td>
+                        </tr>
+                        <tr class="spacer">
+                            <td colspan="6"></td>
+                        </tr>
+                        <tr class="hidden"></tr>
+                        <tr>
+                            <th class="issue-summary category">Summary</th>
+                            <td class="issue-summary" colspan="5">{{ctrl.currentIssue.title}}</td>
+                        </tr>
+                        <tr>
+                            <th class="issue-description category">Description</th>
+                            <td class="issue-description" colspan="5">
                                 <p>{{ctrl.currentIssue.description}}</p>
                             </td>
                         </tr>
@@ -60,22 +60,22 @@
                 </table>
                 <br>
                 <div class="issueButton">
-                    <button ng-click="ctrl.updateIssue(ctrl.currentIssue.issueNumber)">Update issue</button>
+                    <button ng-click="ctrl.goToUpdateIssue(ctrl.currentIssue.issueNumber)">Update issue</button>
                 </div>
                 <table>
                     <tbody>
                         <tr>
-                            <th class="bug-description category" colspan="2">Comments</th>
+                            <th class="issue-description category" colspan="2">Comments <i class="fas fa-comments"></i></th>
                         </tr>
                         <tr>
-                            <th class="bug-description category">User #1</th>
-                            <td class="bug-description" >
-                                <p>Hi There<br>If the Access Level is the reporter</p>
+                            <th class="issue-description category">User #1</th>
+                            <td class="issue-description" >
+                                <p>Static comment.<br> Comments displayed here. </p>
                             </td>
                         </tr>
                         <tr ng-repeat="comment in ctrl.comments | filter : ctrl.search">
-                            <th class="bug-description category">{{comment.user}}</th>
-                            <td class="bug-description" >
+                            <th class="issue-description category">{{comment.user}}</th>
+                            <td class="issue-description" >
                                 <p>{{comment.body}}</p>
                             </td>
                         </tr>
@@ -87,7 +87,7 @@
                 <div class="commentForm" ng-show= ctrl.commentflag>
                     <form ng-submit="ctrl.createComment()">
                         <div class="newComment">
-                            <h3> New Comment <i class="fas fa-comments"></i></h3>
+                            <h3> New Comment <i class="fas fa-comment"></i></h3>
                         </div>
                         <div class="comment-body">
                             <textarea rows="5" cols="100" ng-model="ctrl.postcomment.body" placeholder="Comment here" maxlength="500" required></textarea>

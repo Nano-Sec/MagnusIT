@@ -5,7 +5,7 @@
         <link rel="stylesheet" type="text/css" href="../css/createIssue.css">
     <body>
         <div class = "form-container" ng-controller="IssueController as ctrl">   
-            <form name="createIssueForm" ng-submit="ctrl.createIssue()">               
+            <form name="createIssueForm" ng-submit="ctrl.createIssue()">
                 <div class="description-container">
                     <div class="issue-no">
                        New Issue <i class="fas fa-exclamation-circle"></i>
@@ -14,7 +14,7 @@
                         <input type="text" ng-model="ctrl.postissue.title" placeholder="Title" maxlength="50" required>
                     </div>
                     <div class="issue-description">
-                        <textarea rows="17" cols="100" ng-model="ctrl.postissue.description" placeholder="Description" maxlength="500" required></textarea>
+                        <textarea rows="17" cols="100" ng-model="ctrl.postissue.description" placeholder="Description" maxlength="250" required></textarea>
                     </div>
                 </div>
                 <div class="dropdown-container">
@@ -28,6 +28,11 @@
                         Select Category<br>
                         <select name="category" ng-model="ctrl.postissue.category" required>
                             <option value="Hardware">Hardware</option>
+                            <option value="Server">Server</option>
+                            <option value="Client">Client</option>
+                            <option value="Security">Security</option>
+                            <option value="Performance">Performance</option>
+                            <option value="Documentation">Documentation</option>
                         </select>
                     </div>
                 </div>

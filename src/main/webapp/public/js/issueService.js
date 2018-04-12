@@ -1,4 +1,4 @@
-angular.module('myapp').factory('IssueService', ['$rootScope','$http', '$q', function($rootScope,$http, $q){
+angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, $q){
     
     // var currentIssue;
     var factory = {
@@ -7,12 +7,7 @@ angular.module('myapp').factory('IssueService', ['$rootScope','$http', '$q', fun
         fetchIssue: fetchIssue,
         createIssue: createIssue,
         createComment: createComment,
-        setCurrentIssue: function(issue){
-            $rootScope.currentIssue= issue;
-        },
-        getCurrentIssue: function(){
-            return $rootScope.currentIssue;
-        }
+        updateIssue: updateIssue
         // fetchUserProjects: fetchUserProjects,
         // fetchIssueCategories: fetchIssueCategories
     };
@@ -91,6 +86,21 @@ angular.module('myapp').factory('IssueService', ['$rootScope','$http', '$q', fun
                 deferred.reject(errResponse);
             }
         );
+        return deferred.promise;
+    }
+
+    function updateIssue(issue) {
+        var deferred= $q.defer();
+        $http.put('update/', issue)
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while updating Issue');
+                    deferred.reject(errResponse);
+                }
+            );
         return deferred.promise;
     }
  
