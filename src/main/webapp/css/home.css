@@ -64,7 +64,6 @@ body{
 }
 .view{
     min-height: 550px;
-    margin: 0% 0.5%;
-    border: #4484ce 1px solid;
+    margin: 0% 1%;
     background:transparent;
 }

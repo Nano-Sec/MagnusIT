@@ -33,7 +33,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		.antMatchers("/public/**")
 		.permitAll()
 		.anyRequest()
-		.authenticated()
+		.authenticated().and().logout().logoutUrl("/logout").logoutSuccessUrl("/public/login.html")
 		.and()
 		.csrf().disable();
 	}

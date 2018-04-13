@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Update Issue</title>
-    <link rel="stylesheet" href="../css/updateIssue.css">
+    <link rel="stylesheet" href="css/updateIssue.css">
 </head>
 <body>
     <div class="updateContainer" ng-controller="IssueController as ctrl">
@@ -52,7 +52,7 @@
                 </select>
                 </div>
                 <div class="rowElement">
-                    Assigned to: <br><select data-ng-model="ctrl.currentIssue.assignedTo" required convert-to-number>
+                    Assigned to: <br><select data-ng-model="ctrl.currentIssue.assignedTo" ng-required="true" convert-to-number>
                     <option value=1>Default</option>
                 </select>
                 </div>
@@ -61,7 +61,7 @@
                 Summary:<br><input type="text" ng-model="ctrl.currentIssue.title" placeholder="Title" maxlength="50" required>
             </div>
             <div class="text">
-                Description:<br> <textarea rows="17" cols="100" ng-model="ctrl.currentIssue.description" placeholder="Description" maxlength="250" required></textarea>
+                Description:<br> <textarea rows="17" ng-model="ctrl.currentIssue.description" placeholder="Description" maxlength="250" required></textarea>
             </div>
             <div class="formButtons">
                 <div class="buttonContainer">

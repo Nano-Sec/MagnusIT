@@ -99,14 +99,12 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(currentEmployee, HttpStatus.OK);
     }
 
-    //Logout
-	@GetMapping(value="/logout")
-	public String logout (HttpServletRequest request, HttpServletResponse response) throws ServletException {
+//    //Logout
+//	@PostMapping(value="/logout")
+//	public void logout (HttpServletRequest request, HttpServletResponse response) throws ServletException {
 //		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 //		if (auth != null){
 //			new SecurityContextLogoutHandler().logout(request, response, auth);
 //		}
-		request.logout();
-		return "redirect to login page";
-	}
+//	}
 }

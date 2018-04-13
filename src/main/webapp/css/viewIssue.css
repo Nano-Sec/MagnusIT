@@ -16,6 +16,9 @@ body {
     margin: 5px;
     text-align: right;
 }
+.issueButton#commentButton{
+    margin-top: 25px;
+}
 .issueButton button,input[type=submit],[type=reset]{
     /* background-color:white;
     color: #4484ce; */
@@ -51,7 +54,7 @@ textarea{
     resize: none;
 }
 td.category, th.category {
-    background-color: #4484ce !important;
+    background-color: #4484ce;
     color: snow;
     vertical-align: top;
     text-align: left;
@@ -60,5 +63,5 @@ td{
     background-color: rgb(255, 255, 255);
 }
 tr.spacer {
-    height: 10px;
+    height: 20px;
 }

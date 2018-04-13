@@ -11,7 +11,7 @@
             + btoa(credentials.username + ":" + credentials.password)
         } : {};
 
-        $http.get('/user', {headers : headers})
+        $http.get('user', {headers : headers})
         .then(function(response) {
         if (response.data) {
             $rootScope.user= response.data;
@@ -29,12 +29,10 @@
     }
 
     $scope.logout= function(){
-        $http.get('/logout')
+        $http.post('logout')
             .then(function (response) {
-                if(response.data){
-                    $rootScope.authenticated= false;
-                    $state.go("login");
-                }
+                $rootScope.authenticated= false;
+                $state.go("login");
             })
             .catch(function() {
                 console.log('logout failure');

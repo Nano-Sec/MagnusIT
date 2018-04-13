@@ -1,7 +1,7 @@
 <html>
     <head>
         <title>View Issue</title>
-        <link rel="stylesheet" href="../css/viewIssue.css">
+        <link rel="stylesheet" href="css/viewIssue.css">
     </head>
     <body>
         <div class="issueContainer" ng-controller="IssueController as ctrl">
@@ -24,27 +24,24 @@
                             <td class="issue-date-submitted">{{ctrl.currentIssue.creationDate | date:'fullDate'}}</td>
                             <td class="issue-last-modified">{{ctrl.currentIssue.lastModifiedDate | date:'fullDate'}}</td>
                         </tr>
-                        <tr class="spacer">
-                            <td colspan="6"></td>
-                        </tr>
                         <tr class="hidden"></tr>
                         <tr>
                             <th class="issue-reporter category">Reporter</th>
-                            <td class="issue-reporter">{{ctrl.currentIssue.reporter}}</td>
                             <th class="issue-assigned-to category">Assigned to</th>
-                            <td class="issue-assigned-to" colspan="3">{{ctrl.currentIssue.assignedTo}}</td>
+                            <th class="issue-status category">Status</th>
+                            <th class="issue-priority category">Priority</th>
+                            <th class="issue-resolution category" colspan="2">Lifecycle</th>
                         </tr>
                         <tr>
-                            <th class="issue-status category">Status</th>
+                            <td class="issue-reporter">{{ctrl.currentIssue.reporter}}</td>
+                            <td class="issue-assigned-to">{{ctrl.currentIssue.assignedTo}}</td>
                             <td class="issue-status"><i class="fa fa-square fa-status-box status-80-color"></i>{{ctrl.currentIssue.status}}</td>
-                            <th class="issue-priority category">Priority</th>
                             <td class="issue-priority">{{ctrl.currentIssue.priority}}</td>
-                            <th class="issue-resolution category">Lifecycle</th>
-                            <td class="issue-resolution"></td>
+                            <td class="issue-resolution" colspan="2"></td>
                         </tr>
-                        <tr class="spacer">
-                            <td colspan="6"></td>
-                        </tr>
+                        <!--<tr class="spacer">-->
+                            <!--<td colspan="6"></td>-->
+                        <!--</tr>-->
                         <tr class="hidden"></tr>
                         <tr>
                             <th class="issue-summary category">Summary</th>
@@ -83,7 +80,7 @@
                 </table>
             </div>
             <div class="comments">
-                <div class="issueButton"><button ng-click="ctrl.setCommentFlag()">Comment</button></div>
+                <div class="issueButton" id="commentButton"><button ng-click="ctrl.setCommentFlag()">Comment</button></div>
                 <div class="commentForm" ng-show= ctrl.commentflag>
                     <form ng-submit="ctrl.createComment()">
                         <div class="newComment">

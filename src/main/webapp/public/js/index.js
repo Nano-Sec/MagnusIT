@@ -28,27 +28,27 @@
         .state('home',{
             abstract: true,
             url: '/home',
-            templateUrl: '/views/home.html'
+            templateUrl: 'views/home.html'
         })
         .state('home.dashboard',{
             url: '/dashboard',
-            templateUrl: '/views/dashboard.html'
+            templateUrl: 'views/dashboard.html'
         })
         .state('home.createIssue',{
             url: '/createIssue',
-            templateUrl: '/views/createIssue.html'
+            templateUrl: 'views/createIssue.html'
         })
         .state('home.viewIssueList',{
             url: '/IssueList',
-            templateUrl: '/views/issueList.html'
+            templateUrl: 'views/issueList.html'
         })
         .state('home.viewIssue',{
             url: '/Issue',
-            templateUrl: '/views/viewIssue.html'
+            templateUrl: 'views/viewIssue.html'
         })
         .state('home.updateIssue',{
             url: '/Issue/update',
-            templateUrl: '/views/updateIssue.html'
+            templateUrl: 'views/updateIssue.html'
         })
         .state('404',{
             url: '/error/404',
