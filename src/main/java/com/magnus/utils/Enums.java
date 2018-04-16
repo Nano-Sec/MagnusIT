@@ -8,7 +8,7 @@ public class Enums {
 		NEW,CONFIRMED,REJECTED,ASSIGNED,RESOLVED,CLOSED
 	}
 	public enum IssueCategory{
-		Hardware,Server,Client
+		Hardware,Server,Client,Security,Performance,Documentation
 	}
 	public enum IssuePriority {
 		URGENT,HIGH,MEDIUM,LOW

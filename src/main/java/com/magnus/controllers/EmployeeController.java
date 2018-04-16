@@ -8,6 +8,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +26,10 @@ import com.magnus.entities.Employee;
 import com.magnus.services.AuthService;
 import com.magnus.services.EmployeeService;
 import com.magnus.utils.Views;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @RestController
 public class EmployeeController {
@@ -91,4 +98,13 @@ public class EmployeeController {
         service.updateEmployee(employee);
         return new ResponseEntity<Employee>(currentEmployee, HttpStatus.OK);
     }
+
+//    //Logout
+//	@PostMapping(value="/logout")
+//	public void logout (HttpServletRequest request, HttpServletResponse response) throws ServletException {
+//		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+//		if (auth != null){
+//			new SecurityContextLogoutHandler().logout(request, response, auth);
+//		}
+//	}
 }

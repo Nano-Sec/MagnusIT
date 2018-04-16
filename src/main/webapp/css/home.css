@@ -26,7 +26,12 @@ body{
 .smallbar{
     height: 25%;
     color: white;
-    background-color: #2a8dff;
+    text-align: right;
+    padding-right: 0.5%;
+    background-color: #4484ce;
+}
+.smallbar label:hover{
+    cursor: pointer;
 }
 .navigation{
     height: 75%;
@@ -42,7 +47,7 @@ body{
 }
 .tabs:hover{
     cursor: pointer;
-    background: #2a8dff;
+    background: #4484ce;
     color: ghostwhite;
 }
 .product-name{
@@ -59,7 +64,6 @@ body{
 }
 .view{
     min-height: 550px;
-    margin: 0% 0.5%;
-    border: #2a8dff 1px solid;
+    margin: 0% 1%;
     background:transparent;
 }

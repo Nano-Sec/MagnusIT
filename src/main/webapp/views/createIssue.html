@@ -2,32 +2,37 @@
     <head>
         <title>Create Issue</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">    </head>
-        <link rel="stylesheet" type="text/css" href="../css/createIssue.css">
+        <link rel="stylesheet" type="text/css" href="css/createIssue.css">
     <body>
         <div class = "form-container" ng-controller="IssueController as ctrl">   
-            <form name="createIssueForm" ng-submit="ctrl.createIssue()">               
+            <form name="createIssueForm" ng-submit="ctrl.createIssue()">
                 <div class="description-container">
                     <div class="issue-no">
                        New Issue <i class="fas fa-exclamation-circle"></i>
                     </div>
                     <div class="issue-title">
-                        <input type="text" ng-model="ctrl.postissue.title" placeholder="Title" >
+                        <input type="text" ng-model="ctrl.postissue.title" placeholder="Title" maxlength="50" required>
                     </div>
                     <div class="issue-description">
-                        <textarea rows="17" cols="100" ng-model="ctrl.postissue.description" placeholder="Description"></textarea>
+                        <textarea rows="17" cols="100" ng-model="ctrl.postissue.description" placeholder="Description" maxlength="250" required></textarea>
                     </div>
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown" id="project-dropdown">
                         Select Project<br>
-                        <select name="project-name" ng-model="ctrl.postissue.project.id">
+                        <select name="project-name" ng-model="ctrl.postissue.project.id" required>
                             <option value=1>Default</option>
                         </select>
                     </div>
                     <div class="dropdown">
                         Select Category<br>
-                        <select name="category" ng-model="ctrl.postissue.category">
+                        <select name="category" ng-model="ctrl.postissue.category" required>
                             <option value="Hardware">Hardware</option>
+                            <option value="Server">Server</option>
+                            <option value="Client">Client</option>
+                            <option value="Security">Security</option>
+                            <option value="Performance">Performance</option>
+                            <option value="Documentation">Documentation</option>
                         </select>
                     </div>
                 </div>

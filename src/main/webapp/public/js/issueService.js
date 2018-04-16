@@ -1,9 +1,13 @@
 angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, $q){
- 
+    
+    // var currentIssue;
     var factory = {
-        createIssue: createIssue,
         fetchAllIssues: fetchAllIssues,
-        fetchIssue: fetchIssue
+        fetchAllComments: fetchAllComments,
+        fetchIssue: fetchIssue,
+        createIssue: createIssue,
+        createComment: createComment,
+        updateIssue: updateIssue
         // fetchUserProjects: fetchUserProjects,
         // fetchIssueCategories: fetchIssueCategories
     };
@@ -24,6 +28,21 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
         );
         return deferred.promise;
     }
+
+    function createComment(comment) {
+        var deferred = $q.defer();
+        $http.post('comment/', comment)
+            .then(
+            function (response) {
+                deferred.resolve("comment posted");
+            },
+            function(errResponse){
+                console.error('Error while posting comment');
+                deferred.reject(errResponse);
+            }
+        );
+        return deferred.promise;
+    }
     
     function fetchAllIssues() {
         var deferred = $q.defer();
@@ -34,6 +53,21 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
             },
             function(errResponse){
                 console.error('Error while fetching Issues');
+                deferred.reject(errResponse);
+            }
+        );
+        return deferred.promise;
+    }
+
+    function fetchAllComments(number) {
+        var deferred = $q.defer();
+        $http.get('comments/'+ number)
+            .then(
+            function (response) {
+                deferred.resolve(response.data);
+            },
+            function(errResponse){
+                console.error('Error while fetching comments');
                 deferred.reject(errResponse);
             }
         );
@@ -52,6 +86,21 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
                 deferred.reject(errResponse);
             }
         );
+        return deferred.promise;
+    }
+
+    function updateIssue(issue) {
+        var deferred= $q.defer();
+        $http.put('update/', issue)
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while updating Issue');
+                    deferred.reject(errResponse);
+                }
+            );
         return deferred.promise;
     }
  

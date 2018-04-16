@@ -28,6 +28,7 @@ public class Issue {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
+	@JsonView(Views.Issue.class)
 	private Long id;
 	@JsonView(Views.Issue.class)
 	int issueNumber;
@@ -39,6 +40,8 @@ public class Issue {
 	Employee assignedTo;
 	/*@OneToOne @JsonView(Views.Issue.class)
 	Issue duplicate;*/
+	@JsonView(Views.Issue.class)
+	boolean isPublic;
 	@JsonView(Views.Issue.class)
 	IssueCategory category;
 	@JsonView(Views.Issue.class)
@@ -104,6 +107,15 @@ public class Issue {
 	public void setCategory(IssueCategory category) {
 		this.category = category;
 	}
+
+	public boolean isPublic() {
+		return isPublic;
+	}
+
+	public void setPublic(boolean aPublic) {
+		isPublic = aPublic;
+	}
+
 	public IssueStatus getStatus() {
 		return status;
 	}

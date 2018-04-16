@@ -1,0 +1,50 @@
+.heading{
+    color: rgb(240, 82, 82);
+    margin: 40px;
+}
+.row{
+    width: 80%;
+    margin: 30px;
+}
+.rowElement{
+    /*float: left;*/
+    width: 20%;
+    margin: 10px;
+}
+.rowElement input, select{
+    width: 100%;
+}
+.text{
+    margin: 40px;
+}
+.text input{
+    width: 49%;
+}
+.actions button{
+    margin-left: 40px;
+}
+.buttonContainer{
+    margin-left: 40.5%;
+}
+textarea{
+    resize: none;
+    width: 49%;
+}
+select{
+    padding: 5px 10px;
+}
+input,textarea,select{
+    border:lightgrey solid 1px;
+    border-radius: 4px;
+    padding: 8px 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-size:12px; */
+}
+input[type=submit],[type=reset] ,button{
+    background-color:rgb(241, 93, 67);
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
