@@ -78,14 +78,13 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
                 console.error('Error while posting comment');
             }
         );
-        alert("Your comment has been posted.");
         self.cancelComment();
         $window.location.reload();
     };
 
-    self.updateIssue= function(){
+    self.updateIssue= function(description){
         self.transformToPut();
-        IssueService.updateIssue(self.putIssue)
+        IssueService.updateIssue(self.putIssue, description)
             .then(
                 self.fetchAllIssues,
                 function(errResponse){
@@ -93,7 +92,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
                 }
             );
         alert('Issue successfully updated');
-        $state.go('home.dashboard');
+        $state.go('home.viewIssue');
     };
 
     self.transformToPut= function(){
@@ -115,11 +114,22 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
         self.putIssue.lastModifiedDate= self.currentIssue.lastModifiedDate;
     };
 
+    self.deleteIssue= function(){
+        IssueService.deleteIssue(self.currentIssue.issueNumber)
+            .then(
+                self.fetchAllIssues,
+                function(errResponse){
+                    console.error('Error while deleting Issue');
+                }
+            );
+        localStorage.setItem("number", null);
+    };
+
     self.confirmIssue= function(){
         var check= confirm('Are you sure you want to confirm issue '+ self.currentIssue.issueNumber+'?');
         if(check){
             self.currentIssue.status= 'CONFIRMED';
-            self.updateIssue();
+            self.updateIssue('Confirmed');
         }
     };
 
@@ -127,7 +137,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
         var check= confirm('Are you sure you want to reject issue '+ self.currentIssue.issueNumber+'?');
         if(check){
             self.currentIssue.status= 'REJECTED';
-            self.updateIssue();
+            self.updateIssue('Rejected');
         }
     };
 
@@ -135,7 +145,15 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
         var check= confirm('Are you sure you want to mark issue '+ self.currentIssue.issueNumber+' as fixed?');
         if(check){
             self.currentIssue.status= 'RESOLVED';
-            self.updateIssue();
+            self.updateIssue('Marked as fixed');
+        }
+    };
+
+    self.reopenIssue= function(){
+        var check= confirm('Are you sure you want to reopen issue '+ self.currentIssue.issueNumber+'?');
+        if(check){
+            self.currentIssue.status= 'NEW';
+            self.updateIssue('Reopened');
         }
     };
 

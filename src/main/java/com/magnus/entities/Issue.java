@@ -1,15 +1,9 @@
 package com.magnus.entities;
 
 import java.util.Date;
+import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EntityListeners;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
 
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
@@ -52,6 +46,8 @@ public class Issue {
 	String title;
 	@JsonView(Views.Issue.class)
 	String description;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	List<Comment> comments;
 	@JsonView(Views.Issue.class)
 	Date dueDate;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Issue.class)
@@ -140,6 +136,15 @@ public class Issue {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	public List<Comment> getComments() {
+		return comments;
+	}
+
+	public void setComments(List<Comment> comments) {
+		this.comments = comments;
+	}
+
 	public Date getDueDate() {
 		return dueDate;
 	}

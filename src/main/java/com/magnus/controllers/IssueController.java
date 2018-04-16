@@ -91,14 +91,26 @@ public class IssueController {
 
 	//Update Issue
 	@RequestMapping(value = "/update/", method=RequestMethod.PUT)
-	public ResponseEntity<Issue> updateIssue(@RequestBody Issue issue) {
+	public ResponseEntity<Issue> updateIssue(@RequestBody Issue issue, @RequestParam("description") String description) {
 		long id= issue.getId();
 		Issue currentIssue = service.getIssue(issue.getIssueNumber());
 		if (currentIssue==null) {
 			LOGGER.error("Issue with id " + id + " not found");
 			return new ResponseEntity<Issue>(HttpStatus.NOT_FOUND);
 		}
-		service.updateIssue(issue);
+		service.updateIssue(issue, description);
 		return new ResponseEntity<Issue>(currentIssue, HttpStatus.OK);
+	}
+
+	//Delete issue
+	@DeleteMapping(value="/delete/{id}")
+	public ResponseEntity<Void> deleteIssue(@PathVariable("id") int id){
+		Issue issue= service.getIssue(id);
+		if(issue==null){
+			LOGGER.error("Unable to retrieve issue number "+id);
+			return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+		}
+		service.deleteIssue(issue.getId());
+		return new ResponseEntity<Void>(HttpStatus.NO_CONTENT);
 	}
 }
