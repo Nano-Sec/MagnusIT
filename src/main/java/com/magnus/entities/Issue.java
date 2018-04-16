@@ -48,6 +48,8 @@ public class Issue {
 	String description;
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	List<Comment> comments;
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	List<IssueHistory> issueHistory;
 	@JsonView(Views.Issue.class)
 	Date dueDate;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Issue.class)
@@ -143,6 +145,14 @@ public class Issue {
 
 	public void setComments(List<Comment> comments) {
 		this.comments = comments;
+	}
+
+	public List<IssueHistory> getHistory() {
+		return issueHistory;
+	}
+
+	public void setHistory(List<IssueHistory> history) {
+		this.issueHistory = history;
 	}
 
 	public Date getDueDate() {

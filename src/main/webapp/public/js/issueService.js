@@ -5,6 +5,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
         fetchAllIssues: fetchAllIssues,
         fetchAllComments: fetchAllComments,
         fetchIssue: fetchIssue,
+        fetchHistory: fetchHistory,
         createIssue: createIssue,
         createComment: createComment,
         updateIssue: updateIssue,
@@ -87,6 +88,21 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
                 deferred.reject(errResponse);
             }
         );
+        return deferred.promise;
+    }
+
+    function fetchHistory(number) {
+        var deferred = $q.defer();
+        $http.get('history/'+ number)
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while fetching issue history');
+                    deferred.reject(errResponse);
+                }
+            );
         return deferred.promise;
     }
 

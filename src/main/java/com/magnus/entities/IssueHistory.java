@@ -16,7 +16,7 @@ public class IssueHistory {
     @Column(name = "id")
     @JsonView(Views.IssueHistory.class)
     long id;
-    @ManyToOne
+    @ManyToOne @JsonView(Views.IssueHistory.class)
     Employee user;
     @ManyToOne
     Issue issue;
@@ -25,6 +25,8 @@ public class IssueHistory {
     @CreatedDate
     @Column(nullable = false, updatable = false) @JsonView(Views.IssueHistory.class)
     protected Date creationDate;
+
+    public IssueHistory(){}
 
     public IssueHistory(Employee user, Issue issue, String desc){
         this.user= user;
@@ -40,8 +42,8 @@ public class IssueHistory {
         this.id = id;
     }
 
-    public Employee getUser() {
-        return user;
+    public long getUser() {
+        return user.getEmployeeNumber();
     }
 
     public void setUser(Employee user) {

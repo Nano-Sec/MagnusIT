@@ -43,6 +43,7 @@ public class IssueService {
 	public List<Comment> getAllComments(int number){
 		return (List<Comment>) commentRepo.getAllComments(number);
 	}
+	public List<IssueHistory> getHistory(int number){ return (List<IssueHistory>) historyRepo.getIssueHistory(number);}
 	public List<Issue> getUserIssues(long id){
 		return issueRepo.getUserIssues(id);
 	}
@@ -51,7 +52,6 @@ public class IssueService {
 		issue.setStatus(IssueStatus.NEW);
 		issue.setPriority(IssuePriority.MEDIUM);
 		issue.setReporter(user);
-		issue.setComments(new ArrayList<>());
 		issueRepo.save(issue);
 		addHistory(new IssueHistory(user, issue, "Issue created"));
 		LOGGER.info("Issue "+ issue.getIssueNumber()+" added");
@@ -68,11 +68,16 @@ public class IssueService {
 		LOGGER.info("Comment "+ comment.getId() +" added");
 	}
 	public void updateIssue(Issue issue, String description) {
-		List<Comment> list= getAllComments(issue.getIssueNumber());
-		if(issue.getComments()!=null)
-		    issue.getComments().clear();
-		if(list!=null)
-			issue.getComments().addAll(list);
+		if(issue.getComments()==null)
+			issue.setComments(new ArrayList<>());
+		else{
+			issue.getComments().clear();
+			issue.getComments().addAll(getAllComments(issue.getIssueNumber()));
+		}
+		if(issue.getHistory()==null)
+			issue.setHistory(new ArrayList<>());
+		issue.getHistory().clear();
+		issue.getHistory().addAll(getHistory(issue.getIssueNumber()));
 		issueRepo.save(issue);
 		addHistory(new IssueHistory((Employee)service.getLoggedInUser(), issue, description));
 		LOGGER.info("Issue "+issue.getId()+" updated");
@@ -82,6 +87,12 @@ public class IssueService {
 		LOGGER.info("Issue "+id+" deleted");
 	}
 	public void addHistory(IssueHistory history){
-		historyRepo.save(history);
+        Issue issue= issueRepo.findOne(history.getIssue().getId());
+        List<IssueHistory> list= issue.getHistory();
+        if(list==null)
+        	list= new ArrayList<>();
+        list.add(history);
+        issue.setHistory(list);
+	    historyRepo.save(history);
 	}
 }

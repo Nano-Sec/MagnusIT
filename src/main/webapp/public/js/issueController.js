@@ -35,6 +35,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
             function(data){
                 self.currentIssue= data;
                 self.fetchAllComments(self.currentIssue.issueNumber);
+                self.fetchHistory(self.currentIssue.issueNumber);
             },
             function(errResponse){
                 console.error('Error while fetching issue: '+issueId);
@@ -52,6 +53,18 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
                 console.error('Error while fetching comments');
             }
         );
+    };
+
+    self.fetchHistory = function fetchHistory(number) {
+        IssueService.fetchHistory(number)
+            .then(
+                function(data) {
+                    self.history= data;
+                },
+                function(errResponse){
+                    console.error('Error while fetching issue history');
+                }
+            );
     };
 
     if(localStorage.getItem("number")!=null){
@@ -93,6 +106,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
             );
         alert('Issue successfully updated');
         $state.go('home.viewIssue');
+        $window.location.reload();
     };
 
     self.transformToPut= function(){
@@ -123,6 +137,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
                 }
             );
         localStorage.setItem("number", null);
+        $state.go('home.viewIssueList');
     };
 
     self.confirmIssue= function(){
