@@ -62,17 +62,17 @@
                 <table>
                     <tbody>
                         <tr>
-                            <th class="issue-description category" colspan="2">Comments <i class="fas fa-comments"></i></th>
+                            <th class="category" colspan="2">Comments <i class="fas fa-comments"></i></th>
                         </tr>
                         <tr>
-                            <th class="issue-description category">User #1</th>
-                            <td class="issue-description" >
+                            <th class="user">User #1</th>
+                            <td class="comment" >
                                 <p>Static comment.<br> Comments displayed here. </p>
                             </td>
                         </tr>
                         <tr ng-repeat="comment in ctrl.comments | filter : ctrl.search">
-                            <th class="issue-description category">{{comment.user}}</th>
-                            <td class="issue-description" >
+                            <th class="user">{{comment.user}}</th>
+                            <td class="commentBody" >
                                 <p>{{comment.body}}</p>
                             </td>
                         </tr>
@@ -97,6 +97,18 @@
                         </div>
                     </form>
                 </div>
+            </div>
+            <div class="issue-history">
+                <table>
+                    <tr>
+                        <th class="category" colspan="3">Issue history <i class="fas fa-history"></i></th>
+                    </tr>
+                    <tr ng-repeat="item in ctrl.history">
+                        <td>{{item.user}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.creationDate | date:'fullDate'}}</td>
+                    </tr>
+                </table>
             </div>
         </div>
     </body>

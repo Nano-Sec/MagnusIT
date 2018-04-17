@@ -98,13 +98,4 @@ public class EmployeeController {
         service.updateEmployee(employee);
         return new ResponseEntity<Employee>(currentEmployee, HttpStatus.OK);
     }
-
-//    //Logout
-//	@PostMapping(value="/logout")
-//	public void logout (HttpServletRequest request, HttpServletResponse response) throws ServletException {
-//		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-//		if (auth != null){
-//			new SecurityContextLogoutHandler().logout(request, response, auth);
-//		}
-//	}
 }

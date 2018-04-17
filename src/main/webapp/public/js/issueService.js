@@ -5,9 +5,11 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
         fetchAllIssues: fetchAllIssues,
         fetchAllComments: fetchAllComments,
         fetchIssue: fetchIssue,
+        fetchHistory: fetchHistory,
         createIssue: createIssue,
         createComment: createComment,
-        updateIssue: updateIssue
+        updateIssue: updateIssue,
+        deleteIssue: deleteIssue
         // fetchUserProjects: fetchUserProjects,
         // fetchIssueCategories: fetchIssueCategories
     };
@@ -82,22 +84,52 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
                 deferred.resolve(response.data);
             },
             function(errResponse){
-                console.error('Error while fetching this Issue with Id: '+id);
+                console.error('Error while fetching Issue with Id: '+issueId);
                 deferred.reject(errResponse);
             }
         );
         return deferred.promise;
     }
 
-    function updateIssue(issue) {
+    function fetchHistory(number) {
+        var deferred = $q.defer();
+        $http.get('history/'+ number)
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while fetching issue history');
+                    deferred.reject(errResponse);
+                }
+            );
+        return deferred.promise;
+    }
+
+    function updateIssue(issue, description) {
         var deferred= $q.defer();
-        $http.put('update/', issue)
+        $http.put('update/', issue, {params: {description: description}})
             .then(
                 function (response) {
                     deferred.resolve(response.data);
                 },
                 function(errResponse){
                     console.error('Error while updating Issue');
+                    deferred.reject(errResponse);
+                }
+            );
+        return deferred.promise;
+    }
+
+    function deleteIssue(number) {
+        var deferred = $q.defer();
+        $http.delete('delete/'+number)
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while deleting Issue');
                     deferred.reject(errResponse);
                 }
             );

@@ -14,8 +14,10 @@
             <button ng-click="ctrl.confirmIssue()">Confirm issue</button>
             <button ng-click="ctrl.rejectIssue()">Reject issue</button>
             <button ng-click="ctrl.markAsFixed()">Mark as fixed</button>
+            <button ng-click="ctrl.reopenIssue()">Reopen issue</button>
+            <button ng-click="ctrl.deleteIssue()">Delete issue</button>
         </div>
-        <form ng-submit="ctrl.updateIssue()">
+        <form ng-submit="ctrl.updateIssue('Updated')">
             <div class="row">
                 <div class="rowElement">Issue number:<br> <input type="text" ng-model="ctrl.currentIssue.issueNumber" ng-disabled="true"></div>
                 <div class="rowElement">Reporter: <br><input type="text" ng-model="ctrl.currentIssue.reporter" ng-disabled="true"></div>
