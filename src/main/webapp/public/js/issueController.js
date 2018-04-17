@@ -114,7 +114,11 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
         self.putIssue.issueNumber= self.currentIssue.issueNumber;
         self.putIssue.project.id= self.currentIssue.project;
         self.putIssue.reporter.employeeNumber= parseInt( self.currentIssue.reporter);
-        self.putIssue.assignedTo.employeeNumber= parseInt(self.currentIssue.assignedTo);
+        if(self.currentIssue.assignedTo==-1){
+            self.putIssue.assignedTo=null;
+        }
+        else
+            self.putIssue.assignedTo.employeeNumber= parseInt(self.currentIssue.assignedTo);
         self.putIssue.isPublic= self.currentIssue.isPublic;
         self.putIssue.category= self.currentIssue.category;
         self.putIssue.status= self.currentIssue.status;
