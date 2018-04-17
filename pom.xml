@@ -4,8 +4,8 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.rest</groupId>
-	<artifactId>employeeservice</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<artifactId>MagnusIT</artifactId>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>EmployeeCRUD</name>

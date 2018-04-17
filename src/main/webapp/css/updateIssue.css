@@ -6,7 +6,7 @@ body {
     min-height: 560px;
     min-width: 1000px;
     overflow:auto;
-    border: lightgrey solid 2px;
+    /*border: lightgrey solid 2px;*/
     /* background-color: black; */
     background: transparent;
 }
@@ -50,11 +50,15 @@ body {
     text-align: center;
     /* background-color: gray; */
 }
+.reporter{
+    padding-top: 18px;
+    color: rgb(240, 82, 82);
+}
 .dropdown{
     height: 15%;
     width: 100%;
     /* background-color: blue; */
-    /* margin-top: 12%; */
+     margin-top: 6%;
     /* color: slategrey; */
     /* text-align: center; */
 }
@@ -71,11 +75,17 @@ body {
 .button-container-right{
     float: right;
     height: auto;
-    width: 20%;
+    width: 15%;
+    margin-top: 5%;
+    padding-right: 2%;
+    text-align: right;
     /* background-color: coral; */
     background:transparent;
 }
-input[type=submit],[type=reset],button {
+.button-container-right button{
+    padding: 10px 12px;
+}
+button {
     /* width: 10%; */
     background-color:rgb(241, 93, 67);
     color: white;

@@ -130,7 +130,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
 
     self.deleteIssue= function(){
         var check= confirm('Are you sure you want to delete this issue?');
-        if(check) {
+        if(check==true) {
             IssueService.deleteIssue(self.currentIssue.issueNumber)
                 .then(
                     self.fetchAllIssues,
@@ -146,7 +146,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
 
     self.confirmIssue= function(){
         var check= confirm('Are you sure you want to confirm issue '+ self.currentIssue.issueNumber+'?');
-        if(check){
+        if(check==true){
             self.currentIssue.status= 'CONFIRMED';
             self.updateIssue('Confirmed');
         }
@@ -154,7 +154,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
 
     self.rejectIssue= function(){
         var check= confirm('Are you sure you want to reject issue '+ self.currentIssue.issueNumber+'?');
-        if(check){
+        if(check==true){
             self.currentIssue.status= 'REJECTED';
             self.updateIssue('Rejected');
         }
@@ -162,7 +162,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
 
     self.markAsFixed= function(){
         var check= confirm('Are you sure you want to mark issue '+ self.currentIssue.issueNumber+' as fixed?');
-        if(check){
+        if(check==true){
             self.currentIssue.status= 'RESOLVED';
             self.updateIssue('Marked as fixed');
         }
@@ -170,7 +170,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
 
     self.reopenIssue= function(){
         var check= confirm('Are you sure you want to reopen issue '+ self.currentIssue.issueNumber+'?');
-        if(check){
+        if(check==true){
             self.currentIssue.status= 'NEW';
             self.updateIssue('Reopened');
         }
