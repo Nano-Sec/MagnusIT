@@ -71,8 +71,8 @@
                             </td>
                         </tr>
                         <tr ng-repeat="comment in ctrl.comments | filter : ctrl.search">
-                            <th class="issue-description category">{{comment.user}}</th>
-                            <td class="issue-description" >
+                            <th class="user">{{comment.user}}</th>
+                            <td class="commentBody" >
                                 <p>{{comment.body}}</p>
                             </td>
                         </tr>

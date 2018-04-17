@@ -129,15 +129,19 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
     };
 
     self.deleteIssue= function(){
-        IssueService.deleteIssue(self.currentIssue.issueNumber)
-            .then(
-                self.fetchAllIssues,
-                function(errResponse){
-                    console.error('Error while deleting Issue');
-                }
-            );
-        localStorage.setItem("number", null);
-        $state.go('home.viewIssueList');
+        var check= confirm('Are you sure you want to delete this issue?');
+        if(check) {
+            IssueService.deleteIssue(self.currentIssue.issueNumber)
+                .then(
+                    self.fetchAllIssues,
+                    function (errResponse) {
+                        console.error('Error while deleting Issue');
+                    }
+                );
+
+            localStorage.setItem("number", null);
+            $state.go('home.viewIssueList');
+        }
     };
 
     self.confirmIssue= function(){
