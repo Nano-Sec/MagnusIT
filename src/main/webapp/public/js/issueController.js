@@ -1,7 +1,7 @@
 angular.module('myapp').controller('IssueController', ['$window','$state','IssueService', function($window,$state,IssueService) {
     var self = this;
     self.issueNumber=Math.floor(Math.random() * 10000);
-    self.postissue={'issueNumber':self.issueNumber,'project':{'id': ''},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
+    self.postissue={'issueNumber':self.issueNumber,'project':{'id': null},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
     self.currentIssue= {"id": null, "issueNumber": '', "project": '', "reporter": '', "assignedTo": '', "isPublic": '',"category": '',
         "status": '', "priority": '', "title": '', "description": '', "dueDate": '',
         "createdBy": '', "creationDate": '', "lastModifiedBy": '', "lastModifiedDate": ''

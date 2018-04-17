@@ -19540,3 +19540,250 @@ javax.persistence.EntityNotFoundException: Unable to find com.magnus.entities.Em
 17-04-2018 18:05:13.125 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization completed in 22 ms
 17-04-2018 18:13:58.419 [http-nio-9090-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver.handleTypeMismatch - Failed to bind request element: org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'int'; nested exception is java.lang.NumberFormatException: For input string: "null"
 17-04-2018 18:14:34.882 [http-nio-9090-exec-5] INFO  com.magnus.services.IssueService.updateIssue - Issue 29 updated
+17-04-2018 21:39:26.563 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on NanoSec-PC with PID 8912 (C:\Users\NanoSec\Documents\MagnusIT\target\classes started by NanoSec in C:\Users\NanoSec\Documents\MagnusIT)
+17-04-2018 21:39:26.566 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+17-04-2018 21:39:26.623 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@548a102f: startup date [Tue Apr 17 21:39:26 IST 2018]; root of context hierarchy
+17-04-2018 21:39:27.698 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a58ddffe] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17-04-2018 21:39:27.996 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 9090 (http)
+17-04-2018 21:39:28.005 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+17-04-2018 21:39:28.006 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+17-04-2018 21:39:28.081 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+17-04-2018 21:39:28.082 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 1462 ms
+17-04-2018 21:39:28.187 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+17-04-2018 21:39:28.187 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17-04-2018 21:39:28.188 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17-04-2018 21:39:28.188 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+17-04-2018 21:39:28.190 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+17-04-2018 21:39:28.190 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+17-04-2018 21:39:28.613 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+17-04-2018 21:39:28.623 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+17-04-2018 21:39:28.686 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+17-04-2018 21:39:28.687 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+17-04-2018 21:39:28.688 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+17-04-2018 21:39:28.734 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+17-04-2018 21:39:28.844 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+17-04-2018 21:39:29.307 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate.execute - HHH000228: Running hbm2ddl schema update
+17-04-2018 21:39:29.543 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17-04-2018 21:39:29.734 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory
+17-04-2018 21:39:30.140 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter.initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@548a102f: startup date [Tue Apr 17 21:39:26 IST 2018]; root of context hierarchy
+17-04-2018 21:39:30.186 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Employee>> com.magnus.controllers.EmployeeController.getAllEmployees()
+17-04-2018 21:39:30.187 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/user]}" onto public java.lang.Object com.magnus.controllers.EmployeeController.getLoggedInUser()
+17-04-2018 21:39:30.187 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/employee/view],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee()
+17-04-2018 21:39:30.189 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/view/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee(long)
+17-04-2018 21:39:30.189 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/insert/{type}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.EmployeeController.addEmployee(com.magnus.entities.Employee) throws com.fasterxml.jackson.core.JsonParseException,com.fasterxml.jackson.databind.JsonMappingException,java.io.IOException
+17-04-2018 21:39:30.189 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/update/{type}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.updateEmployee(com.magnus.entities.Employee)
+17-04-2018 21:39:30.192 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comment/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Comment> com.magnus.controllers.IssueController.getComment(long)
+17-04-2018 21:39:30.192 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issues/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Issue>> com.magnus.controllers.IssueController.getAllIssues()
+17-04-2018 21:39:30.192 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.getIssue(int)
+17-04-2018 21:39:30.193 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/history/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.IssueHistory>> com.magnus.controllers.IssueController.getHistory(int)
+17-04-2018 21:39:30.193 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comments/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Comment>> com.magnus.controllers.IssueController.getAllComments(int)
+17-04-2018 21:39:30.194 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addIssue(com.magnus.entities.Issue)
+17-04-2018 21:39:30.194 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/update/],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.updateIssue(com.magnus.entities.Issue,java.lang.String)
+17-04-2018 21:39:30.195 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comment/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addComment(com.magnus.entities.Comment)
+17-04-2018 21:39:30.196 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.deleteIssue(int)
+17-04-2018 21:39:30.198 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17-04-2018 21:39:30.198 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17-04-2018 21:39:30.218 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17-04-2018 21:39:30.218 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17-04-2018 21:39:30.243 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17-04-2018 21:39:30.259 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping.<init> - Adding welcome page: ServletContext resource [/index.html]
+17-04-2018 21:39:30.603 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+17-04-2018 21:39:30.658 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5cdf221a, org.springframework.security.web.context.SecurityContextPersistenceFilter@18d30e7, org.springframework.security.web.header.HeaderWriterFilter@656ec00d, org.springframework.security.web.authentication.logout.LogoutFilter@4fbb1144, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@53f7a906, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2475fba3, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@349f0ca4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e27f603, org.springframework.security.web.session.SessionManagementFilter@4d67d5a4, org.springframework.security.web.access.ExceptionTranslationFilter@59e082f8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4536a715]
+17-04-2018 21:39:30.661 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@77ce88c4, org.springframework.security.web.context.SecurityContextPersistenceFilter@46b6701e, org.springframework.security.web.header.HeaderWriterFilter@4cd7d5e1, org.springframework.security.web.authentication.logout.LogoutFilter@4228f269, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@376b5cb2, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3686389, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@71e2c6d8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@11abd6c, org.springframework.security.web.session.SessionManagementFilter@2ae3235e, org.springframework.security.web.access.ExceptionTranslationFilter@9d99851, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@78318ac2]
+17-04-2018 21:39:30.763 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter.afterSingletonsInstantiated - Registering beans for JMX exposure on startup
+17-04-2018 21:39:30.802 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.start - Tomcat started on port(s): 9090 (http)
+17-04-2018 21:39:30.806 [main] INFO  com.magnus.MagnusItApplication.logStarted - Started MagnusItApplication in 4.475 seconds (JVM running for 5.577)
+17-04-2018 21:39:37.448 [http-nio-9090-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17-04-2018 21:39:37.449 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization started
+17-04-2018 21:39:37.466 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization completed in 17 ms
+17-04-2018 22:18:42.754 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on NanoSec-PC with PID 1664 (C:\Users\NanoSec\Documents\MagnusIT\target\classes started by NanoSec in C:\Users\NanoSec\Documents\MagnusIT)
+17-04-2018 22:18:42.756 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+17-04-2018 22:18:42.811 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@548a102f: startup date [Tue Apr 17 22:18:42 IST 2018]; root of context hierarchy
+17-04-2018 22:18:43.824 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$53f51436] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+17-04-2018 22:18:44.057 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 9090 (http)
+17-04-2018 22:18:44.066 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+17-04-2018 22:18:44.066 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+17-04-2018 22:18:44.142 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+17-04-2018 22:18:44.143 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 1334 ms
+17-04-2018 22:18:44.257 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+17-04-2018 22:18:44.257 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+17-04-2018 22:18:44.257 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+17-04-2018 22:18:44.258 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+17-04-2018 22:18:44.259 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+17-04-2018 22:18:44.260 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+17-04-2018 22:18:44.594 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+17-04-2018 22:18:44.603 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+17-04-2018 22:18:44.645 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+17-04-2018 22:18:44.646 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+17-04-2018 22:18:44.647 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+17-04-2018 22:18:44.675 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+17-04-2018 22:18:44.778 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+17-04-2018 22:18:45.343 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate.execute - HHH000228: Running hbm2ddl schema update
+17-04-2018 22:18:45.527 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+17-04-2018 22:18:45.708 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory
+17-04-2018 22:18:46.087 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter.initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@548a102f: startup date [Tue Apr 17 22:18:42 IST 2018]; root of context hierarchy
+17-04-2018 22:18:46.135 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/user]}" onto public java.lang.Object com.magnus.controllers.EmployeeController.getLoggedInUser()
+17-04-2018 22:18:46.137 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/insert/{type}],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.EmployeeController.addEmployee(com.magnus.entities.Employee) throws com.fasterxml.jackson.core.JsonParseException,com.fasterxml.jackson.databind.JsonMappingException,java.io.IOException
+17-04-2018 22:18:46.137 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Employee>> com.magnus.controllers.EmployeeController.getAllEmployees()
+17-04-2018 22:18:46.138 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/update/{type}],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.updateEmployee(com.magnus.entities.Employee)
+17-04-2018 22:18:46.138 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/view/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee(long)
+17-04-2018 22:18:46.138 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/employee/view],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee()
+17-04-2018 22:18:46.141 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comment/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Comment> com.magnus.controllers.IssueController.getComment(long)
+17-04-2018 22:18:46.142 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issues/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Issue>> com.magnus.controllers.IssueController.getAllIssues()
+17-04-2018 22:18:46.142 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comments/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Comment>> com.magnus.controllers.IssueController.getAllComments(int)
+17-04-2018 22:18:46.142 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.deleteIssue(int)
+17-04-2018 22:18:46.142 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comment/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addComment(com.magnus.entities.Comment)
+17-04-2018 22:18:46.143 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/update/],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.updateIssue(com.magnus.entities.Issue,java.lang.String)
+17-04-2018 22:18:46.152 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/history/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.IssueHistory>> com.magnus.controllers.IssueController.getHistory(int)
+17-04-2018 22:18:46.152 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.getIssue(int)
+17-04-2018 22:18:46.154 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addIssue(com.magnus.entities.Issue)
+17-04-2018 22:18:46.155 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+17-04-2018 22:18:46.156 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+17-04-2018 22:18:46.177 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17-04-2018 22:18:46.178 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17-04-2018 22:18:46.204 [main] INFO  o.s.w.s.h.SimpleUrlHandlerMapping.registerHandler - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+17-04-2018 22:18:46.220 [main] INFO  o.s.b.a.w.WebMvcAutoConfiguration$WelcomePageHandlerMapping.<init> - Adding welcome page: ServletContext resource [/index.html]
+17-04-2018 22:18:46.557 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/css/**'], Ant [pattern='/js/**'], Ant [pattern='/images/**'], Ant [pattern='/webjars/**'], Ant [pattern='/**/favicon.ico'], Ant [pattern='/error']]], []
+17-04-2018 22:18:46.614 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: org.springframework.security.web.util.matcher.AnyRequestMatcher@1, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@738a815c, org.springframework.security.web.context.SecurityContextPersistenceFilter@4b07cad0, org.springframework.security.web.header.HeaderWriterFilter@c497a55, org.springframework.security.web.authentication.logout.LogoutFilter@1b3bec6c, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@21527b8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4e94669c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@668a32a4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2565a7d0, org.springframework.security.web.session.SessionManagementFilter@71dd4624, org.springframework.security.web.access.ExceptionTranslationFilter@451816fd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@64dfb31d]
+17-04-2018 22:18:46.618 [main] INFO  o.s.s.web.DefaultSecurityFilterChain.<init> - Creating filter chain: OrRequestMatcher [requestMatchers=[Ant [pattern='/**']]], [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@21a6a494, org.springframework.security.web.context.SecurityContextPersistenceFilter@775f15fd, org.springframework.security.web.header.HeaderWriterFilter@4228f269, org.springframework.security.web.authentication.logout.LogoutFilter@78318ac2, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@77ce88c4, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@106cd9c8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1552da16, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@794c5f5e, org.springframework.security.web.session.SessionManagementFilter@376b5cb2, org.springframework.security.web.access.ExceptionTranslationFilter@71e2c6d8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@75839695]
+17-04-2018 22:18:46.724 [main] INFO  o.s.j.e.a.AnnotationMBeanExporter.afterSingletonsInstantiated - Registering beans for JMX exposure on startup
+17-04-2018 22:18:46.761 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.start - Tomcat started on port(s): 9090 (http)
+17-04-2018 22:18:46.764 [main] INFO  com.magnus.MagnusItApplication.logStarted - Started MagnusItApplication in 4.248 seconds (JVM running for 4.756)
+17-04-2018 22:19:02.876 [http-nio-9090-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring FrameworkServlet 'dispatcherServlet'
+17-04-2018 22:19:02.876 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization started
+17-04-2018 22:19:02.893 [http-nio-9090-exec-2] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization completed in 16 ms
+17-04-2018 22:29:27.848 [http-nio-9090-exec-2] INFO  c.magnus.controllers.IssueController.addIssue - Creating Issue sdfhjlhj
+17-04-2018 22:29:27.919 [http-nio-9090-exec-2] INFO  com.magnus.services.IssueService.addIssue - Issue 6363 added
+17-04-2018 22:29:43.660 [http-nio-9090-exec-5] INFO  com.magnus.services.IssueService.updateIssue - Issue 10 updated
+17-04-2018 22:34:04.530 [http-nio-9090-exec-3] INFO  c.magnus.controllers.IssueController.addIssue - Creating Issue dfsdf
+17-04-2018 22:34:04.552 [http-nio-9090-exec-3] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet].log - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.InvalidDataAccessApiUsageException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.magnus.entities.Issue.project -> com.magnus.entities.Project; nested exception is java.lang.IllegalStateException: org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.magnus.entities.Issue.project -> com.magnus.entities.Project] with root cause
+org.hibernate.TransientPropertyValueException: object references an unsaved transient instance - save the transient instance before flushing : com.magnus.entities.Issue.project -> com.magnus.entities.Project
+	at org.hibernate.engine.spi.CascadingActions$8.noCascade(CascadingActions.java:379)
+	at org.hibernate.engine.internal.Cascade.cascade(Cascade.java:126)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.cascadeOnFlush(AbstractFlushingEventListener.java:150)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.prepareEntityFlushes(AbstractFlushingEventListener.java:141)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:74)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:38)
+	at org.hibernate.internal.SessionImpl.flush(SessionImpl.java:1282)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:465)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2963)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2339)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:485)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:147)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.access$100(JdbcResourceLocalTransactionCoordinatorImpl.java:38)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:231)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:65)
+	at org.hibernate.jpa.internal.TransactionImpl.commit(TransactionImpl.java:61)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:517)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:761)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:730)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:518)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:292)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:96)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:136)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:133)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:92)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.data.repository.core.support.SurroundingTransactionDetectorMethodInterceptor.invoke(SurroundingTransactionDetectorMethodInterceptor.java:57)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:213)
+	at com.sun.proxy.$Proxy115.save(Unknown Source)
+	at com.magnus.services.IssueService.addIssue(IssueService.java:55)
+	at com.magnus.controllers.IssueController.addIssue(IssueController.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:133)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:97)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:827)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:738)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:85)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:967)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:901)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:970)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:872)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:661)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:846)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:742)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:52)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:317)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:127)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:91)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:114)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:170)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.www.BasicAuthenticationFilter.doFilterInternal(BasicAuthenticationFilter.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:64)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:331)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:214)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:177)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:347)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:263)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HttpPutFormContentFilter.doFilterInternal(HttpPutFormContentFilter.java:108)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:81)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:197)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:107)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:199)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:504)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:140)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:81)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:87)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:342)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:803)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:790)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1459)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+17-04-2018 22:46:55.725 [http-nio-9090-exec-10] INFO  c.magnus.controllers.IssueController.addIssue - Creating Issue dsfasd
+17-04-2018 22:46:55.740 [http-nio-9090-exec-10] INFO  com.magnus.services.IssueService.addIssue - Issue 6409 added
+17-04-2018 22:47:45.402 [http-nio-9090-exec-10] INFO  com.magnus.services.IssueService.updateIssue - Issue 12 updated

@@ -12,9 +12,12 @@
             </div>
             <div class='login-content'>
                 <div class='login-fields'>
-                    <input ng-model="credentials.username" type="text" class="fa" placeholder="&#xf007;   Username" required>
-                    <input ng-model="credentials.password" type="password" class="fa" placeholder="&#xf13e;   Password" required>
-                    <input type="submit" ng-click="auth()" class="fa" value="Login &#xf101;">
+                    <div class="error" ng-show="error">Invalid username or password</div>
+                    <form ng-submit="auth()">
+                        <input ng-model="credentials.username" type="text" class="fa" placeholder="&#xf007;   Username" required>
+                        <input ng-model="credentials.password" type="password" class="fa" placeholder="&#xf13e;   Password" required>
+                        <input type="submit" class="fa" value="Login &#xf101;">
+                    </form>
                     <a href="#">Forgot Password ?</a>
                 </div>
             </div>
