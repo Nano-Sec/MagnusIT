@@ -30,6 +30,8 @@ public class IssueService {
 	CommentRepository commentRepo;
 	@Autowired
 	AuthService service;
+	@Autowired
+	EmailService mailservice;
 	
 	public Issue getIssue(int id) {
 		return issueRepo.findByIssueNumber(id);

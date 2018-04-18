@@ -5,7 +5,7 @@
 
 	<groupId>com.rest</groupId>
 	<artifactId>MagnusIT</artifactId>
-	<version>0.0.2-SNAPSHOT</version>
+	<version>0.0.3-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<name>EmployeeCRUD</name>
@@ -61,6 +61,15 @@
 			<artifactId>tomcat</artifactId>
 			<version>9.0.7</version>
 			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>4.3.5.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-mail</artifactId>
 		</dependency>
 	</dependencies>
 
