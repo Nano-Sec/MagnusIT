@@ -21,8 +21,6 @@ public class IssueController {
 	public static final Logger LOGGER= LoggerFactory.getLogger(IssueController.class);
 	@Autowired
 	IssueService service;
-	/*@Autowired
-	private AuthService authService;*/
 	
 	//View issue
 	@JsonView(Views.Issue.class)

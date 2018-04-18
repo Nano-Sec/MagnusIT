@@ -11,13 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.fasterxml.jackson.annotation.JsonView;
 import com.fasterxml.jackson.core.JsonParseException;
@@ -75,7 +69,7 @@ public class EmployeeController {
     }
 	
 	//Insert employee
-	@PostMapping(value = "/admin/insert/{type}")
+	@PostMapping(value = "/admin/insert")
     public ResponseEntity<Void> addEmployee(@RequestBody Employee employee) throws JsonParseException, JsonMappingException, IOException {
 		LOGGER.info("Creating User " + employee.getEmployeeName());
         if(service.getEmployee(employee.getEmployeeNumber())!= null){
@@ -87,7 +81,7 @@ public class EmployeeController {
     }
 		
 	//Update employee
-	@RequestMapping(value = "/admin/update/{type}", method=RequestMethod.PUT)
+	@RequestMapping(value = "/admin/update", method=RequestMethod.PUT)
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
 		long id= employee.getEmployeeNumber();
         Employee currentEmployee = (Employee) service.getEmployee(id);
@@ -98,4 +92,16 @@ public class EmployeeController {
         service.updateEmployee(employee);
         return new ResponseEntity<Employee>(currentEmployee, HttpStatus.OK);
     }
+
+    //Delete employee
+	@DeleteMapping(value = "/admin/delete/{id}")
+	public ResponseEntity<Void> deleteEmployee(@PathVariable("id") int id){
+		Employee emp= service.getEmployee(id);
+		if(emp==null){
+			LOGGER.error("Unable to retrieve employee number "+id);
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		service.deleteEmployee(emp.getEmployeeNumber());
+		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	}
 }

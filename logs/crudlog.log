@@ -20578,3 +20578,93 @@ org.hibernate.TransientPropertyValueException: object references an unsaved tran
 18-04-2018 15:35:07.834 [http-nio-9090-exec-1] INFO  o.s.web.servlet.DispatcherServlet.initServletBean - FrameworkServlet 'dispatcherServlet': initialization completed in 20 ms
 18-04-2018 15:35:28.292 [http-nio-9090-exec-4] INFO  c.magnus.controllers.IssueController.addIssue - Creating Issue Testing mail
 18-04-2018 15:35:32.872 [http-nio-9090-exec-4] INFO  com.magnus.services.IssueService.addIssue - Issue 9272 added
+18-04-2018 18:36:21.021 [main] INFO  com.magnus.MagnusItApplication.logStarting - Starting MagnusItApplication on DHPC-MUM020 with PID 3132 (C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT\target\classes started by DarkHorse in C:\Users\DarkHorse\Documents\Nano_workspace\MagnusIT)
+18-04-2018 18:36:21.037 [main] INFO  com.magnus.MagnusItApplication.logStartupProfileInfo - No active profile set, falling back to default profiles: default
+18-04-2018 18:36:21.131 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.prepareRefresh - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d9d4f9d: startup date [Wed Apr 18 18:36:21 IST 2018]; root of context hierarchy
+18-04-2018 18:36:22.108 [main] INFO  o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization - Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$47131ace] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+18-04-2018 18:36:22.389 [main] INFO  o.s.b.c.e.t.TomcatEmbeddedServletContainer.initialize - Tomcat initialized with port(s): 9090 (http)
+18-04-2018 18:36:22.404 [main] INFO  o.a.catalina.core.StandardService.log - Starting service [Tomcat]
+18-04-2018 18:36:22.404 [main] INFO  o.a.catalina.core.StandardEngine.log - Starting Servlet Engine: Apache Tomcat/8.5.27
+18-04-2018 18:36:22.498 [localhost-startStop-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/].log - Initializing Spring embedded WebApplicationContext
+18-04-2018 18:36:22.498 [localhost-startStop-1] INFO  o.s.web.context.ContextLoader.prepareEmbeddedWebApplicationContext - Root WebApplicationContext: initialization completed in 1367 ms
+18-04-2018 18:36:22.638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'characterEncodingFilter' to: [/*]
+18-04-2018 18:36:22.638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+18-04-2018 18:36:22.638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+18-04-2018 18:36:22.638 [localhost-startStop-1] INFO  o.s.b.w.s.FilterRegistrationBean.configure - Mapping filter: 'requestContextFilter' to: [/*]
+18-04-2018 18:36:22.638 [localhost-startStop-1] INFO  o.s.b.w.s.DelegatingFilterProxyRegistrationBean.configure - Mapping filter: 'springSecurityFilterChain' to: [/*]
+18-04-2018 18:36:22.638 [localhost-startStop-1] INFO  o.s.b.w.s.ServletRegistrationBean.onStartup - Mapping servlet: 'dispatcherServlet' to [/]
+18-04-2018 18:36:23.034 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory - Building JPA container EntityManagerFactory for persistence unit 'default'
+18-04-2018 18:36:23.034 [main] INFO  o.h.jpa.internal.util.LogHelper.logPersistenceUnitInformation - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+18-04-2018 18:36:23.081 [main] INFO  org.hibernate.Version.logVersion - HHH000412: Hibernate Core {5.0.12.Final}
+18-04-2018 18:36:23.081 [main] INFO  org.hibernate.cfg.Environment.<clinit> - HHH000206: hibernate.properties not found
+18-04-2018 18:36:23.081 [main] INFO  org.hibernate.cfg.Environment.buildBytecodeProvider - HHH000021: Bytecode provider name : javassist
+18-04-2018 18:36:23.112 [main] INFO  o.h.annotations.common.Version.<clinit> - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+18-04-2018 18:36:23.206 [main] INFO  org.hibernate.dialect.Dialect.<init> - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+18-04-2018 18:36:23.676 [main] INFO  o.h.tool.hbm2ddl.SchemaUpdate.execute - HHH000228: Running hbm2ddl schema update
+18-04-2018 18:36:24.852 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.buildNativeEntityManagerFactory - Initialized JPA EntityManagerFactory for persistence unit 'default'
+18-04-2018 18:36:25.039 [main] INFO  o.h.h.i.QueryTranslatorFactoryInitiator.initiateService - HHH000397: Using ASTQueryTranslatorFactory
+18-04-2018 18:36:25.491 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter.initControllerAdviceCache - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2d9d4f9d: startup date [Wed Apr 18 18:36:21 IST 2018]; root of context hierarchy
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/all],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Employee>> com.magnus.controllers.EmployeeController.getAllEmployees()
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/user]}" onto public java.lang.Object com.magnus.controllers.EmployeeController.getLoggedInUser()
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/employee/view],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee()
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/view/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.getEmployee(long)
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/insert],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.EmployeeController.addEmployee(com.magnus.entities.Employee) throws com.fasterxml.jackson.core.JsonParseException,com.fasterxml.jackson.databind.JsonMappingException,java.io.IOException
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/update],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Employee> com.magnus.controllers.EmployeeController.updateEmployee(com.magnus.entities.Employee)
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/admin/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.EmployeeController.deleteEmployee(int)
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comment/{id}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Comment> com.magnus.controllers.IssueController.getComment(long)
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comments/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Comment>> com.magnus.controllers.IssueController.getAllComments(int)
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addIssue(com.magnus.entities.Issue)
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/comment/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.addComment(com.magnus.entities.Comment)
+18-04-2018 18:36:25.554 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/update/],methods=[PUT]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.updateIssue(com.magnus.entities.Issue,java.lang.String)
+18-04-2018 18:36:25.569 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/delete/{id}],methods=[DELETE]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.IssueController.deleteIssue(int)
+18-04-2018 18:36:25.569 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issue/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.getIssue(int)
+18-04-2018 18:36:25.569 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/history/{number}],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.IssueHistory>> com.magnus.controllers.IssueController.getHistory(int)
+18-04-2018 18:36:25.569 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/issues/],methods=[GET]}" onto public org.springframework.http.ResponseEntity<java.util.List<com.magnus.entities.Issue>> com.magnus.controllers.IssueController.getAllIssues()
+18-04-2018 18:36:25.569 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping.register - Mapped "{[/project/],methods=[POST]}" onto public org.springframework.http.ResponseEntity<java.lang.Void> com.magnus.controllers.ProjectController.addProject(com.magnus.entities.Project)
+18-04-2018 18:36:25.569 [main] WARN  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext.refresh - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'projectController' method 
+public org.springframework.http.ResponseEntity<com.magnus.entities.Project> com.magnus.controllers.ProjectController.updateProject(com.magnus.entities.Project)
+to {[/update/],methods=[PUT]}: There is already 'issueController' bean method
+public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.updateIssue(com.magnus.entities.Issue,java.lang.String) mapped.
+18-04-2018 18:36:25.569 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean.destroy - Closing JPA EntityManagerFactory for persistence unit 'default'
+18-04-2018 18:36:25.569 [main] INFO  o.a.catalina.core.StandardService.log - Stopping service [Tomcat]
+18-04-2018 18:36:25.600 [main] INFO  o.s.b.a.l.AutoConfigurationReportLoggingInitializer.logAutoConfigurationReport - 
+
+Error starting ApplicationContext. To display the auto-configuration report re-run your application with 'debug' enabled.
+18-04-2018 18:36:25.600 [main] ERROR o.s.boot.SpringApplication.reportFailure - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'requestMappingHandlerMapping' defined in class path resource [org/springframework/boot/autoconfigure/web/WebMvcAutoConfiguration$EnableWebMvcConfiguration.class]: Invocation of init method failed; nested exception is java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'projectController' method 
+public org.springframework.http.ResponseEntity<com.magnus.entities.Project> com.magnus.controllers.ProjectController.updateProject(com.magnus.entities.Project)
+to {[/update/],methods=[PUT]}: There is already 'issueController' bean method
+public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.updateIssue(com.magnus.entities.Issue,java.lang.String) mapped.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483)
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107)
+	at com.magnus.MagnusItApplication.main(MagnusItApplication.java:22)
+Caused by: java.lang.IllegalStateException: Ambiguous mapping. Cannot map 'projectController' method 
+public org.springframework.http.ResponseEntity<com.magnus.entities.Project> com.magnus.controllers.ProjectController.updateProject(com.magnus.entities.Project)
+to {[/update/],methods=[PUT]}: There is already 'issueController' bean method
+public org.springframework.http.ResponseEntity<com.magnus.entities.Issue> com.magnus.controllers.IssueController.updateIssue(com.magnus.entities.Issue,java.lang.String) mapped.
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.assertUniqueMethodMapping(AbstractHandlerMethodMapping.java:576)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry.register(AbstractHandlerMethodMapping.java:540)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.registerHandlerMethod(AbstractHandlerMethodMapping.java:264)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.detectHandlerMethods(AbstractHandlerMethodMapping.java:250)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.initHandlerMethods(AbstractHandlerMethodMapping.java:214)
+	at org.springframework.web.servlet.handler.AbstractHandlerMethodMapping.afterPropertiesSet(AbstractHandlerMethodMapping.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping.afterPropertiesSet(RequestMappingHandlerMapping.java:127)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624)
+	... 16 common frames omitted
