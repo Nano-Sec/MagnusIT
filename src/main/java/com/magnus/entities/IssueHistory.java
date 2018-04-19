@@ -15,13 +15,13 @@ public class IssueHistory {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
     @JsonView(Views.IssueHistory.class)
-    long id;
+    private long id;
     @ManyToOne @JsonView(Views.IssueHistory.class)
-    Employee user;
+    private Employee user;
     @ManyToOne
-    Issue issue;
+    private Issue issue;
     @JsonView(Views.IssueHistory.class) @Column(nullable = false, updatable = false)
-    String description;
+    private String description;
     @CreatedDate
     @Column(nullable = false, updatable = false) @JsonView(Views.IssueHistory.class)
     protected Date creationDate;

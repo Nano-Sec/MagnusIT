@@ -30,15 +30,15 @@ public class Project {
 	@Column(name = "id")
 	private Long id;
 	@JsonView(Views.Project.class)
-	String name;
+	private String name;
 	@JsonView(Views.Project.class)
-	ProjectStatus status;
+	private ProjectStatus status;
 	@JsonView(Views.Project.class)
-	boolean isPublic;
+	private boolean isPublic;
 	@JsonView(Views.Project.class)
-	String description;
+	private String description;
 	@ManyToMany
-	List<Employee> members;
+	private List<Employee> members;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Project.class)
     protected Employee createdBy;
     @CreatedDate @Column(nullable = false, updatable = false) @JsonView(Views.Project.class)

@@ -36,17 +36,17 @@ public class Employee implements UserDetails{
 	@Id @GeneratedValue(strategy=GenerationType.AUTO) @JsonView(Views.Employee.class)
 	long employeeNumber;
 	@JsonView(Views.Employee.class)
-	String employeeName;
+	private String employeeName;
 	@JsonView(Views.Employee.class)
-	String email;
+	private String email;
 	@Column(name = "username", unique = true) @JsonView(Views.Employee.class)
 	private String username;
 	@Column(name = "password")
 	private String password;
 	@JsonView(Views.Employee.class)
-	Date dateOfJoining;
+	private Date dateOfJoining;
 	@ManyToMany
-	List<Project> projects;
+	private List<Project> projects;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
 	private List<UserRole> userRoles;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Employee.class)

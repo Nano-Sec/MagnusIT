@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/project")
 public class ProjectController {
     public static final Logger LOGGER= LoggerFactory.getLogger(ProjectController.class);
     @Autowired
@@ -21,8 +22,8 @@ public class ProjectController {
 
     //View project
     @JsonView(Views.Project.class)
-    @GetMapping(value = "/project/{id}")
-    public ResponseEntity<Project> getIssue(@PathVariable("id") long id) {
+    @GetMapping(value = "/view/{id}")
+    public ResponseEntity<Project> getProject(@PathVariable("id") long id) {
         Project project= service.getProject(id);
         if(project == null) {
             LOGGER.error("Project with if " + id + " not found");
@@ -33,8 +34,8 @@ public class ProjectController {
 
     //View project list
     @JsonView(Views.Project.class)
-    @GetMapping(value = "/projects/")
-    public ResponseEntity<List<Project>> getAllIssues(){
+    @GetMapping(value = "/view/all")
+    public ResponseEntity<List<Project>> getAllProjects(){
         List <Project> list= service.getAllProjects();
         if(list.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -43,7 +44,7 @@ public class ProjectController {
     }
 
     //Insert project
-    @PostMapping(value="/project/")
+    @PostMapping(value="/add/")
     public ResponseEntity<Void> addProject(@RequestBody Project project){
         LOGGER.info("Creating Project " + project.getName());
         if(service.getProject(project.getId())!= null){
@@ -55,7 +56,7 @@ public class ProjectController {
     }
 
     //Update project
-    @RequestMapping(value = "/update/", method=RequestMethod.PUT)
+    @RequestMapping(value = "/modify/", method=RequestMethod.PUT)
     public ResponseEntity<Project> updateProject(@RequestBody Project project) {
         long id= project.getId();
         Project currentProject = service.getProject(project.getId());
@@ -68,7 +69,7 @@ public class ProjectController {
     }
 
     //Delete project
-    @DeleteMapping(value="/delete/{id}")
+    @DeleteMapping(value="/remove/{id}")
     public ResponseEntity<Void> deleteProject(@PathVariable("id") int id){
         Project project= service.getProject(id);
         if(project==null){

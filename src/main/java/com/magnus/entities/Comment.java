@@ -21,11 +21,11 @@ public class Comment {
 	@JsonView(Views.Comment.class)
 	private Long id;
 	@ManyToOne @JsonView(Views.Comment.class)
-	Issue issue;
+	private Issue issue;
 	@ManyToOne @JsonView(Views.Comment.class)
-	Employee user;
+	private Employee user;
 	@JsonView(Views.Comment.class)
-	String body;
+	private String body;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Issue.class)
     protected Employee createdBy;
     @CreatedDate @Column(nullable = false, updatable = false) @JsonView(Views.Issue.class)

@@ -1,6 +1,5 @@
 angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, $q){
-    
-    // var currentIssue;
+
     var factory = {
         fetchAllIssues: fetchAllIssues,
         fetchAllComments: fetchAllComments,
@@ -18,7 +17,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
  
     function createIssue(issue) {
         var deferred = $q.defer();
-        $http.post('issue/', issue)
+        $http.post('issue/insert/', issue)
             .then(
             function (response) {
                 deferred.resolve("issue posted");
@@ -33,7 +32,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
 
     function createComment(comment) {
         var deferred = $q.defer();
-        $http.post('comment/', comment)
+        $http.post('issue/comment/', comment)
             .then(
             function (response) {
                 deferred.resolve("comment posted");
@@ -48,7 +47,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
     
     function fetchAllIssues() {
         var deferred = $q.defer();
-        $http.get('issues/')
+        $http.get('issue/view/list/')
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -63,7 +62,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
 
     function fetchAllComments(number) {
         var deferred = $q.defer();
-        $http.get('comments/'+ number)
+        $http.get('issue/comments/'+ number)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -78,7 +77,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
  
     function fetchIssue(issueId) {
         var deferred = $q.defer();
-        $http.get('issue/'+issueId)
+        $http.get('issue/view/'+issueId)
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -93,7 +92,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
 
     function fetchHistory(number) {
         var deferred = $q.defer();
-        $http.get('history/'+ number)
+        $http.get('issue/history/'+ number)
             .then(
                 function (response) {
                     deferred.resolve(response.data);
@@ -108,7 +107,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
 
     function updateIssue(issue, description) {
         var deferred= $q.defer();
-        $http.put('update/', issue, {params: {description: description}})
+        $http.put('issue/update/', issue, {params: {description: description}})
             .then(
                 function (response) {
                     deferred.resolve(response.data);
@@ -123,7 +122,7 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
 
     function deleteIssue(number) {
         var deferred = $q.defer();
-        $http.delete('delete/'+number)
+        $http.delete('issue/delete/'+number)
             .then(
                 function (response) {
                     deferred.resolve(response.data);

@@ -25,33 +25,33 @@ public class Issue {
 	@JsonView(Views.Issue.class)
 	private Long id;
 	@JsonView(Views.Issue.class)
-	int issueNumber;
+	private int issueNumber;
 	@ManyToOne @JsonView(Views.Issue.class)
-	Project project;
+	private Project project;
 	@ManyToOne @JsonView(Views.Issue.class)
-	Employee reporter;
+	private Employee reporter;
 	@ManyToOne @JsonView(Views.Issue.class)
-	Employee assignedTo;
+	private Employee assignedTo;
 	/*@OneToOne @JsonView(Views.Issue.class)
 	Issue duplicate;*/
 	@JsonView(Views.Issue.class)
-	boolean isPublic;
+	private boolean isPublic;
 	@JsonView(Views.Issue.class)
-	IssueCategory category;
+	private IssueCategory category;
 	@JsonView(Views.Issue.class)
-	IssueStatus status;
+	private IssueStatus status;
 	@JsonView(Views.Issue.class)
-	IssuePriority priority;
+	private IssuePriority priority;
 	@JsonView(Views.Issue.class)
-	String title;
+	private String title;
 	@JsonView(Views.Issue.class)
-	String description;
+	private String description;
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	List<Comment> comments;
+	private List<Comment> comments;
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
-	List<IssueHistory> issueHistory;
+	private List<IssueHistory> issueHistory;
 	@JsonView(Views.Issue.class)
-	Date dueDate;
+	private Date dueDate;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Issue.class)
     protected Employee createdBy;
     @CreatedDate @Column(nullable = false, updatable = false) @JsonView(Views.Issue.class)

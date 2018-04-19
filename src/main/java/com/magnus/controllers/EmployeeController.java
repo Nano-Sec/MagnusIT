@@ -40,13 +40,13 @@ public class EmployeeController {
 	}
 	
 	//List all employees
-	@GetMapping(value = "/admin/all") @JsonView(Views.Employee.class)
+	@GetMapping(value = "/admin/all/") @JsonView(Views.Employee.class)
 	public ResponseEntity<List<Employee>> getAllEmployees(){
 		List <Employee> list= service.getAllEmployees();
 		if(list.isEmpty()) {
-			return new ResponseEntity<List<Employee>>(HttpStatus.NO_CONTENT);
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
-		return new ResponseEntity<List<Employee>>(list, HttpStatus.OK);
+		return new ResponseEntity<>(list, HttpStatus.OK);
 	}
 	
 	//View employee for admin
@@ -56,16 +56,16 @@ public class EmployeeController {
         Employee emp= service.getEmployee(id);
 		if(emp == null) {
         	LOGGER.error("Employee with id " + id + " not found");
-        	return new ResponseEntity<Employee>(HttpStatus.NOT_FOUND);
+        	return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
-        return new ResponseEntity<Employee>(emp, HttpStatus.OK);
+        return new ResponseEntity<>(emp, HttpStatus.OK);
     }
 	
 	//View logged in employee
 	@JsonView(Views.Employee.class)
 	@GetMapping(value = "/employee/view")
     public ResponseEntity<Employee> getEmployee() {
-		return new ResponseEntity<Employee>((Employee)authService.getLoggedInUser(), HttpStatus.OK);
+		return new ResponseEntity<>((Employee)authService.getLoggedInUser(), HttpStatus.OK);
     }
 	
 	//Insert employee
@@ -74,23 +74,23 @@ public class EmployeeController {
 		LOGGER.info("Creating User " + employee.getEmployeeName());
         if(service.getEmployee(employee.getEmployeeNumber())!= null){
             LOGGER.error("A User with id " + employee.getEmployeeNumber() + " already exists");
-            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+            return new ResponseEntity<>(HttpStatus.CONFLICT);
         }
         service.addEmployee(employee);
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 		
 	//Update employee
 	@RequestMapping(value = "/admin/update", method=RequestMethod.PUT)
     public ResponseEntity<Employee> updateEmployee(@RequestBody Employee employee) {
 		long id= employee.getEmployeeNumber();
-        Employee currentEmployee = (Employee) service.getEmployee(id);
+        Employee currentEmployee =  service.getEmployee(id);
         if (currentEmployee==null) {
             LOGGER.error("User with id " + id + " not found");
-            return new ResponseEntity<Employee>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         service.updateEmployee(employee);
-        return new ResponseEntity<Employee>(currentEmployee, HttpStatus.OK);
+        return new ResponseEntity<>(currentEmployee, HttpStatus.OK);
     }
 
     //Delete employee

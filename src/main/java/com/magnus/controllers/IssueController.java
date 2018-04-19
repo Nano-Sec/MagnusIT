@@ -17,6 +17,7 @@ import com.magnus.services.IssueService;
 import com.magnus.utils.Views;
 
 @RestController
+@RequestMapping("/issue")
 public class IssueController {
 	public static final Logger LOGGER= LoggerFactory.getLogger(IssueController.class);
 	@Autowired
@@ -24,7 +25,7 @@ public class IssueController {
 	
 	//View issue
 	@JsonView(Views.Issue.class)
-	@GetMapping(value = "/issue/{number}")
+	@GetMapping(value = "/view/{number}")
     public ResponseEntity<Issue> getIssue(@PathVariable("number") int id) {
         Issue issue= service.getIssue(id);
 		if(issue == null) {
@@ -60,7 +61,7 @@ public class IssueController {
 	
 	//View issue list
 	@JsonView(Views.Issue.class)
-	@GetMapping(value = "/issues/")
+	@GetMapping(value = "/view/list/")
 	public ResponseEntity<List<Issue>> getAllIssues(){
 		List <Issue> list= service.getAllIssues();
 		if(list.isEmpty()) {
@@ -81,7 +82,7 @@ public class IssueController {
 	}
 	
 	//Insert issue
-	@PostMapping(value="/issue/")
+	@PostMapping(value="/insert/")
 	public ResponseEntity<Void> addIssue(@RequestBody Issue issue){
 		LOGGER.info("Creating Issue " + issue.getTitle());
         if(service.getIssue(issue.getIssueNumber())!= null){
