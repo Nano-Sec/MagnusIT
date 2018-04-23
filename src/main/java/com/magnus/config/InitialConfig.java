@@ -16,10 +16,10 @@ public class InitialConfig {
 	@Autowired
 	private EmployeeRepository userRepository;
 
-	private void addUserIfAbsent(BCryptPasswordEncoder passwordEncoder, String username, String name, RoleType ...roleTypes) {
+	private void addUserIfAbsent(BCryptPasswordEncoder passwordEncoder, String username, String name, String email, RoleType ...roleTypes) {
 		Employee user = userRepository.findByUsername(username);
 		if(user == null) {
-			user = new Employee(username, passwordEncoder.encode("Pass2416"), name);
+			user = new Employee(username, passwordEncoder.encode("Pass2416"), name, email);
 			Builder<UserRole> builder = new ImmutableList.Builder<UserRole>();
 			for (RoleType roleType : roleTypes) {
 				builder = builder.add(new UserRole(user, roleType));
@@ -32,7 +32,7 @@ public class InitialConfig {
 	//Encoder can be passed into the configuration autowire since it's a bean
 	@Autowired
 	protected void setupDefaultUsers(BCryptPasswordEncoder passwordEncoder) {
-		addUserIfAbsent(passwordEncoder, "admin", "Admin", RoleType.ADMIN, RoleType.EMPLOYEE);
-		addUserIfAbsent(passwordEncoder, "nano", "test", RoleType.EMPLOYEE);
+		addUserIfAbsent(passwordEncoder, "admin", "Admin", "example@example.com", RoleType.ADMIN, RoleType.EMPLOYEE);
+		addUserIfAbsent(passwordEncoder, "nano", "test", "example@example.com", RoleType.EMPLOYEE);
 	}	
 }

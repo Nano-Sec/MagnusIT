@@ -29,6 +29,8 @@ public class Project {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private Long id;
+	@Column(unique = true, nullable = false) @JsonView(Views.Project.class)
+	long projectNo;
 	@JsonView(Views.Project.class)
 	private String name;
 	@JsonView(Views.Project.class)
@@ -53,6 +55,15 @@ public class Project {
 	public void setId(Long id) {
 		this.id = id;
 	}
+
+	public long getProjectNo() {
+		return projectNo;
+	}
+
+	public void setProjectNo(long projectNo) {
+		this.projectNo = projectNo;
+	}
+
 	public String getName() {
 		return name;
 	}

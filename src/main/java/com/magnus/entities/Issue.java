@@ -24,7 +24,7 @@ public class Issue {
 	@Column(name = "id")
 	@JsonView(Views.Issue.class)
 	private Long id;
-	@JsonView(Views.Issue.class)
+	@Column(unique = true, nullable = false) @JsonView(Views.Issue.class)
 	private int issueNumber;
 	@ManyToOne @JsonView(Views.Issue.class)
 	private Project project;

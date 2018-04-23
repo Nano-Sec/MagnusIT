@@ -50,6 +50,10 @@
             url: '/Issue/update',
             templateUrl: 'views/updateIssue.html'
         })
+        .state('home.userList',{
+            url: '/Users/view',
+            templateUrl: 'views/userList.html'
+        })
         .state('404',{
             url: '/error/404',
             templateUrl: 'error.html'

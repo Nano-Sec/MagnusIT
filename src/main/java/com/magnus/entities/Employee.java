@@ -35,6 +35,8 @@ public class Employee implements UserDetails{
 	private static final long serialVersionUID = 1L;
 	@Id @GeneratedValue(strategy=GenerationType.AUTO) @JsonView(Views.Employee.class)
 	long employeeNumber;
+	@Column(unique = true, nullable = false) @JsonView(Views.Employee.class)
+	long empNo;
 	@JsonView(Views.Employee.class)
 	private String employeeName;
 	@JsonView(Views.Employee.class)
@@ -58,10 +60,11 @@ public class Employee implements UserDetails{
     @LastModifiedDate @Column(nullable = false) @JsonView(Views.Employee.class)
     protected Date lastModifiedDate;
     public Employee() {}
-	public Employee(String username, String password, String name) {
+	public Employee(String username, String password, String name, String email) {
 		this.username = username;
 		this.employeeName = name;
 		this.password = password;
+		this.email=email;
 		this.lastModifiedBy= createdBy;
 		this.lastModifiedDate= creationDate;
 	}
@@ -101,6 +104,15 @@ public class Employee implements UserDetails{
 	public void setEmployeeNumber(long employeeNumber) {
 		this.employeeNumber = employeeNumber;
 	}
+
+	public long getEmpNo() {
+		return empNo;
+	}
+
+	public void setEmpNo(long empNo) {
+		this.empNo = empNo;
+	}
+
 	public String getEmployeeName() {
 		return employeeName;
 	}

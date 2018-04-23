@@ -93,7 +93,7 @@ html {
   .circle:hover{
       background: rgb(0, 0, 0);
   }
-  .header{
+  .userHeader{
       text-align: center;
       margin: 1%;
   }
