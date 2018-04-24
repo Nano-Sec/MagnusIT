@@ -1,0 +1,109 @@
+html {
+    box-sizing: border-box;
+  }
+  
+  body{
+      /* background-image: url("images/wall.jpg");
+      background-repeat:no-repeat;
+      background-attachment: fixed; */
+      background: rgb(231, 231, 231);
+      background-size:cover;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+  
+  .column {
+    float: left;
+    width: 25%;
+    margin-bottom: 20px;
+    padding: 0px 8px;
+    background:transparent;
+  }
+  
+  @media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background-color: white;
+    transition: all 0.5s ease 0s;
+    transition: transform .2s;
+  }
+
+  .card:hover{
+    /* background: #e0e0e0; */
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
+  }
+  
+  .number{
+      width: 100%;
+      background-color: #4484ce;
+      color: white;
+      text-align: right;
+      padding: 5px 15px;
+  }
+  
+  .container {
+    text-align: center;
+    padding: 0 16px;
+  }
+  
+  .container::after, .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .title {
+    color: grey;
+  }
+  
+  a {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+  }
+
+  .search-bar{
+    text-align: center;
+    width: 60%;
+    margin: 30px auto;
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    background: transparent;
+}
+
+select, input[type=text], .search-button{
+    width: 33.3%;
+    padding: 15px;
+    border: none;
+}
+
+select:focus, input[type=text]:focus, .search-button:focus{
+    outline: none !important;
+}
+  
+.button:hover, .search-button:hover {
+background-color: rgb(241, 93, 67);
+}
+
+select{
+padding: 14px;
+border-left: lightgray 1px solid;
+}
+
+.search-button{
+    color: white;
+    background-color: #4484ce;
+    margin-left: -0.5%;
+    transition: all 0.5s ease 0s;
+}
