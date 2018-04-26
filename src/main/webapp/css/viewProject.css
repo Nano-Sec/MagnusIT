@@ -64,8 +64,24 @@ div {
     background-color: #4484ce;
     color: white;
     text-align: left;
-    padding: 5px 15px;
+    padding: 5px 0 5px 15px;
 }
+.add-button{
+    border: none;
+    outline: 0;
+    margin-left: 190px;
+    display: inline-block;
+    border-radius: 2px;
+    /* padding: 5px; */
+    color: white;
+    background-color: rgb(241, 93, 67);
+    text-align: center;
+    cursor: pointer;
+    height: 25px;
+    width: 30px;
+    transition: all 0.5s ease 0s;
+}
+
 .members{
 margin: 5px 0;
 width: 100%;
@@ -152,6 +168,7 @@ p{
 .action-button {
     border: none;
     outline: 0;
+    width: 150px;
     margin: 15px 0 0 20px;
     display: inline-block;
     border-radius: 2px;
@@ -160,14 +177,57 @@ p{
     background-color: #4484ce;
     text-align: center;
     cursor: pointer;
-    width: 10%;
     transition: all 0.5s ease 0s;
 }
-button:hover{
-    background-color: rgb(241, 93, 67);
+.dropdown{
+    float: left;
+    height: 35px;
+    width: 150px;
+    overflow: hidden;
+    text-align: center;
+    margin: 15px 0 0 20px;
+    /* background: powderblue; */
+    transition: all 0.5s ease 0s;
 }
-.fas{
-    font-size: 0.1em;
+.drop-button{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    border-radius: 2px;
+    padding: 10px;
+    color: white;
+    background-color: #4484ce;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.5s ease 0s;
+}
+.dropdown-content {
+    height: auto;
+    overflow: hidden;
+    /* position: absolute; */
+    /* background-color: #f1f1f1; */
+    min-width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: rgb(46, 46, 46);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    transition: all 0.5s ease 0s;
+}
+.dropdown-content a:hover {
+    background: rgb(217, 235, 255);
+}
+.dropdown:hover {
+    display: block;
+    height: 170px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.action-button:hover, .delete-button:hover{
+    background-color: rgb(241, 93, 67);
 }
 .stamps{
     width: 100%;
