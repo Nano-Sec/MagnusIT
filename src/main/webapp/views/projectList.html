@@ -5,98 +5,23 @@
         <link rel="stylesheet" href="css/projectList.css">
     </head>
     <body>
-        <div class="search-bar">
-            <input type="text" placeholder="Type Here..."><select name="project">
-                <option value="" disabled>Projects</option>
-                <option value=1>Default</option>
-            </select>
-            <button class="search-button"><i class="fas fa-search"></i>&nbsp; Search</button>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>AngularJS</h2>
-                <p class="title">In-progress</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
-                </div>
+        <div ng-controller="ProjectController as ctrl">
+            <div class="search-bar">
+                <input type="text" placeholder="Type Here..."><select name="project">
+                    <option value="" disabled>Projects</option>
+                    <option value=1>Default</option>
+                </select>
+                <button class="search-button"><i class="fas fa-search"></i>&nbsp; Search</button>
             </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>Java-Spring</h2>
-                <p class="title">Completed</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>Bootstrap</h2>
-                <p class="title">New</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>TATA AIG</h2>
-                <p class="title">In-progress</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>AngularJS</h2>
-                <p class="title">In-progress</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>Java-Spring</h2>
-                <p class="title">Completed</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>Bootstrap</h2>
-                <p class="title">New</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>TATA AIG</h2>
-                <p class="title">In-progress</p>
-                <p>Members : 5</p>
-                <p><a class="arrow" href="#"><i class="fas fa-arrow-right"></i></a></p>
+            <div class="column" ng-repeat="project in ctrl.projects">
+                <div class="card">
+                    <div class="number">#{{project.projectNo}}</div>
+                    <div class="container">
+                    <h2>{{project.name}}</h2>
+                    <p class="title">{{project.status}}</p>
+                    <p>Members : 5</p>
+                    <p><a class="arrow" ng-click="ctrl.goToProject(project.id)"><i class="fas fa-arrow-right"></i></a></p>
+                    </div>
                 </div>
             </div>
         </div>

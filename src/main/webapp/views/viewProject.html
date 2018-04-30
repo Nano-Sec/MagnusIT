@@ -5,59 +5,57 @@
         <link rel="stylesheet" href="css/viewProject.css">
     </head>
     <body>
-        <div class="project-header">
-            <div class="project-id"><h3>#6654</h3></div>
-            <div class="vertical-line"></div>
-            <div class="project-name"><h3>TATA AIG</h3></div>
-            <div class="status"><h4><i class="fas fa-circle" style=font-size:0.1em;></i>&nbsp;In-progress</h4></div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="container">
-                    <div class="title"><h3>About</h3></div>
-                    <div class="description">
-                        <p>
-                            We empower business process with best techni-
-                            cal solutions to maximize business operational
-                            efficiency. Productivity thus ensures optimum
-                            profitability. Analyzed Business process will be
-                            technology redefined and process re-engineer.
-                        </p>
+        <div ng-controller="ProjectController as ctrl">
+            <div class="project-header">
+                <div class="project-id"><h3>#{{ctrl.currentProject.projectNo}}</h3></div>
+                <div class="vertical-line"></div>
+                <div class="project-name"><h3>{{ctrl.currentProject.name}}</h3></div>
+                <div class="status"><h4><i class="fas fa-circle" style=font-size:0.1em;></i>&nbsp;{{ctrl.currentProject.status}}</h4></div>
+            </div>
+            <div class="row">
+                <div class="card">
+                    <div class="container">
+                        <div class="title"><h3>About</h3></div>
+                        <div class="description">
+                            <p>
+                                {{ctrl.currentProject.description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="stamps">
+                    <div class="created-date">{{ctrl.currentProject.createdDate | date:'fullDate'}}<p>Created On</p></div>
+                    <div class="created-by">{{ctrl.currentProject.createdBy}}<p>Created By</p></div>
+                    <div class="access">Public<p>Accessibility</p></div>
+                </div>
+            </div>
+            <div class="row-right">
+                <div class="member-card">
+                    <div class="member-title">Members <button class="add-button"><i class="fas fa-user-plus"></i></button></div>
+                    <div class="members">
+                        <div class="member-id">#2345</div>
+                        <div class="member-name">Adarsh Singh</div>
+                        <div class="member-button"><button class="delete-button"><i class="far fa-trash-alt"></i></button></div>
+                    </div>
+                    <div class="members">
+                        <div class="member-id">#6735</div>
+                        <div class="member-name">Abhinav Upadhyay</div>
+                        <div class="member-button"><button class="delete-button"><i class="far fa-trash-alt"></i></button></div>
                     </div>
                 </div>
             </div>
-            <div class="stamps">
-                <div class="created-date">26/11/2007<p>Created On</p></div>
-                <div class="created-by">Admin<p>Created By</p></div>
-                <div class="access">Public<p>Accessibility</p></div>
-            </div>
-        </div>
-        <div class="row-right">
-            <div class="member-card">
-                <div class="member-title">Members <button class="add-button"><i class="fas fa-user-plus"></i></button></div>
-                <div class="members">
-                    <div class="member-id">#2345</div>
-                    <div class="member-name">Adarsh Singh</div>
-                    <div class="member-button"><button class="delete-button"><i class="far fa-trash-alt"></i></button></div>
-                </div>
-                <div class="members">
-                    <div class="member-id">#6735</div>
-                    <div class="member-name">Abhinav Upadhyay</div>
-                    <div class="member-button"><button class="delete-button"><i class="far fa-trash-alt"></i></button></div>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="button-bar">
-            <button class="action-button">Delete &nbsp;<i class="far fa-trash-alt"></i></button>
-            <button class="action-button">Update &nbsp;<i class="far fa-edit"></i></button>
-            <button class="action-button">Assign Project &nbsp;<i class="fas fa-user-plus"></i></button>
-            <div class="dropdown">
-                <button class="drop-button">Status &nbsp;<i class="fas fa-angle-down"></i></button>
-                <div class="dropdown-content">
-                    <a href="#">New</a>
-                    <a href="#">In-progress</a>
-                    <a href="#">Completed</a>
+            <br>
+            <div class="button-bar">
+                <button class="action-button">Delete &nbsp;<i class="far fa-trash-alt"></i></button>
+                <button class="action-button">Update &nbsp;<i class="far fa-edit"></i></button>
+                <button class="action-button">Assign Project &nbsp;<i class="fas fa-user-plus"></i></button>
+                <div class="dropdown">
+                    <button class="drop-button">Status &nbsp;<i class="fas fa-angle-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#">New</a>
+                        <a href="#">In-progress</a>
+                        <a href="#">Completed</a>
+                    </div>
                 </div>
             </div>
         </div>

@@ -80,6 +80,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
                 console.error('Error while creating Issue');
             }
         );
+        alert('issue created successfully');
         $state.go("home.dashboard");
     };
 

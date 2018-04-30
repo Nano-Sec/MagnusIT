@@ -54,11 +54,12 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
                     console.error('Error while creating Employee');
                 }
             );
+        alert('employee created successfully');
         $state.go("home.dashboard");
     };
 
-    self.updateEmployee= function(description){
-        EmployeeService.updateEmployee(self.putEmployee, description)
+    self.updateEmployee= function(){
+        EmployeeService.updateEmployee(self.putEmployee)
             .then(
                 self.fetchAllEmployees,
                 function(errResponse){

@@ -28,6 +28,7 @@ public class Project {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
+	@JsonView(Views.Project.class)
 	private Long id;
 	@Column(unique = true, nullable = false) @JsonView(Views.Project.class)
 	long projectNo;
