@@ -39,7 +39,7 @@ public class Employee implements UserDetails{
 	long empNo;
 	@JsonView(Views.Employee.class)
 	private String employeeName;
-	@JsonView(Views.Employee.class)
+	@Column(nullable = false) @JsonView(Views.Employee.class)
 	private String email;
 	@Column(name = "username", unique = true) @JsonView(Views.Employee.class)
 	private String username;
@@ -48,8 +48,10 @@ public class Employee implements UserDetails{
 	@JsonView(Views.Employee.class)
 	private Date dateOfJoining;
 	@ManyToMany
+//	@JsonView(Views.Employee.class)
 	private List<Project> projects;
 	@OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+	@JsonView(Views.Employee.class)
 	private List<UserRole> userRoles;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Employee.class)
     protected Employee createdBy;
@@ -147,6 +149,15 @@ public class Employee implements UserDetails{
 		}
 		return createdBy.getEmployeeName();
 	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
+
 	public void setCreatedBy(Employee createdBy) {
 		this.createdBy = createdBy;
 	}

@@ -23,19 +23,13 @@ div {
     color: rgb(59, 59, 59);
     /* background: lightblue; */
 }
-.vertical-line{
-    border-left: 1px solid rgb(223, 223, 223);
-    height: 45px;
-    position: absolute;
-    left: 22%;
-    top: 1.9%;
-}
 .user-name{
     float: left;
     height: 100%;
     max-width: 70%;
     padding: 2px 20px;
     color: rgb(82, 96, 109);
+    border-left: 1px solid rgb(223, 223, 223);
     /* background: cornflowerblue; */
 }
 .row{

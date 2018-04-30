@@ -39,6 +39,7 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
             },
             function(errResponse){
                 console.error('Error while fetching issue: '+issueId);
+                localStorage.setItem("number",null);
             }
             );
     };

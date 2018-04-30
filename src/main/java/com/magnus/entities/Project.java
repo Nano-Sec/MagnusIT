@@ -40,6 +40,7 @@ public class Project {
 	@JsonView(Views.Project.class)
 	private String description;
 	@ManyToMany
+//    @JsonView(Views.Project.class)
 	private List<Employee> members;
 	@CreatedBy @ManyToOne @JoinColumn(updatable=false) @JsonView(Views.Project.class)
     protected Employee createdBy;

@@ -54,6 +54,18 @@
             url: '/Users/view',
             templateUrl: 'views/userList.html'
         })
+        .state('home.viewEmployee',{
+            url: '/Users/view/employee',
+            templateUrl: 'views/viewUser.html'
+        })
+        .state('home.projectList',{
+            url: '/projects/view',
+            templateUrl: 'views/projectList.html'
+        })
+        .state('home.viewProject',{
+            url: '/project/view',
+            templateUrl: 'views/viewProject.html'
+        })
         .state('404',{
             url: '/error/404',
             templateUrl: 'error.html'

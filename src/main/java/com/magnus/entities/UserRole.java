@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonView;
+import com.magnus.utils.Views;
 import org.springframework.security.core.GrantedAuthority;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -26,11 +28,13 @@ public class UserRole implements GrantedAuthority {
 	
 	@Column(name = "role_type")
 	@Enumerated(EnumType.STRING)
+	@JsonView(Views.Employee.class)
 	private RoleType roleType;
 	
 	@JsonIgnore
 	@JoinColumn(name = "user_id")
 	@ManyToOne
+	@JsonView(Views.Employee.class)
 	private Employee user;
 	
 	public UserRole() {}

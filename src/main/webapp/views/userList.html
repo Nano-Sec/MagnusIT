@@ -23,18 +23,6 @@
             </div>
         </div>
 
-        <div class="column">
-            <div class="card">
-                <div class="number">#2545</div>
-                <div class="container">
-                <h2>Jane Doe</h2>
-                <p class="title">CEO & Founder</p>
-                <p>example@example.com</p>
-                <p><button class="button"><i class="fas fa-arrow-right"></i></button></p>
-                </div>
-            </div>
-        </div>
-
         <div class="column" ng-repeat="user in ctrl.employees">
         <div class="card">
             <div class="number">#{{user.empNo}}</div>
@@ -42,7 +30,7 @@
                 <h2>{{user.employeeName}}</h2>
                 <p class="title">Employee</p>
                 <p>{{user.email}}</p>
-                <p><button class="button"><i class="fas fa-arrow-right"></i></button></p>
+                <p><button class="button" ng-click="ctrl.goToEmployee(user.employeeNumber)"><i class="fas fa-arrow-right"></i></button></p>
             </div>
         </div>
         </div>
