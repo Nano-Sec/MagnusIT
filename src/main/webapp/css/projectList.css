@@ -38,7 +38,6 @@ html {
   }
 
   .card:hover{
-    /* background: #e0e0e0; */
     -ms-transform: scale(1.05); /* IE 9 */
     -webkit-transform: scale(1.05); /* Safari 3-8 */
     transform: scale(1.05);
@@ -67,9 +66,16 @@ html {
     color: grey;
   }
   
-  a {
+  .arrow {
     display: inline-block;
     color: rgb(0, 0, 0);
+    transition: 0.50s;
+  }
+
+  .arrow:hover{
+    transition: 0.50s;
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(360deg);
   }
 
   .search-bar{
@@ -102,8 +108,8 @@ border-left: lightgray 1px solid;
 }
 
 .search-button{
-    color: white;
-    background-color: #4484ce;
-    margin-left: -0.5%;
-    transition: all 0.5s ease 0s;
+color: white;
+background-color: #4484ce;
+margin-left: -0.5%;
+transition: all 0.5s ease 0s;
 }
