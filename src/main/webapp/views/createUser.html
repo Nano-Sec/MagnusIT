@@ -2,29 +2,29 @@
     <head>
         <title>Create User</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">    </head>
-        <link rel="stylesheet" type="text/css" href="createUser.css">
+        <link rel="stylesheet" type="text/css" href="css/createUser.css">
     <body>
-        <div class = "form-container" ng-controller="">   
-            <form name="createUserForm" ng-submit="">
+        <div class = "form-container" ng-controller="EmployeeController as ctrl">
+            <form name="createUserForm" ng-submit="ctrl.createEmployee()">
                 <div class="input-container">
                     <div class="user-no">
                        New User <i class="far fa-address-card"></i>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="name">Name</label></div>
-                        <div class="col-75"><input type="text" ng-model="" placeholder="Full name..." maxlength="250" required></div>
+                        <div class="col-75"><input type="text" ng-model="ctrl.postEmployee.employeeName" placeholder="Full name..." maxlength="250" required></div>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="username">Username</label></div>
-                        <div class="col-75"><input type="text" ng-model="" placeholder="Choose a unique username..." maxlength="250" required></div>
+                        <div class="col-75"><input type="text" ng-model="ctrl.postEmployee.username" placeholder="Choose a unique username..." maxlength="250" required></div>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="email">Email</label></div>
-                        <div class="col-75"><input type="email" ng-model="" placeholder="User's E-Mail id..." maxlength="250" required></div>
+                        <div class="col-75"><input type="email" ng-model="ctrl.postEmployee.email" placeholder="User's E-Mail id..." maxlength="250" required></div>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="doj">Date of Joining</label></div>
-                        <div class="col-75"><input type="date" ng-model="" required></div>
+                        <div class="col-75"><input type="date" ng-model="ctrl.postEmployee.dateOfJoining" required></div>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="name">Role Type</label></div>
@@ -37,7 +37,7 @@
                 <div class="dropdown-container">
                     <div class="dropdown" id="project-dropdown">
                         Select Project<br>
-                        <select name="project-name" ng-model="ctrl.postuser.project.id" required>
+                        <select name="project-name" ng-model="ctrl.postEmployee.project.id" required>
                             <option value="" disabled>Select a value</option>
                             <option value=1>Default</option>
                         </select>

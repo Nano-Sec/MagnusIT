@@ -50,6 +50,10 @@
             url: '/Issue/update',
             templateUrl: 'views/updateIssue.html'
         })
+        .state('home.createEmployee',{
+            url: '/Users/create',
+            templateUrl: 'views/createUser.html'
+        })
         .state('home.userList',{
             url: '/Users/view',
             templateUrl: 'views/userList.html'

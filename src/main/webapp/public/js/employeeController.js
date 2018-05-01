@@ -1,6 +1,7 @@
 angular.module('myapp').controller('EmployeeController', ['$window','$state','EmployeeService', function($window,$state,EmployeeService) {
     var self = this;
     self.postEmployee={};
+    self.postEmployee.empNo= Math.floor(Math.random() * 10000);
     self.putEmployee={};
     self.employees=[];
 
