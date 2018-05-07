@@ -2,6 +2,7 @@ package com.magnus.services;
 
 import com.magnus.entities.Project;
 import com.magnus.repositories.ProjectRepository;
+import com.magnus.utils.Enums;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,7 @@ public class ProjectService {
     }
 
     public void addProject(Project project){
+        project.setStatus(Enums.ProjectStatus.NEW);
         projectRepo.save(project);
         LOGGER.info("Project "+project.getName()+" added");
     }

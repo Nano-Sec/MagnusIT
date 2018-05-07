@@ -1,6 +1,14 @@
 angular.module('myapp').controller('ProjectController', ['$window','$state','ProjectService', function($window,$state,ProjectService) {
     var self = this;
-    self.postProject={};
+    self.projectNo= Math.floor(Math.random() * 10000);
+    self.postProject={
+        "id": '',
+        "projectNo": self.projectNo,
+        "name": '',
+        "isPublic": '',
+        "description": ''
+    };
+    self.postProject.projectNo= Math.floor(Math.random() * 10000);
     self.putProject={};
     self.projects=[];
 
@@ -62,16 +70,15 @@ angular.module('myapp').controller('ProjectController', ['$window','$state','Pro
     self.deleteProject= function(){
         var check= confirm('Are you sure you want to delete this project?');
         if(check==true) {
-            ProjectService.deleteProject(self.currentProject.projectNo)
+            ProjectService.deleteProject(self.currentProject.id)
                 .then(
                     self.fetchAllProjects,
                     function (errResponse) {
                         console.error('Error while deleting Project');
                     }
                 );
-
             localStorage.setItem("projectNumber", null);
-            $state.go('home.viewProjectList');
+            $state.go('home.projectList');
         }
     };
 

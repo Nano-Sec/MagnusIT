@@ -26,7 +26,7 @@ public class ProjectController {
     public ResponseEntity<Project> getProject(@PathVariable("id") long id) {
         Project project= service.getProject(id);
         if(project == null) {
-            LOGGER.error("Project with if " + id + " not found");
+            LOGGER.error("Project with id " + id + " not found");
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(project, HttpStatus.OK);
@@ -47,10 +47,6 @@ public class ProjectController {
     @PostMapping(value="/add/")
     public ResponseEntity<Void> addProject(@RequestBody Project project){
         LOGGER.info("Creating Project " + project.getName());
-        if(service.getProject(project.getId())!= null){
-            LOGGER.error("A project with id " + project.getId() + " already exists");
-            return new ResponseEntity<>(HttpStatus.CONFLICT);
-        }
         service.addProject(project);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
