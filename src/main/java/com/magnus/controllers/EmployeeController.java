@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.web.bind.annotation.*;
 
@@ -72,6 +73,8 @@ public class EmployeeController {
 	@PostMapping(value = "/admin/insert")
     public ResponseEntity<Void> addEmployee(@RequestBody Employee employee) throws JsonParseException, JsonMappingException, IOException {
 		LOGGER.info("Creating User " + employee.getEmployeeName());
+		BCryptPasswordEncoder encoder= new BCryptPasswordEncoder();
+		employee.setPassword(encoder.encode("pass"));
         if(service.getEmployee(employee.getEmployeeNumber())!= null){
             LOGGER.error("A User with id " + employee.getEmployeeNumber() + " already exists");
             return new ResponseEntity<>(HttpStatus.CONFLICT);

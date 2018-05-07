@@ -37,8 +37,8 @@
                     </div>
                     <div class="dropdown">
                         Role Type<br>
-                        <input type="checkbox" name="admin"> Admin
-                        <input type="checkbox" name="employee"> Employee
+                        <input type="checkbox" name="admin" ng-model="ctrl.admin" ng-true-value="'ADMIN'" ng-false-value=""> Admin
+                        <input type="checkbox" name="employee" ng-model="ctrl.employee" ng-true-value="'EMPLOYEE'" ng-false-value=""> Employee
                     </div>
                 </div>
                 <div class="submit-container">

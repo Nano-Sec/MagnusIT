@@ -47,6 +47,8 @@ public class Employee implements UserDetails{
 	private String password;
 	@JsonView(Views.Employee.class)
 	private Date dateOfJoining;
+	@JsonView(Views.Employee.class)
+	private boolean inactive;
 	@ManyToMany
 //	@JsonView(Views.Employee.class)
 	private List<Project> projects;
@@ -127,6 +129,15 @@ public class Employee implements UserDetails{
 	public void setDateOfJoining(Date dateOfJoining) {
 		this.dateOfJoining = dateOfJoining;
 	}
+
+	public boolean isInactive() {
+		return inactive;
+	}
+
+	public void setInactive(boolean inactive) {
+		this.inactive = inactive;
+	}
+
 	public void setUsername(String username) {
 		this.username = username;
 	}

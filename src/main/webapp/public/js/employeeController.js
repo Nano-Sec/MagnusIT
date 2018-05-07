@@ -1,6 +1,14 @@
 angular.module('myapp').controller('EmployeeController', ['$window','$state','EmployeeService', function($window,$state,EmployeeService) {
     var self = this;
-    self.postEmployee={};
+    self.postEmployee={
+        "empNo": '',
+        "employeeName": "",
+        "email": "",
+        "username": "",
+        "password":'',
+        "dateOfJoining": '',
+        "userRoles": []
+    };
     self.postEmployee.empNo= Math.floor(Math.random() * 10000);
     self.putEmployee={};
     self.employees=[];
@@ -48,16 +56,26 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
     }
 
     self.createEmployee = function createEmployee(){
-        // if(!createUserForm.admin.checked && !createUserForm.employee.checked)
-        EmployeeService.createEmployee(self.postEmployee)
-            .then(
-                self.fetchAllEmployees,
-                function(errResponse){
-                    console.error('Error while creating Employee');
-                }
-            );
-        alert('employee created successfully');
-        $state.go("home.dashboard");
+        debugger;
+        if(self.admin==null && self.employee==null){
+            debugger;
+            alert('Please select a roletype');
+        }
+        else{
+            if(self.admin!=null)
+                self.postEmployee.userRoles.push({"roleType":"ADMIN"});
+            if(self.employee!=null)
+                self.postEmployee.userRoles.push({"roleType":"EMPLOYEE"});
+            EmployeeService.createEmployee(self.postEmployee)
+                .then(
+                    self.fetchAllEmployees,
+                    function(errResponse){
+                        console.error('Error while creating Employee');
+                    }
+                );
+            alert('employee created successfully');
+            $state.go("home.dashboard");
+        }
     };
 
     self.updateEmployee= function(){

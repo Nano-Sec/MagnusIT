@@ -57,7 +57,9 @@ public class EmployeeService {
 		LOGGER.info("Employee "+emp.getEmployeeName()+" updated");
 	}
 	public void deleteEmployee(long id){
-		empRepo.delete(id);
+		Employee emp=empRepo.findOne(id);
+		emp.setInactive(true);
+		empRepo.save(emp);
 		LOGGER.info("Employee "+id+" deleted");
 	}
 }
