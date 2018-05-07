@@ -60,6 +60,10 @@ div {
     width: 80%;
     /* background: rgb(109, 255, 255); */
 }
+.description span{
+    border-right: rgb(155, 155, 155) 1px solid;
+    padding: 0 10px;
+}
 .button-bar{
     float: left;
     height: 10%;

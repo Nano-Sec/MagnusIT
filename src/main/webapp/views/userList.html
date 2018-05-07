@@ -28,7 +28,7 @@
             <div class="number">#{{user.empNo}}</div>
             <div class="container">
                 <h2>{{user.employeeName}}</h2>
-                <p class="title">Employee</p>
+                <span class="title" ng-repeat="role in user.userRoles">{{role.roleType}}</span>
                 <p>{{user.email}}</p>
                 <p><button class="button" ng-click="ctrl.goToEmployee(user.employeeNumber)"><i class="fas fa-arrow-right"></i></button></p>
             </div>

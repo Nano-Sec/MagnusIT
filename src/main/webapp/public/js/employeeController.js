@@ -48,6 +48,7 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
     }
 
     self.createEmployee = function createEmployee(){
+        // if(!createUserForm.admin.checked && !createUserForm.employee.checked)
         EmployeeService.createEmployee(self.postEmployee)
             .then(
                 self.fetchAllEmployees,

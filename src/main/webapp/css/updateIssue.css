@@ -41,7 +41,7 @@ body {
     padding: 1.5% 1.5% 1% 1.5%;
     height: 6%;
     width: 97%;
-    color: rgb(240, 82, 82);
+    color: #4484ce;
     /* background-color: rgb(194, 255, 224); */
 }
 .issue-description{
@@ -52,7 +52,7 @@ body {
 }
 .reporter{
     padding-top: 18px;
-    color: rgb(240, 82, 82);
+    color: #4484ce;
 }
 .dropdown{
     height: 15%;
@@ -87,13 +87,17 @@ body {
 }
 button {
     /* width: 10%; */
-    background-color:rgb(241, 93, 67);
+    background-color: #4484ce;
     color: white;
     padding: 8px 10px;
     margin-left: 2%;
     border: none;
     border-radius: 4px;
+    transition: all 0.5s ease 0s;
     cursor: pointer;
+}
+button:hover{
+    background-color:rgb(241, 93, 67);
 }
 input[type=text]{
     width: 98%;

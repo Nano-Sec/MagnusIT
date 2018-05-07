@@ -26,33 +26,19 @@
                         <div class="col-25"><label for="doj">Date of Joining</label></div>
                         <div class="col-75"><input type="date" ng-model="ctrl.postEmployee.dateOfJoining" required></div>
                     </div>
-                    <div class="user-name">
-                        <div class="col-25"><label for="name">Role Type</label></div>
-                        <div class="col-75"><select ng-model="" required>
-                            <option value="1">Admin</option>
-                            <option value="2">Employee</option>
-                        </select></div>
-                    </div>
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown" id="project-dropdown">
                         Select Project<br>
-                        <select name="project-name" ng-model="ctrl.postEmployee.project.id" required>
+                        <select name="project-name" ng-model="ctrl.postEmployee.project.id" disabled>
                             <option value="" disabled>Select a value</option>
                             <option value=1>Default</option>
                         </select>
                     </div>
                     <div class="dropdown">
-                        Select Category<br>
-                        <select name="category" ng-model="ctrl.postuser.category" required>
-                            <option value="" disabled>Select a value</option>
-                            <option value="Hardware">Hardware</option>
-                            <option value="Server">Server</option>
-                            <option value="Client">Client</option>
-                            <option value="Security">Security</option>
-                            <option value="Performance">Performance</option>
-                            <option value="Documentation">Documentation</option>
-                        </select>
+                        Role Type<br>
+                        <input type="checkbox" name="admin"> Admin
+                        <input type="checkbox" name="employee"> Employee
                     </div>
                 </div>
                 <div class="submit-container">

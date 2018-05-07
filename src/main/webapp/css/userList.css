@@ -53,7 +53,15 @@ html {
   .container {
     padding: 0 16px;
   }
-  
+
+  .container span{
+      padding:0 5px;
+      background-color: rgb(205, 204, 200);
+      color: black;
+      border-radius: 4px;
+      margin-right: 5px;
+  }
+
   .container::after, .row::after {
     content: "";
     clear: both;
@@ -133,4 +141,8 @@ html {
       background-color: #4484ce;
       margin-left: -0.5%;
       transition: all 0.5s ease 0s;
+  }
+
+  .action-button{
+      margin-bottom: 30px;
   }
