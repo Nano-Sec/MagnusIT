@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Create Project</title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">    </head>
+        <link rel="stylesheet" type="text/css" href="css/createProject.css">
+    <body>
+        <div class = "form-container" ng-controller="">
+            <form name="createProjectForm" ng-submit="">
+                <div class="input-container">
+                    <div class="project-no">
+                       New Project &nbsp; <i class="far fa-file-alt"></i>
+                    </div>
+                    <div class="project-name">
+                        <div class="col-25"><label for="name">Name</label></div>
+                        <div class="col-75"><input type="text" ng-model="" placeholder="Project name..." maxlength="250" required></div>
+                    </div>
+                    <div class="project-name">
+                        <div class="col-25"><label for="description">Description</label></div>
+                        <div class="col-75"><textarea ng-model="" placeholder="Describe the project..." rows="20" required></textarea></div>
+                    </div>
+                </div>
+                <div class="dropdown-container">
+                    <div class="dropdown" id="project-dropdown">
+                        Accessibility<br>
+                        <select name="accessibility" ng-model="">
+                            <option value="" disabled>Select a value</option>
+                            <option value="public">Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="submit-container">
+                    <div class="button-container">
+                        <input type="submit" value="Add">
+                        <input type="reset" value="Cancel">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </body>
+</html>
