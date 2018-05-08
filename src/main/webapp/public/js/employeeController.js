@@ -1,7 +1,8 @@
 angular.module('myapp').controller('EmployeeController', ['$window','$state','EmployeeService', function($window,$state,EmployeeService) {
     var self = this;
+    self.employeeNo= Math.floor(Math.random() * 10000);
     self.postEmployee={
-        "empNo": '',
+        "empNo": self.employeeNo,
         "employeeName": "",
         "email": "",
         "username": "",
@@ -9,7 +10,6 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
         "dateOfJoining": '',
         "userRoles": []
     };
-    self.postEmployee.empNo= Math.floor(Math.random() * 10000);
     self.putEmployee={};
     self.employees=[];
 
@@ -56,9 +56,7 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
     }
 
     self.createEmployee = function createEmployee(){
-        debugger;
         if(self.admin==null && self.employee==null){
-            debugger;
             alert('Please select a roletype');
         }
         else{
@@ -79,16 +77,25 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
     };
 
     self.updateEmployee= function(){
-        EmployeeService.updateEmployee(self.putEmployee)
-            .then(
-                self.fetchAllEmployees,
-                function(errResponse){
-                    console.error('Error while updating Employee');
-                }
-            );
-        alert('Employee successfully updated');
-        $state.go('home.viewEmployee');
-        $window.location.reload();
+        if(self.admin==null && self.employee==null){
+            alert('Please select a roletype');
+        }
+        else {
+            if(self.admin!=null)
+                self.postEmployee.userRoles.push({"roleType":"ADMIN"});
+            if(self.employee!=null)
+                self.postEmployee.userRoles.push({"roleType":"EMPLOYEE"});
+            EmployeeService.updateEmployee(self.currentEmployee)
+                .then(
+                    self.fetchAllEmployees,
+                    function (errResponse) {
+                        console.error('Error while updating Employee');
+                    }
+                );
+            alert('Employee successfully updated');
+            $state.go('home.viewEmployee');
+            $window.location.reload();
+        }
     };
 
     self.deleteEmployee= function(){

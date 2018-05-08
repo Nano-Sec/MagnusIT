@@ -62,6 +62,10 @@
             url: '/Users/view/employee',
             templateUrl: 'views/viewUser.html'
         })
+        .state('home.updateEmployee',{
+            url: '/Users/update/employee',
+            templateUrl: 'views/updateUser.html'
+        })
         .state('home.projectList',{
             url: '/projects/view',
             templateUrl: 'views/projectList.html'
@@ -69,6 +73,10 @@
         .state('home.viewProject',{
             url: '/project/view',
             templateUrl: 'views/viewProject.html'
+        })
+        .state('home.createProject',{
+            url: '/project/new',
+            templateUrl: 'views/createProject.html'
         })
         .state('404',{
             url: '/error/404',

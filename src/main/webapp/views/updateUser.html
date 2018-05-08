@@ -5,40 +5,40 @@
         <link rel="stylesheet" type="text/css" href="css/updateUser.css">
     <body>
         <div class = "form-container" ng-controller="EmployeeController as ctrl">
-            <form name="updateUserForm" ng-submit="">
+            <form name="updateUserForm" ng-submit="ctrl.updateEmployee()">
                 <div class="input-container">
                     <div class="user-no">
                        Update User &nbsp; <i class="far fa-edit"></i>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="name">Name</label></div>
-                        <div class="col-75"><input type="text" ng-model="ctrl.postEmployee.employeeName" placeholder="Full name..." maxlength="250" required></div>
+                        <div class="col-75"><input type="text" ng-model="ctrl.currentEmployee.employeeName" placeholder="Full name..." maxlength="250" required></div>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="username">Username</label></div>
-                        <div class="col-75"><input type="text" ng-model="ctrl.postEmployee.username" placeholder="Choose a unique username..." maxlength="250" required></div>
+                        <div class="col-75"><input type="text" ng-model="ctrl.currentEmployee.username" placeholder="Choose a unique username..." maxlength="250" required></div>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="email">Email</label></div>
-                        <div class="col-75"><input type="email" ng-model="ctrl.postEmployee.email" placeholder="User's E-Mail id..." maxlength="250" required></div>
+                        <div class="col-75"><input type="email" ng-model="ctrl.currentEmployee.email" placeholder="User's E-Mail id..." maxlength="250" required></div>
                     </div>
                     <div class="user-name">
                         <div class="col-25"><label for="doj">Date of Joining</label></div>
-                        <div class="col-75"><input type="date" ng-model="ctrl.postEmployee.dateOfJoining" required></div>
+                        <div class="col-75"><input type="date" ng-model="ctrl.currentEmployee.dateOfJoining" required></div>
                     </div>
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown" id="project-dropdown">
                         Select Project<br>
-                        <select name="project-name" ng-model="ctrl.postEmployee.project.id" disabled>
+                        <select name="project-name" ng-model="ctrl.currentEmployee.project.id" disabled>
                             <option value="" disabled>Select a value</option>
                             <option value=1>Default</option>
                         </select>
                     </div>
                     <div class="dropdown">
                         Role Type<br>
-                        <input type="checkbox" name="admin"> Admin
-                        <input type="checkbox" name="employee"> Employee
+                        <input type="checkbox" name="admin" ng-model="ctrl.admin" ng-true-value="'ADMIN'" ng-false-value=""> Admin
+                        <input type="checkbox" name="employee" ng-model="ctrl.employee" ng-true-value="'EMPLOYEE'" ng-false-value=""> Employee
                     </div>
                 </div>
                 <div class="submit-container">
