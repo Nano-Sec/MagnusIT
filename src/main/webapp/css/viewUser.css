@@ -91,7 +91,7 @@ button {
     text-align: center;
     cursor: pointer;
     width: 10%;
-    transition: all 0.5s ease 0s;
+    transition: background-color 0.5s ease 0s;
   }
   button:hover{
     background-color: rgb(241, 93, 67);

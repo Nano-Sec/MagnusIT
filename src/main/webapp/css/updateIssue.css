@@ -2,7 +2,7 @@ body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .form-container{
-    margin: auto;
+    margin-top: 15px;
     min-height: 560px;
     min-width: 1000px;
     overflow:auto;
@@ -93,7 +93,7 @@ button {
     margin-left: 2%;
     border: none;
     border-radius: 4px;
-    transition: all 0.5s ease 0s;
+    transition: background-color 0.5s ease 0s;
     cursor: pointer;
 }
 button:hover{
