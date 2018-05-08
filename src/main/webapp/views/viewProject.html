@@ -23,9 +23,9 @@
                     </div>
                 </div>
                 <div class="stamps">
-                    <div class="created-date">{{ctrl.currentProject.createdDate | date:'fullDate'}}<p>Created On</p></div>
-                    <div class="created-by">{{ctrl.currentProject.createdBy}}<p>Created By</p></div>
-                    <div class="access">Public<p>Accessibility</p></div>
+                    <div class="created-date">Created On<p>{{ctrl.currentProject.creationDate | date:'mediumDate'}}</p></div>
+                    <div class="created-by">Created By<p>{{ctrl.currentProject.createdBy}}</p></div>
+                    <div class="access">Accessibility<p ng-show="ctrl.currentProject.isPublic">Public</p><p ng-hide="ctrl.currentProject.isPublic">Private</p></div>
                 </div>
             </div>
             <div class="row-right">

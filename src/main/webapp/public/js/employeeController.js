@@ -12,6 +12,7 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
     };
     self.putEmployee={};
     self.employees=[];
+    self.roles=[];
 
     self.fetchAllEmployees = function fetchAllEmployees(){
         EmployeeService.fetchAllEmployees()
@@ -32,6 +33,13 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
             .then(
                 function(data){
                     self.currentEmployee= data;
+                    self.currentEmployee.dateOfJoining= new Date(self.currentEmployee.dateOfJoining);
+                    for(var i=0;i<self.currentEmployee.userRoles.length;i++){
+                        if(self.currentEmployee.userRoles[i].roleType=="ADMIN")
+                            self.admin="ADMIN";
+                        else if(self.currentEmployee.userRoles[i].roleType=="EMPLOYEE")
+                            self.employee="EMPLOYEE";
+                    }
                 },
                 function(errResponse){
                     console.error('Error while fetching employee: '+empId);
@@ -82,9 +90,15 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
         }
         else {
             if(self.admin!=null)
-                self.postEmployee.userRoles.push({"roleType":"ADMIN"});
+                self.roles.push({"roleType":"ADMIN"});
             if(self.employee!=null)
-                self.postEmployee.userRoles.push({"roleType":"EMPLOYEE"});
+                self.roles.push({"roleType":"EMPLOYEE"});
+            self.currentEmployee.userRoles=self.roles;
+            delete self.currentEmployee.createdBy;
+            delete self.currentEmployee.creationDate;
+            delete self.currentEmployee.lastModifiedBy;
+            delete self.currentEmployee.lastModifiedDate;
+            debugger;
             EmployeeService.updateEmployee(self.currentEmployee)
                 .then(
                     self.fetchAllEmployees,
@@ -92,7 +106,10 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
                         console.error('Error while updating Employee');
                     }
                 );
+            self.fetchEmployee(localStorage.getItem("empNumber"));
             alert('Employee successfully updated');
+            self.admin='';
+            self.employee='';
             $state.go('home.viewEmployee');
             $window.location.reload();
         }
@@ -108,9 +125,7 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
                         console.error('Error while deleting Employee');
                     }
                 );
-
-            localStorage.setItem("empNumber", null);
-            $state.go('home.viewEmployeeList');
+            $state.go('home.userList');
         }
     };
 

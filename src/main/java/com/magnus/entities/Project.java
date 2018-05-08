@@ -96,8 +96,8 @@ public class Project {
 	public void setMembers(List<Employee> members) {
 		this.members = members;
 	}
-	public Employee getCreatedBy() {
-		return createdBy;
+	public String getCreatedBy() {
+		return createdBy.getUsername();
 	}
 	public void setCreatedBy(Employee createdBy) {
 		this.createdBy = createdBy;
@@ -108,8 +108,8 @@ public class Project {
 	public void setCreationDate(Date creationDate) {
 		this.creationDate = creationDate;
 	}
-	public Employee getLastModifiedBy() {
-		return lastModifiedBy;
+	public String getLastModifiedBy() {
+		return lastModifiedBy.getUsername();
 	}
 	public void setLastModifiedBy(Employee lastModifiedBy) {
 		this.lastModifiedBy = lastModifiedBy;

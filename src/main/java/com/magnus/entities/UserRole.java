@@ -34,7 +34,6 @@ public class UserRole implements GrantedAuthority {
 	@JsonIgnore
 	@JoinColumn(name = "user_id")
 	@ManyToOne
-	@JsonView(Views.Employee.class)
 	private Employee user;
 	
 	public UserRole() {}

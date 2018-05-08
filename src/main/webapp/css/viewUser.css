@@ -9,6 +9,7 @@ div {
     box-sizing: border-box;
     display: block;
 }
+
 .header{
     height: 10%;
     width: 100%;
@@ -31,6 +32,13 @@ div {
     color: rgb(82, 96, 109);
     border-left: 1px solid rgb(223, 223, 223);
     /* background: cornflowerblue; */
+}
+.inactive{
+    float: right;
+    padding: 2px 20px;
+    margin-right: 1.5%;
+    height:100%;
+    color: red;
 }
 .row{
     float: left;

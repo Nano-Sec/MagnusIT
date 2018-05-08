@@ -17,6 +17,7 @@ import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.CreatedBy;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedBy;
@@ -145,7 +146,6 @@ public class Employee implements UserDetails{
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 	public List<UserRole> getUserRoles() {
 		return userRoles;
 	}

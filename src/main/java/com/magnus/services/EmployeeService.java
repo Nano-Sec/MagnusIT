@@ -40,9 +40,9 @@ public class EmployeeService {
 	}
 	public void setRoles(Employee emp) {
 		Builder<UserRole> builder = new ImmutableList.Builder<UserRole>();
-		UserRole userRole=new UserRole();
-		userRole.setUser(emp);
 		for(UserRole role: emp.getUserRoles()) {
+			UserRole userRole=new UserRole();
+			userRole.setUser(emp);
 			userRole.setRoleType(role.getRoleType());
 			builder = builder.add(userRole);
 		}
