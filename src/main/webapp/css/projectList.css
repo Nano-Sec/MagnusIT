@@ -78,6 +78,34 @@ html {
     transform: rotate(360deg);
   }
 
+.add-button-container{
+  float: left;
+  margin-left: 1%;
+}
+
+  .add-button{
+    border: none;
+    outline: 0;
+    display: inline-block;
+    border-radius: 2px;
+    color: white;
+    cursor: pointer;
+    height: 45px;
+    width: 120px;
+    transition: all 0.5s ease 0s;
+    text-align: center;
+    background: #4484ce;
+  }
+
+  .add-button:hover{
+    background-color: rgb(241, 93, 67);
+  }
+
+  /* .add-button:hover:after{
+    content: attr(data-hover);
+    font-size: 20px;
+  } */
+
   .search-bar{
     text-align: center;
     width: 60%;
