@@ -86,11 +86,11 @@ html {
     transition: background-color 0.5s ease 0s;
     text-align: center;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    background: #4484ce;
+    background-color: rgb(241, 93, 67);
   }
 
   .add-button:hover{
-    background-color: rgb(241, 93, 67);
+
   }
 
   .search-bar{
