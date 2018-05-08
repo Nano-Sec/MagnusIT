@@ -1,4 +1,4 @@
-angular.module('myapp').controller('IssueController', ['$window','$state','IssueService', function($window,$state,IssueService) {
+angular.module('myapp').controller('IssueController', ['$window','$state','IssueService','ProjectService','EmployeeService', function($window,$state,IssueService,ProjectService,EmployeeService) {
     var self = this;
     self.issueNumber=Math.floor(Math.random() * 10000);
     self.postissue={'issueNumber':self.issueNumber,'project':{'id': null},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
@@ -29,6 +29,35 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
 
     self.fetchAllIssues();
 
+    self.fetchUser= function(empId){
+        var user={};
+        EmployeeService.fetchEmployee(empId)
+            .then(
+                function(data){
+                    user= data;
+                },
+                function(errResponse){
+                    console.error('Error while fetching employee: '+empId);
+                }
+            );
+        return user;
+    };
+
+    self.fetchProject= function(projectId){
+        var project={};
+        ProjectService.fetchProject(projectId)
+            .then(
+                function(data){
+                    project= data;
+                },
+                function(errResponse){
+                    debugger;
+                    console.error('Error while fetching project: '+projectId);
+                }
+            );
+        debugger;
+    };
+
     self.fetchIssue = function fetchIssue(issueId){
         IssueService.fetchIssue(issueId)
             .then(
@@ -36,6 +65,11 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
                 self.currentIssue= data;
                 self.fetchAllComments(self.currentIssue.issueNumber);
                 self.fetchHistory(self.currentIssue.issueNumber);
+                self.project= self.fetchProject(self.currentIssue.project);
+                if(self.currentIssue.assignedTo!=-1)
+                    self.assignedTo= self.fetchUser(self.currentIssue.assignedTo);
+                self.reporter= self.fetchUser(self.currentIssue.reporter);
+                debugger;
             },
             function(errResponse){
                 console.error('Error while fetching issue: '+issueId);

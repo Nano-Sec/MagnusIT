@@ -12,7 +12,7 @@
                             <th class="issue-id category" width="15%">Issue No.</th>
                             <th class="issue-project category" width="20%">Project</th>
                             <th class="issue-category category" width="15%">Category</th>
-                            <th class="issue-view-status category" width="15%">Public</th>
+                            <th class="issue-view-status category" width="15%">Accessibility</th>
                             <th class="issue-date-submitted category" width="18%">Date Submitted</th>
                             <th class="issue-last-modified category" width="20%">Last Update</th>
                         </tr>
@@ -20,7 +20,8 @@
                             <td class="issue-id">{{ctrl.currentIssue.issueNumber}}</td>
                             <td class="issue-project">{{ctrl.currentIssue.project}}</td>
                             <td class="issue-category">{{ctrl.currentIssue.category}}</td>
-                            <td class="issue-view-status">{{ctrl.currentIssue.isPublic}}</td>
+                            <td class="issue-view-status" ng-show="ctrl.currentIssue.isPublic">Public</td>
+                            <td class="issue-view-status" ng-hide="ctrl.currentIssue.isPublic">Private</td>
                             <td class="issue-date-submitted">{{ctrl.currentIssue.creationDate | date:'fullDate'}}</td>
                             <td class="issue-last-modified">{{ctrl.currentIssue.lastModifiedDate | date:'fullDate'}}</td>
                         </tr>
