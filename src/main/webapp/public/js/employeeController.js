@@ -47,6 +47,18 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
             );
     };
 
+    self.fetchEmployeeEssentials = function fetchEmployeeEssentials(list){
+        EmployeeService.fetchEmployeeEssentials(list)
+            .then(
+                function(data){
+
+                },
+                function(errResponse){
+                    console.error('Error while fetching employee: '+empId);
+                }
+            );
+    };
+
     self.fetchLoggedEmployee = function fetchLoggedEmployee(empId){
         EmployeeService.fetchLoggedEmployee(empId)
             .then(
@@ -98,7 +110,6 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
             delete self.currentEmployee.creationDate;
             delete self.currentEmployee.lastModifiedBy;
             delete self.currentEmployee.lastModifiedDate;
-            debugger;
             EmployeeService.updateEmployee(self.currentEmployee)
                 .then(
                     self.fetchAllEmployees,

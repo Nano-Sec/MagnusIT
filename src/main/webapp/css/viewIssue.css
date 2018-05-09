@@ -10,6 +10,10 @@ body {
     width: 100%;
     overflow:auto;
 }
+.table-container span{
+    color: rgb(241, 93, 67);
+    font-weight: bold;
+}
 .table-responsive {
     margin-bottom: 0 !important;
     min-height: .01%;
@@ -36,6 +40,9 @@ body {
 .newComment{
     color: rgb(240, 82, 82);
 }
+.user{
+    width: 15%;
+}
 div {
     display: block;
 }
@@ -46,6 +53,7 @@ table{
 }
 tr, td, th{
     border: #8fa5be .5px solid;
+    padding-left: 5px;
     /* border-spacing: 0px; */
 }
 .hidden {

@@ -61,6 +61,18 @@ public class EmployeeController {
         }
         return new ResponseEntity<>(emp, HttpStatus.OK);
     }
+
+    //View essentials
+	@JsonView(Views.EmployeeEssentials.class)
+	@GetMapping(value = "/employee/viewEssentials")
+	public ResponseEntity<List<Employee>> getEmployeeEssentials(@RequestParam("List") String list) {
+		String[] formattedList=list.substring(1,list.length()-1).split(",");
+		long[] intList= new long[formattedList.length];
+		for(int i=0;i<formattedList.length;i++){
+			intList[i]= Integer.parseInt(formattedList[i]);
+		}
+		return new ResponseEntity<>(service.getEmployeeBatch(intList), HttpStatus.OK);
+	}
 	
 	//View logged in employee
 	@JsonView(Views.Employee.class)

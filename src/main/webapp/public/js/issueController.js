@@ -1,4 +1,4 @@
-angular.module('myapp').controller('IssueController', ['$window','$state','IssueService','ProjectService','EmployeeService', function($window,$state,IssueService,ProjectService,EmployeeService) {
+angular.module('myapp').controller('IssueController', ['$q','$window','$state','IssueService','ProjectService','EmployeeService', function($q,$window,$state,IssueService,ProjectService,EmployeeService) {
     var self = this;
     self.issueNumber=Math.floor(Math.random() * 10000);
     self.postissue={'issueNumber':self.issueNumber,'project':{'id': null},'reporter':{'employeeNumber': 1},'category':self.category,'title':'','description':''};
@@ -13,6 +13,9 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
     self.issues=[];
     self.postcomment={'issue':{'id':self.currentIssue.id},'user':{'employeeNumber': 1},'body':''};
     self.comments=[];
+    self.commentUsers=[];
+    self.historyUsers=[];
+    self.usersToFetch=[];
     self.commentflag= false;
  
     self.fetchAllIssues = function fetchAllIssues(){
@@ -30,32 +33,33 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
     self.fetchAllIssues();
 
     self.fetchUser= function(empId){
-        var user={};
+        var deferred= $q.defer();
         EmployeeService.fetchEmployee(empId)
             .then(
                 function(data){
-                    user= data;
+                    deferred.resolve(data);
                 },
                 function(errResponse){
                     console.error('Error while fetching employee: '+empId);
+                    deferred.reject(errResponse);
                 }
             );
-        return user;
+        return deferred.promise;
     };
 
     self.fetchProject= function(projectId){
-        var project={};
+        var deferred= $q.defer();
         ProjectService.fetchProject(projectId)
             .then(
-                function(data){
-                    project= data;
+                function(response){
+                    deferred.resolve(response);
                 },
                 function(errResponse){
-                    debugger;
                     console.error('Error while fetching project: '+projectId);
+                    deferred.reject(errResponse);
                 }
             );
-        debugger;
+        return deferred.promise;
     };
 
     self.fetchIssue = function fetchIssue(issueId){
@@ -65,11 +69,35 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
                 self.currentIssue= data;
                 self.fetchAllComments(self.currentIssue.issueNumber);
                 self.fetchHistory(self.currentIssue.issueNumber);
-                self.project= self.fetchProject(self.currentIssue.project);
-                if(self.currentIssue.assignedTo!=-1)
-                    self.assignedTo= self.fetchUser(self.currentIssue.assignedTo);
-                self.reporter= self.fetchUser(self.currentIssue.reporter);
-                debugger;
+                self.fetchProject(self.currentIssue.project)
+                    .then(
+                        function(response){
+                            self.project= response;
+                        },
+                        function(errResponse){
+                            console.error(errResponse);
+                        }
+                    );
+                if(self.currentIssue.assignedTo!=-1){
+                    self.fetchUser(self.currentIssue.assignedTo)
+                        .then(
+                            function(response){
+                                self.assignedTo= response;
+                            },
+                            function(errResponse){
+                                console.error(errResponse);
+                            }
+                        );
+                }
+                self.fetchUser(self.currentIssue.reporter)
+                    .then(
+                        function(response){
+                            self.reporter= response;
+                        },
+                        function(errResponse){
+                            console.error(errResponse);
+                        }
+                    );
             },
             function(errResponse){
                 console.error('Error while fetching issue: '+issueId);
@@ -83,6 +111,10 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
             .then(
             function(data) {
                 self.comments= data;
+                for(var i=0;i<self.comments.length;i++){
+                    self.usersToFetch.push(self.comments[i].user);
+                }
+                self.fetchAllCommentUsers(JSON.stringify(self.usersToFetch));
             },
             function(errResponse){
                 console.error('Error while fetching comments');
@@ -90,11 +122,39 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
         );
     };
 
+    self.fetchAllCommentUsers= function(list){
+      EmployeeService.fetchEmployeeEssentials(list)
+          .then(
+              function(data) {
+                  self.commentUsers=data;
+              },
+              function(errResponse){
+                  console.error('Error while fetching comment users');
+              }
+          );
+    };
+
+    self.fetchAllHistoryUsers= function(list){
+        EmployeeService.fetchEmployeeEssentials(list)
+            .then(
+                function(data) {
+                    self.historyUsers=data;
+                },
+                function(errResponse){
+                    console.error('Error while fetching history users');
+                }
+            );
+    };
+
     self.fetchHistory = function fetchHistory(number) {
         IssueService.fetchHistory(number)
             .then(
                 function(data) {
                     self.history= data;
+                    for(var i=0;i<self.history.length;i++){
+                        self.usersToFetch.push(self.history[i].user);
+                    }
+                    self.fetchAllHistoryUsers(JSON.stringify(self.usersToFetch));
                 },
                 function(errResponse){
                     console.error('Error while fetching issue history');
@@ -221,6 +281,16 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
         $state.go('home.viewIssue');
     };
 
+    self.goToProject= function(id){
+        localStorage.setItem("projectNumber",id);
+        $state.go('home.viewProject');
+    };
+
+    self.goToUser= function(id){
+        localStorage.setItem("empNumber",id);
+        $state.go('home.viewEmployee');
+    };
+
     self.goToUpdateIssue= function(id){
         localStorage.setItem("number",id);
         $state.go('home.updateIssue');
@@ -233,29 +303,4 @@ angular.module('myapp').controller('IssueController', ['$window','$state','Issue
     self.cancelComment= function cancelComment(){
         self.commentflag=false;
     };
-
-    // function fetchUserProjects(id){
-    //     IssueService.fetchUserProjects(id)
-    //     .then(
-    //         function(data){
-    //             self.project = data;
-    //         },
-    //         function(errResponse){
-    //             console.error('Error while fetching projects for userId: '+id);
-    //         }
-    //     );
-    // }
-
-    // function fetchIssueCategories(){
-    //     IssueService.fetchIssueCategories()
-    //     .then(
-    //         function(data){
-    //             self.category = data;
-    //         },
-    //         function(errResponse){
-    //             console.error('Error in fetching categories');
-    //         }
-    //     );
-    // }
- 
 }]);

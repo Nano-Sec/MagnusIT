@@ -3,6 +3,7 @@ angular.module('myapp').factory('EmployeeService', ['$http', '$q', function($htt
     var factory = {
         fetchAllEmployees: fetchAllEmployees,
         fetchEmployee: fetchEmployee,
+        fetchEmployeeEssentials: fetchEmployeeEssentials,
         fetchLoggedEmployee: fetchLoggedEmployee,
         createEmployee: createEmployee,
         updateEmployee: updateEmployee,
@@ -50,6 +51,23 @@ angular.module('myapp').factory('EmployeeService', ['$http', '$q', function($htt
                 },
                 function(errResponse){
                     console.error('Error while fetching Employee with Id: '+empId);
+                    deferred.reject(errResponse);
+                }
+            );
+        return deferred.promise;
+    }
+
+    function fetchEmployeeEssentials(list) {
+        var deferred = $q.defer();
+        $http({url:'employee/viewEssentials',
+            method: "GET",
+            params:{List:list}})
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while fetching employee essentials');
                     deferred.reject(errResponse);
                 }
             );

@@ -34,7 +34,7 @@ import com.magnus.utils.Views;
 @Entity @EntityListeners(AuditingEntityListener.class)
 public class Employee implements UserDetails{
 	private static final long serialVersionUID = 1L;
-	@Id @GeneratedValue(strategy=GenerationType.AUTO) @JsonView(Views.Employee.class)
+	@Id @GeneratedValue(strategy=GenerationType.AUTO) @JsonView({Views.Employee.class,Views.EmployeeEssentials.class})
 	long employeeNumber;
 	@Column(unique = true, nullable = false) @JsonView(Views.Employee.class)
 	long empNo;
@@ -42,7 +42,7 @@ public class Employee implements UserDetails{
 	private String employeeName;
 	@Column(nullable = false) @JsonView(Views.Employee.class)
 	private String email;
-	@Column(name = "username", unique = true) @JsonView(Views.Employee.class)
+	@Column(name = "username", unique = true) @JsonView({Views.Employee.class,Views.EmployeeEssentials.class})
 	private String username;
 	@Column(name = "password")
 	private String password;

@@ -18,7 +18,7 @@
                         </tr>
                         <tr class="issue-header-data">
                             <td class="issue-id">{{ctrl.currentIssue.issueNumber}}</td>
-                            <td class="issue-project">{{ctrl.currentIssue.project}}</td>
+                            <td class="issue-project"><a href="" ng-click="ctrl.goToProject(ctrl.project.id)">{{ctrl.project.name}}</a></td>
                             <td class="issue-category">{{ctrl.currentIssue.category}}</td>
                             <td class="issue-view-status" ng-show="ctrl.currentIssue.isPublic">Public</td>
                             <td class="issue-view-status" ng-hide="ctrl.currentIssue.isPublic">Private</td>
@@ -34,8 +34,8 @@
                             <th class="issue-resolution category" colspan="2">Lifecycle</th>
                         </tr>
                         <tr>
-                            <td class="issue-reporter">{{ctrl.currentIssue.reporter}}</td>
-                            <td class="issue-assigned-to">{{ctrl.currentIssue.assignedTo}}</td>
+                            <td class="issue-reporter"><a href="" ng-click="ctrl.goToUser(ctrl.reporter.employeeNumber)">{{ctrl.reporter.username}}</a></td>
+                            <td class="issue-assigned-to"><a href="" ng-click="ctrl.goToUser(ctrl.assignedTo.employeeNumber)">{{ctrl.assignedTo.username}}</a></td>
                             <td class="issue-status"><i class="fa fa-square fa-status-box status-80-color"></i>{{ctrl.currentIssue.status}}</td>
                             <td class="issue-priority">{{ctrl.currentIssue.priority}}</td>
                             <td class="issue-resolution" colspan="2"></td>
@@ -61,7 +61,7 @@
                     <button ng-click="ctrl.goToUpdateIssue(ctrl.currentIssue.issueNumber)">Update issue</button>
                     <button ng-click="ctrl.deleteIssue()">Delete issue</button>
                 </div>
-                <table>
+                <table ng-hide="ctrl.comments.length==0">
                     <tbody>
                         <tr>
                             <th class="category" colspan="2">Comments <i class="fas fa-comments"></i></th>
@@ -73,13 +73,14 @@
                             </td>
                         </tr>
                         <tr ng-repeat="comment in ctrl.comments | filter : ctrl.search">
-                            <th class="user">{{comment.user}}</th>
-                            <td class="commentBody" >
+                            <th class="user"><a href="" ng-click="ctrl.goToUser(ctrl.commentUsers[$index].employeeNumber)">{{ctrl.commentUsers[$index].username}}</a></th>
+                            <td class="commentBody">
                                 <p>{{comment.body}}</p>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+                <span ng-show="ctrl.comments.length==0">No comments to display. Post one below.</span>
             </div>
             <div class="comments">
                 <div class="issueButton" id="commentButton"><button ng-click="ctrl.setCommentFlag()">Comment</button></div>
@@ -106,7 +107,7 @@
                         <th class="category" colspan="3">Issue history <i class="fas fa-history"></i></th>
                     </tr>
                     <tr ng-repeat="item in ctrl.history">
-                        <td>{{item.user}}</td>
+                        <td><a href="" ng-click="ctrl.goToUser(ctrl.historyUsers[$index].employeeNumber)">{{ctrl.historyUsers[$index].username}}</a></td>
                         <td>{{item.description}}</td>
                         <td>{{item.creationDate | date:'fullDate'}}</td>
                     </tr>

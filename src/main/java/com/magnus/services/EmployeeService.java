@@ -56,6 +56,13 @@ public class EmployeeService {
 		empRepo.save(emp);
 		LOGGER.info("Employee "+emp.getEmployeeName()+" updated");
 	}
+	public List<Employee> getEmployeeBatch(long[] list){
+		List<Employee> users= new ArrayList<>();
+		for(long i: list){
+			users.add(getEmployee(i));
+		}
+		return users;
+	}
 	public void deleteEmployee(long id){
 		Employee emp=empRepo.findOne(id);
 		emp.setInactive(true);
