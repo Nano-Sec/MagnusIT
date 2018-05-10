@@ -1,18 +1,14 @@
-html{
-    box-sizing: border-box;
-}
-*, *::before, *::after{
-    box-sizing: inherit;
-}
 .form-container{
     margin: 5% 0 0 13%;
+    padding: 4px;
     height: 500px;
     width: 1000px;
     overflow:auto;
-    border: lightgrey solid 2px;
-    border-radius: 5px;
-    /* background-color: rgb(158, 158, 158); */
-    /* background: transparent; */
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.3);
+    position: relative;
+    transition: all 0.2s;
 }
 .dropdown-container{
     height: 20%;
@@ -28,7 +24,7 @@ html{
     overflow: hidden;
     /* background-color: rebeccapurple; */
 }
-.project-name{
+.update-project-name{
     height: 18%;
     width: 100%;
     padding: 10px 0 0 20px;
@@ -57,7 +53,7 @@ html{
     width: 80%;
 }
 
-.dropdown{
+.updateDropdown{
     height: 10%;
     width: 100%;
     margin-top: 12%;
@@ -92,13 +88,13 @@ input[type=text], [type=email], select{
     resize: none;
 }
 input[type=date]{
-    width: 80%;
+    width: 95%;
     padding: 12px;
     border: 1px solid #ccc;
     border-radius: 4px;
     resize: none;
 }
-label {
+.update-label {
     padding: 8px 12px 5px 0;
     display: inline-block;
 }

@@ -7,6 +7,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.core.JsonParseException;
@@ -27,11 +28,11 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository empRepo;
 	
-	public List<Employee> getAllEmployees(){
-		List<Employee> emps= new ArrayList<Employee>();
-		empRepo.findAll()
-		.forEach(emps::add);
-		return emps;
+	public int getEmployeeCount(){
+		return empRepo.findEmployeeCount();
+	}
+	public List<Employee> getAllEmployees(Pageable pageable){
+		return empRepo.findAll(pageable).getContent();
 	}
 	public void addEmployee(Employee emp) throws JsonParseException, JsonMappingException, IOException {
 		setRoles(emp);

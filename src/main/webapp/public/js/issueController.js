@@ -17,9 +17,27 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     self.historyUsers=[];
     self.usersToFetch=[];
     self.commentflag= false;
+    self.page={"currentPage":1,"count":0,"pageSize":20,"totalPages":0};
+
+    self.setPage= function(page){
+        self.page.currentPage=page;
+    };
  
-    self.fetchAllIssues = function fetchAllIssues(){
-        IssueService.fetchAllIssues()
+    self.fetchIssueCount= function(){
+      IssueService.fetchIssueCount()
+          .then(
+              function(data) {
+                  self.page.count= data;
+                  self.page.totalPages=self.page.count/self.page.pageSize+1;
+              },
+              function(errResponse){
+                  console.error('Error while fetching Issue count');
+              }
+          );
+    };
+
+    self.fetchAllIssues = function fetchAllIssues(page,size){
+        IssueService.fetchAllIssues(page-1,size)
             .then(
             function(data) {
                 self.issues= data;
@@ -30,7 +48,8 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         );
     };
 
-    self.fetchAllIssues();
+    self.fetchIssueCount();
+    self.fetchAllIssues(self.page.currentPage,self.page.pageSize);
 
     self.fetchUser= function(empId){
         var deferred= $q.defer();
@@ -169,7 +188,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     self.createIssue = function createIssue(){
         IssueService.createIssue(self.postissue)
             .then(
-                self.fetchAllIssues,
+                self.fetchAllIssues(self.page.currentPage,self.page.pageSize),
             function(errResponse){
                 console.error('Error while creating Issue');
             }
@@ -195,7 +214,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         self.transformToPut();
         IssueService.updateIssue(self.putIssue, description)
             .then(
-                self.fetchAllIssues,
+                self.fetchAllIssues(self.page.currentPage,self.page.pageSize),
                 function(errResponse){
                     console.error('Error while updating Issue');
                 }
@@ -233,7 +252,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         if(check==true) {
             IssueService.deleteIssue(self.currentIssue.issueNumber)
                 .then(
-                    self.fetchAllIssues,
+                    self.fetchAllIssues(self.page.currentPage,self.page.pageSize),
                     function (errResponse) {
                         console.error('Error while deleting Issue');
                     }

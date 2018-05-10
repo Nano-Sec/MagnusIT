@@ -6,6 +6,7 @@ import com.magnus.utils.Enums;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,11 +18,12 @@ public class ProjectService {
     @Autowired
     private ProjectRepository projectRepo;
 
-    public List<Project> getAllProjects(){
-        List<Project> list= new ArrayList<>();
-        projectRepo.findAll()
-                .forEach(list::add);
-        return list;
+    public int getProjectCount(){
+        return projectRepo.findProjectCount();
+    }
+
+    public List<Project> getAllProjects(Pageable pageable){
+        return projectRepo.findAll(pageable).getContent();
     }
 
     public void addProject(Project project){

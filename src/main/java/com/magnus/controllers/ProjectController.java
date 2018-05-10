@@ -7,6 +7,7 @@ import com.magnus.utils.Views;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,11 +33,17 @@ public class ProjectController {
         return new ResponseEntity<>(project, HttpStatus.OK);
     }
 
+    //Get project count
+    @GetMapping(value = "/count/")
+    public ResponseEntity<Integer> getProjectCount(){
+        return new ResponseEntity<>(service.getProjectCount(), HttpStatus.OK);
+    }
+
     //View project list
     @JsonView(Views.Project.class)
     @GetMapping(value = "/view/all")
-    public ResponseEntity<List<Project>> getAllProjects(){
-        List <Project> list= service.getAllProjects();
+    public ResponseEntity<List<Project>> getAllProjects(Pageable pageable){
+        List <Project> list= service.getAllProjects(pageable);
         if(list.isEmpty()) {
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         }

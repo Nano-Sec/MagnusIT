@@ -6,6 +6,7 @@ import com.magnus.entities.IssueHistory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -62,12 +63,18 @@ public class IssueController {
 	//View issue list
 	@JsonView(Views.Issue.class)
 	@GetMapping(value = "/view/list/")
-	public ResponseEntity<List<Issue>> getAllIssues(){
-		List <Issue> list= service.getAllIssues();
+	public ResponseEntity<List<Issue>> getAllIssues(Pageable pageable){
+		List <Issue> list= service.getAllIssues(pageable);
 		if(list.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
 		return new ResponseEntity<>(list, HttpStatus.OK);
+	}
+
+	//Get issue count
+	@GetMapping(value = "/count/")
+	public ResponseEntity<Integer> getIssueCount(){
+		return new ResponseEntity<>(service.getIssueCount(), HttpStatus.OK);
 	}
 	
 	//View comment list

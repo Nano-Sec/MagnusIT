@@ -6,6 +6,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
@@ -39,11 +40,17 @@ public class EmployeeController {
 	public Object getLoggedInUser() {
 		return authService.getLoggedInUser();
 	}
+
+	//Get employee count
+	@GetMapping(value = "/employee/count/")
+	public ResponseEntity<Integer> getEmployeeCount(){
+		return new ResponseEntity<>(service.getEmployeeCount(), HttpStatus.OK);
+	}
 	
 	//List all employees
 	@GetMapping(value = "/admin/all/") @JsonView(Views.Employee.class)
-	public ResponseEntity<List<Employee>> getAllEmployees(){
-		List <Employee> list= service.getAllEmployees();
+	public ResponseEntity<List<Employee>> getAllEmployees(Pageable pageable){
+		List <Employee> list= service.getAllEmployees(pageable);
 		if(list.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}

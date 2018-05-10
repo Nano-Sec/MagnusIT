@@ -8,6 +8,7 @@ import com.magnus.repositories.IssueHistoryRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.magnus.controllers.EmployeeController;
@@ -39,8 +40,11 @@ public class IssueService {
 	public Comment getComment(long id){
 		return commentRepo.findOne(id);
 	}
-	public List<Issue> getAllIssues(){
-		return (List<Issue>) issueRepo.findAll();
+	public int getIssueCount(){
+		return issueRepo.findIssueCount();
+	}
+	public List<Issue> getAllIssues(Pageable pageable){
+		return issueRepo.findAll(pageable).getContent();
 	}
 	public List<Comment> getAllComments(int number){
 		return (List<Comment>) commentRepo.getAllComments(number);

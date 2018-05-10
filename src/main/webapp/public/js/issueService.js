@@ -1,6 +1,7 @@
 angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, $q){
 
     var factory = {
+        fetchIssueCount: fetchIssueCount,
         fetchAllIssues: fetchAllIssues,
         fetchAllComments: fetchAllComments,
         fetchIssue: fetchIssue,
@@ -9,8 +10,6 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
         createComment: createComment,
         updateIssue: updateIssue,
         deleteIssue: deleteIssue
-        // fetchUserProjects: fetchUserProjects,
-        // fetchIssueCategories: fetchIssueCategories
     };
  
     return factory;
@@ -44,10 +43,27 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
         );
         return deferred.promise;
     }
-    
-    function fetchAllIssues() {
+
+    function fetchIssueCount() {
         var deferred = $q.defer();
-        $http.get('issue/view/list/')
+        $http.get('issue/count/')
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while fetching Issue count');
+                    deferred.reject(errResponse);
+                }
+            );
+        return deferred.promise;
+    }
+    
+    function fetchAllIssues(page,size) {
+        var deferred = $q.defer();
+        $http({url:'issue/view/list/',
+            method:"GET",
+            params:{page:page,size:size}})
             .then(
             function (response) {
                 deferred.resolve(response.data);
@@ -134,35 +150,4 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
             );
         return deferred.promise;
     }
- 
-    // function fetchUserProjects() {
-    //     var deferred = $q.defer();
-    //     $http.get('localhost8080/')
-    //         .then(
-    //         function (response) {
-    //             deferred.resolve(response.data);
-    //         },
-    //         function(errResponse){
-    //             console.error('Error while fetching projects for user Id: '+id);
-    //             deferred.reject(errResponse);
-    //         }
-    //     );
-    //     return deferred.promise;
-    // }
-
-    // function fetchIssueCategories() {
-    //     var deferred = $q.defer();
-    //     $http.get('')
-    //         .then(
-    //         function (response) {
-    //             deferred.resolve(response.data);
-    //         },
-    //         function(errResponse){
-    //             console.error('Error while fetching Issue categories');
-    //             deferred.reject(errResponse);
-    //         }
-    //     );
-    //     return deferred.promise;
-    // }
- 
 }]);
