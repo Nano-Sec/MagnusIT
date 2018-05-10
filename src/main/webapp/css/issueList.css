@@ -61,7 +61,8 @@ table{
     width:100%;
 }
 tr, td, th{
-    border: #4484ce .5px solid;
+    border: 1px solid #ddd;
+    padding:5px;
 }
 td.category, th.category {
     background-color: #bbbbbb !important;

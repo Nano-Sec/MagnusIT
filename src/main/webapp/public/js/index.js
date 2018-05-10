@@ -78,6 +78,10 @@
             url: '/project/new',
             templateUrl: 'views/createProject.html'
         })
+        .state("home.viewProject.updateProject", {
+            url:"/project/update",
+            templateUrl: "views/updateProject.html"
+        })
         .state('404',{
             url: '/error/404',
             templateUrl: 'error.html'
