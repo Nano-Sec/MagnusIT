@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="css/modal.css">
-    <link rel="stylesheet" href="css/createProject.css">
+    <link rel="stylesheet" href="css/updateProject.css">
     <style>
         .modalBox
         {
@@ -21,33 +21,33 @@
     <div class="Modal-backdrop"></div>
     <div class="Modal-holder" ui-sref="home.viewProject">
         <div class="form-container" ng-click="$event.stopPropagation()">
-            <form name="updateProjectForm" ng-submit="ctrl.updateProject()">
+            <form name="createProjectForm" ng-submit="">
                 <div class="input-container">
                     <div class="project-no">
-                        Update Project &nbsp; <i class="far fa-file-alt"></i>
+                       Update Project &nbsp; <i class="fas fa-edit"></i>
                     </div>
                     <div class="project-name">
-                        <div class="col-25"><label for="name">Name</label></div>
-                        <div class="col-75"><input type="text" ng-model="ctrl.postProject.name" placeholder="Project name..." maxlength="250" required></div>
+                        <label for="name">Name</label>
+                        <input type="text" ng-model="" placeholder="Project name..." required>
                     </div>
-                    <div class="project-name">
-                        <div class="col-25"><label for="description">Description</label></div>
-                        <div class="col-75"><textarea ng-model="ctrl.postProject.description" placeholder="Describe the project..." rows="20" maxlength="500" required></textarea></div>
+                    <div class="project-description">
+                        <label for="description">Description</label>
+                        <textarea ng-model="" placeholder="Describe the project..." rows="15" required></textarea>
                     </div>
                 </div>
                 <div class="dropdown-container">
                     <div class="dropdown" id="project-dropdown">
-                        Accessibility<br>
-                        <select name="accessibility" data-ng-model="ctrl.postProject.isPublic">
+                        <label for="accessibility">Accessibility</label>
+                        <select name="accessibility" ng-model="">
                             <option value="" disabled>Select a value</option>
-                            <option data-ng-value="true">Public</option>
-                            <option data-ng-value="false">Private</option>
+                            <option value="public">Public</option>
+                            <option value="private">Private</option>
                         </select>
                     </div>
                 </div>
                 <div class="submit-container">
                     <div class="button-container">
-                        <input type="submit" value="Add">
+                        <input type="submit" value="Update">
                         <input type="reset" value="Cancel">
                     </div>
                 </div>
