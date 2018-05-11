@@ -41,7 +41,7 @@ html {
     border: #4484ce solid 2px;
 }
 .filter-box select{
-    width: 50%;
+    width: 61.5%;
     border:lightgrey solid 1px;
     border-radius: 4px;
     padding: 5px 10px;
@@ -51,7 +51,7 @@ html {
     background-color: rgb(119, 172, 221);
 }
 .pagination-container{
-    background-color: #bbbbbb;
+    background-color: #dddddd;
     overflow: hidden;
 }
 .pagination{
@@ -72,7 +72,7 @@ input[type=text]{
     border-radius: 4px;
 }
 table{
-    border: #4484ce .5px solid;
+    border: #4484ce 0.5px solid;
     border-collapse: collapse;
     width:100%;
 }
@@ -81,7 +81,7 @@ tr, td, th{
     padding:5px;
 }
 td.category, th.category {
-    background-color: #bbbbbb !important;
+    background-color: #dddddd;
     color: #474747;
     vertical-align: top;
     text-align: left;

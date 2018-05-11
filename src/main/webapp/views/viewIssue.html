@@ -66,12 +66,6 @@
                         <tr>
                             <th class="category" colspan="2">Comments <i class="fas fa-comments"></i></th>
                         </tr>
-                        <tr>
-                            <th class="user">User #1</th>
-                            <td class="comment" >
-                                <p>Static comment.<br> Comments displayed here. </p>
-                            </td>
-                        </tr>
                         <tr ng-repeat="comment in ctrl.comments | filter : ctrl.search">
                             <th class="user"><a href="" ng-click="ctrl.goToUser(ctrl.commentUsers[$index].employeeNumber)">{{ctrl.commentUsers[$index].username}}</a></th>
                             <td class="commentBody">
@@ -81,8 +75,8 @@
                     </tbody>
                 </table>
                 <span ng-show="ctrl.comments.length==0">No comments to display. Post one below.</span>
-                <div class="issueButton" id="commentButton"><button ng-click="ctrl.setCommentFlag()">Comment</button></div>
             </div>
+            <div class="issueButton" id="commentButton"><button ng-click="ctrl.setCommentFlag()">Comment</button></div>
             <div class="comments" ng-show= ctrl.commentflag>
                 <form ng-submit="ctrl.createComment()">
                     <div class="new-comment">

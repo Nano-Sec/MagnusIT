@@ -17,7 +17,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     self.historyUsers=[];
     self.usersToFetch=[];
     self.commentflag= false;
-    self.page={"currentPage":1,"count":0,"pageSize":5,"totalPages":0};
+    self.page={"currentPage":1,"count":0,"pageSize":20,"totalPages":0};
     self.pageArray=[];
 
     self.setPage= function(page){
@@ -40,8 +40,9 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
                 endPage=self.page.currentPage+2;
             }
         }
-        for(var i=startPage;i<endPage;i++)
+        for(var i=startPage;i<endPage;i++){
             self.pageArray[i]=i;
+        }
         self.page.currentPage=page;
         self.fetchAllIssues(self.page.currentPage, self.page.pageSize);
     };
