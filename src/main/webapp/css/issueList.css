@@ -50,6 +50,22 @@ html {
     cursor: pointer;
     background-color: rgb(119, 172, 221);
 }
+.pagination-container{
+    background-color: #bbbbbb;
+    overflow: hidden;
+}
+.pagination{
+    margin: 5px 5px 5px 0;
+    float: right;
+}
+.pagination button{
+    background-color:#4484ce;
+    color: white;
+    padding: 8px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
 input[type=text]{
     padding: 6px 10px;
     border:#4484ce solid 1px;
