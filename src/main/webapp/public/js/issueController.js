@@ -17,10 +17,33 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     self.historyUsers=[];
     self.usersToFetch=[];
     self.commentflag= false;
-    self.page={"currentPage":1,"count":0,"pageSize":20,"totalPages":0};
+    self.page={"currentPage":1,"count":0,"pageSize":5,"totalPages":0};
+    self.pageArray=[];
 
     self.setPage= function(page){
+        var startPage,endPage;
+        if(self.page.totalPages<=5){
+            startPage=1;
+            endPage= self.page.totalPages;
+        }
+        else{
+            if(self.page.currentPage<=3) {
+                startPage = 1;
+                endPage= 5;
+            }
+            else if(self.page.currentPage>=self.page.totalPages-2){
+                startPage=self.page.totalPages-4;
+                endPage=self.page.totalPages;
+            }
+            else{
+                startPage=self.page.currentPage-2;
+                endPage=self.page.currentPage+2;
+            }
+        }
+        for(var i=startPage;i<endPage;i++)
+            self.pageArray[i]=i;
         self.page.currentPage=page;
+        self.fetchAllIssues(self.page.currentPage, self.page.pageSize);
     };
  
     self.fetchIssueCount= function(){
@@ -28,7 +51,8 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
           .then(
               function(data) {
                   self.page.count= data;
-                  self.page.totalPages=self.page.count/self.page.pageSize+1;
+                  self.page.totalPages=Math.ceil(self.page.count/self.page.pageSize);
+                  self.setPage(1);
               },
               function(errResponse){
                   console.error('Error while fetching Issue count');

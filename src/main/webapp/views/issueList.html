@@ -104,11 +104,11 @@
             </div>
             <div class="pagination-container">
                 <div class="pagination">
-                    <button class="page-button">First</button>
-                    <button class="page-button">Next</button>
-                    <button class="page-button">Numbers</button>
-                    <button class="page-button">Previous</button>
-                    <button class="page-button">Last</button>
+                    <button class="page-button" ng-click="ctrl.setPage(1)">First</button>
+                    <button class="page-button" ng-click="ctrl.setPage(ctrl.page.currentPage-1)" ng-disabled="ctrl.page.currentPage<2">Previous</button>
+                    <button class="page-button" ng-repeat="i in ctrl.pageArray" ng-click="ctrl.setPage($index+1)">{{$index+1}}</button>
+                    <button class="page-button" ng-click="ctrl.setPage(ctrl.page.currentPage+1)" ng-disabled="ctrl.page.currentPage>=ctrl.page.totalPages">Next</button>
+                    <button class="page-button" ng-click="ctrl.setPage(ctrl.page.totalPages)">Last</button>
                 </div>
             </div>
         </div>
