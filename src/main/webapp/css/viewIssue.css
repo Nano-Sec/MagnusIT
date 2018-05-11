@@ -9,8 +9,10 @@ body {
     margin: auto;
     width: 100%;
     overflow:auto;
+    border: #4484ce solid 2px;
 }
 .table-container span{
+    padding: 0 10px;
     color: rgb(241, 93, 67);
     font-weight: bold;
 }
@@ -37,8 +39,17 @@ body {
     border-radius: 4px;
     cursor: pointer;
 }
-.newComment{
-    color: rgb(240, 82, 82);
+.comments{
+    padding: 0 10px;
+    /* background: lightblue; */
+    margin: 0;
+}
+.comments h3{
+    margin: 0;
+}
+.new-comment{
+    margin: 0;
+    color: rgb(241, 93, 67);
 }
 .user{
     width: 15%;
@@ -47,19 +58,22 @@ div {
     display: block;
 }
 table{
-    border: #8fa5be .5px solid;
     border-collapse: collapse;
     width:100%;
 }
 tr, td, th{
-    border: #8fa5be .5px solid;
+    border: #ddd 1px solid;
     padding-left: 5px;
-    /* border-spacing: 0px; */
+    border-spacing: 0px;
 }
 .hidden {
     display: none !important;
 }
 textarea{
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+     'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 4px;
+    width: 100%;
     padding: 8px 10px;
     margin: 8px 0;
     resize: none;
@@ -73,6 +87,8 @@ td.category, th.category {
 td{
     background-color: rgb(255, 255, 255);
 }
-tr.spacer {
-    height: 20px;
+hr { 
+    display: block;
+    margin: 2em 1em;
+    border:0.5px solid #e0e0e0;
 }
