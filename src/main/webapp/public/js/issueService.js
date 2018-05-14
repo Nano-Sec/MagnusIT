@@ -9,7 +9,8 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
         createIssue: createIssue,
         createComment: createComment,
         updateIssue: updateIssue,
-        deleteIssue: deleteIssue
+        deleteIssue: deleteIssue,
+        searchIssues: searchIssues
     };
  
     return factory;
@@ -145,6 +146,23 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
                 },
                 function(errResponse){
                     console.error('Error while deleting Issue');
+                    deferred.reject(errResponse);
+                }
+            );
+        return deferred.promise;
+    }
+
+    function searchIssues(page,size,search) {
+        var deferred = $q.defer();
+        $http({url:'issue/view/search/',
+            method:"GET",
+            params:{page:page,size:size,search:search}})
+            .then(
+                function (response) {
+                    deferred.resolve(response.data);
+                },
+                function(errResponse){
+                    console.error('Error while searching Issues');
                     deferred.reject(errResponse);
                 }
             );

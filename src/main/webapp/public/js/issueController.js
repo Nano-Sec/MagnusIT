@@ -73,6 +73,18 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         );
     };
 
+    self.searchIssues = function searchIssues(page,size,search){
+        IssueService.searchIssues(page,size,search)
+            .then(
+                function(data) {
+                    self.issues= data;
+                },
+                function(errResponse){
+                    console.error('Error while searching Issues');
+                }
+            );
+    };
+
     self.fetchIssueCount();
     self.fetchAllIssues(self.page.currentPage,self.page.pageSize);
 

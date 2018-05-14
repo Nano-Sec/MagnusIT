@@ -132,4 +132,15 @@ public class IssueController {
 		service.deleteIssue(issue.getId());
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
+
+	//Search Issues
+	@JsonView(Views.Issue.class)
+	@GetMapping(value = "/view/search/")
+	public ResponseEntity<List<Issue>> searchIssues(Pageable pageable, @RequestParam("search") String search){
+		List <Issue> list= service.searchIssue(pageable, search);
+		if(list.isEmpty()) {
+			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+		}
+		return new ResponseEntity<>(list, HttpStatus.OK);
+	}
 }

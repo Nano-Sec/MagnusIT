@@ -8,7 +8,7 @@
             <div class="filter">
                 <div class="heading">
                     Filters <i class="fas fa-filter"></i>
-                    <div class="search-bar"><i class="fas fa-search"></i> <input type="text" placeholder="Search" ng-model="ctrl.search"></div>
+                    <div class="search-bar"><i class="fas fa-search"></i> <input type="text" placeholder="Search" ng-model="ctrl.search" ng-change="ctrl.searchIssues(ctrl.page.currentPage, ctrl.page.pageSize, ctrl.search)"></div>
                 </div>
                 <div class="filter-box">
                     Reporter<br>

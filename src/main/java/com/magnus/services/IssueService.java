@@ -47,9 +47,9 @@ public class IssueService {
 		return issueRepo.findAll(pageable).getContent();
 	}
 	public List<Comment> getAllComments(int number){
-		return (List<Comment>) commentRepo.getAllComments(number);
+		return commentRepo.getAllComments(number);
 	}
-	public List<IssueHistory> getHistory(int number){ return (List<IssueHistory>) historyRepo.getIssueHistory(number);}
+	public List<IssueHistory> getHistory(int number){ return historyRepo.getIssueHistory(number);}
 	public List<Issue> getUserIssues(long id){
 		return issueRepo.getUserIssues(id);
 	}
@@ -100,5 +100,8 @@ public class IssueService {
         list.add(history);
         issue.setHistory(list);
 	    historyRepo.save(history);
+	}
+	public List<Issue> searchIssue(Pageable pageable, String search){
+		return issueRepo.searchIssue(pageable,search);
 	}
 }

@@ -2,6 +2,7 @@ package com.magnus.repositories;
 
 import java.util.List;
 
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,5 +15,8 @@ public interface IssueRepository extends JpaRepository<Issue, Long> {
 	Issue findByIssueNumber(int number);
 
 	@Query("select count(i) from Issue i")
-	public int findIssueCount();
+	int findIssueCount();
+
+	@Query("select i from Issue i where i.title like :search%")
+	List<Issue> searchIssue(Pageable pageable, @Param("search") String search);
 }
