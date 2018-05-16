@@ -21,7 +21,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     self.pageArray=[];
 
     self.setPage= function(page){
-        var startPage,endPage;
+        /*var startPage,endPage;
         if(self.page.totalPages<=5){
             startPage=1;
             endPage= self.page.totalPages;
@@ -42,7 +42,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         }
         for(var i=startPage;i<endPage;i++){
             self.pageArray[i]=i;
-        }
+        }*/
         self.page.currentPage=page;
         self.fetchAllIssues(self.page.currentPage, self.page.pageSize);
     };
@@ -85,8 +85,12 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
             );
     };
 
-    self.fetchIssueCount();
-    self.fetchAllIssues(self.page.currentPage,self.page.pageSize);
+    self.fetchCountAndIssues= function(){
+        self.fetchIssueCount();
+        self.fetchAllIssues(self.page.currentPage,self.page.pageSize);
+    };
+
+    self.fetchCountAndIssues();
 
     self.fetchUser= function(empId){
         var deferred= $q.defer();
@@ -218,7 +222,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
             );
     };
 
-    if(localStorage.getItem("number")!=null){
+    if(localStorage.getItem("number")!=null && $state.current.name=='home.viewIssue'){
         self.fetchIssue(localStorage.getItem("number"));
     }
 

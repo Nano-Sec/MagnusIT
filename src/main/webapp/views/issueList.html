@@ -4,7 +4,7 @@
         <link rel="stylesheet" href="css/issueList.css">
     </head>
     <body>
-        <div class="view-container" ng-controller="IssueController as ctrl">
+        <div class="view-container" ng-controller="IssueController as ctrl" ng-init="ctrl.search=''">
             <div class="filter">
                 <div class="heading">
                     Filters <i class="fas fa-filter"></i>
@@ -96,11 +96,9 @@
             </div>
             <div class="pagination-container">
                 <div class="pagination">
-                    <button class="page-button" ng-click="ctrl.setPage(1)">First</button>
+                    {{ctrl.page.pageSize*(ctrl.page.currentPage-1)+1}} - {{ctrl.page.pageSize*(ctrl.page.currentPage-1)+ctrl.issues.length}} of {{ctrl.page.count}}
                     <button class="page-button" ng-click="ctrl.setPage(ctrl.page.currentPage-1)" ng-disabled="ctrl.page.currentPage<2">Previous</button>
-                    <button class="page-button" ng-repeat="i in ctrl.pageArray" ng-click="ctrl.setPage($index+1)">{{$index+1}}</button>
                     <button class="page-button" ng-click="ctrl.setPage(ctrl.page.currentPage+1)" ng-disabled="ctrl.page.currentPage>=ctrl.page.totalPages">Next</button>
-                    <button class="page-button" ng-click="ctrl.setPage(ctrl.page.totalPages)">Last</button>
                 </div>
             </div>
         </div>
