@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.magnus.entities.IssueHistory;
 import com.magnus.repositories.IssueHistoryRepository;
+import com.magnus.utils.Enums;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,8 +44,8 @@ public class IssueService {
 	public int getIssueCount(){
 		return issueRepo.findIssueCount();
 	}
-	public List<Issue> getAllIssues(Pageable pageable){
-		return issueRepo.findAll(pageable).getContent();
+	public List<Issue> getAllIssues(Pageable pageable, String search, IssueStatus status, Enums.IssueCategory category, IssuePriority priority){
+		return issueRepo.searchIssue(pageable,search,status,category,priority);
 	}
 	public List<Comment> getAllComments(int number){
 		return commentRepo.getAllComments(number);
@@ -100,8 +101,5 @@ public class IssueService {
         list.add(history);
         issue.setHistory(list);
 	    historyRepo.save(history);
-	}
-	public List<Issue> searchIssue(Pageable pageable, String search){
-		return issueRepo.searchIssue(pageable,search);
 	}
 }

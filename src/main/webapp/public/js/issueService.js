@@ -60,11 +60,11 @@ angular.module('myapp').factory('IssueService', ['$http', '$q', function($http, 
         return deferred.promise;
     }
     
-    function fetchAllIssues(page,size) {
+    function fetchAllIssues(page,size,search,status,category,priority) {
         var deferred = $q.defer();
         $http({url:'issue/view/list/',
             method:"GET",
-            params:{page:page,size:size}})
+            params:{page:page,size:size,search:search,status:status,category:category,priority:priority}})
             .then(
             function (response) {
                 deferred.resolve(response.data);

@@ -4,11 +4,11 @@
         <link rel="stylesheet" href="css/issueList.css">
     </head>
     <body>
-        <div class="view-container" ng-controller="IssueController as ctrl" ng-init="ctrl.search=''">
+        <div class="view-container" ng-controller="IssueController as ctrl">
             <div class="filter">
                 <div class="heading">
                     Filters <i class="fas fa-filter"></i>
-                    <div class="search-bar"><i class="fas fa-search"></i> <input type="text" placeholder="Search" ng-model="ctrl.search" ng-change="ctrl.searchIssues(ctrl.page.currentPage, ctrl.page.pageSize, ctrl.search)"></div>
+                    <div class="search-bar"><i class="fas fa-search"></i> <input type="text" placeholder="Search" ng-model="ctrl.search" ng-change="ctrl.fetchAllIssues()"></div>
                 </div>
                 <div class="filter-box">
                     Reporter<br>
@@ -82,7 +82,7 @@
                                 <th class="category" width="10%">Last Updated</th>
                                 <th class="category" width="30%">Title</th>
                             </tr>
-                            <tr ng-repeat="issue in ctrl.issues | filter : {title:ctrl.search, category:ctrl.category, priority:ctrl.priority, status:ctrl.status, isPublic: ctrl.public}">
+                            <tr ng-repeat="issue in ctrl.issues">
                                 <td ng-click="ctrl.goToIssue(issue.issueNumber)" class="issueLink">#{{issue.issueNumber}}</td>
                                 <td>{{issue.category}}</td>
                                 <td>{{issue.priority}}</td>

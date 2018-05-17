@@ -3,6 +3,7 @@ package com.magnus.controllers;
 import java.util.List;
 
 import com.magnus.entities.IssueHistory;
+import com.magnus.utils.Enums;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -63,8 +64,9 @@ public class IssueController {
 	//View issue list
 	@JsonView(Views.Issue.class)
 	@GetMapping(value = "/view/list/")
-	public ResponseEntity<List<Issue>> getAllIssues(Pageable pageable){
-		List <Issue> list= service.getAllIssues(pageable);
+	public ResponseEntity<List<Issue>> getAllIssues(Pageable pageable, @RequestParam String search, @RequestParam String status,
+													@RequestParam String category, @RequestParam String priority){
+		List <Issue> list= service.getAllIssues(pageable,search,toStatus(status),toCategory(category),toPriority(priority));
 		if(list.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
@@ -133,14 +135,56 @@ public class IssueController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
-	//Search Issues
-	@JsonView(Views.Issue.class)
-	@GetMapping(value = "/view/search/")
-	public ResponseEntity<List<Issue>> searchIssues(Pageable pageable, @RequestParam("search") String search){
-		List <Issue> list= service.searchIssue(pageable, search);
-		if(list.isEmpty()) {
-			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+	public Enums.IssueStatus toStatus(String status){
+		switch (status){
+			case "NEW":
+				return Enums.IssueStatus.NEW;
+			case "CONFIRMED":
+				return Enums.IssueStatus.CONFIRMED;
+			case "REJECTED":
+				return Enums.IssueStatus.REJECTED;
+			case "ASSIGNED":
+				return Enums.IssueStatus.ASSIGNED;
+			case "RESOLVED":
+				return Enums.IssueStatus.RESOLVED;
+			case "CLOSED":
+				return Enums.IssueStatus.CLOSED;
+			default:
+				return null;
 		}
-		return new ResponseEntity<>(list, HttpStatus.OK);
+	}
+
+	public Enums.IssueCategory toCategory(String category){
+		switch (category){
+			case "Hardware":
+				return Enums.IssueCategory.Hardware;
+			case "Server":
+				return Enums.IssueCategory.Server;
+			case "Client":
+				return Enums.IssueCategory.Client;
+			case "Security":
+				return Enums.IssueCategory.Security;
+			case "Performance":
+				return Enums.IssueCategory.Performance;
+			case "Documentation":
+				return Enums.IssueCategory.Documentation;
+			default:
+				return null;
+		}
+	}
+
+	public Enums.IssuePriority toPriority(String priority){
+		switch (priority){
+			case "URGENT":
+				return Enums.IssuePriority.URGENT;
+			case "HIGH":
+				return Enums.IssuePriority.HIGH;
+			case "MEDIUM":
+				return Enums.IssuePriority.MEDIUM;
+			case "LOW":
+				return Enums.IssuePriority.LOW;
+			default:
+				return null;
+		}
 	}
 }

@@ -19,32 +19,11 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     self.commentflag= false;
     self.page={"currentPage":1,"count":0,"pageSize":20,"totalPages":0};
     self.pageArray=[];
+    self.search=self.status=self.category=self.public=self.priority='';
 
     self.setPage= function(page){
-        /*var startPage,endPage;
-        if(self.page.totalPages<=5){
-            startPage=1;
-            endPage= self.page.totalPages;
-        }
-        else{
-            if(self.page.currentPage<=3) {
-                startPage = 1;
-                endPage= 5;
-            }
-            else if(self.page.currentPage>=self.page.totalPages-2){
-                startPage=self.page.totalPages-4;
-                endPage=self.page.totalPages;
-            }
-            else{
-                startPage=self.page.currentPage-2;
-                endPage=self.page.currentPage+2;
-            }
-        }
-        for(var i=startPage;i<endPage;i++){
-            self.pageArray[i]=i;
-        }*/
         self.page.currentPage=page;
-        self.fetchAllIssues(self.page.currentPage, self.page.pageSize);
+        self.fetchAllIssues();
     };
  
     self.fetchIssueCount= function(){
@@ -61,8 +40,9 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
           );
     };
 
-    self.fetchAllIssues = function fetchAllIssues(page,size){
-        IssueService.fetchAllIssues(page-1,size)
+    self.fetchAllIssues = function fetchAllIssues(){
+        IssueService.fetchAllIssues(self.page.currentPage-1, self.page.pageSize, self.search,self.status,
+            self.category,self.priority)
             .then(
             function(data) {
                 self.issues= data;
@@ -73,21 +53,8 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         );
     };
 
-    self.searchIssues = function searchIssues(page,size,search){
-        IssueService.searchIssues(page,size,search)
-            .then(
-                function(data) {
-                    self.issues= data;
-                },
-                function(errResponse){
-                    console.error('Error while searching Issues');
-                }
-            );
-    };
-
     self.fetchCountAndIssues= function(){
         self.fetchIssueCount();
-        self.fetchAllIssues(self.page.currentPage,self.page.pageSize);
     };
 
     self.fetchCountAndIssues();
@@ -229,7 +196,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     self.createIssue = function createIssue(){
         IssueService.createIssue(self.postissue)
             .then(
-                self.fetchAllIssues(self.page.currentPage,self.page.pageSize),
+                self.fetchAllIssues(),
             function(errResponse){
                 console.error('Error while creating Issue');
             }
@@ -255,7 +222,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         self.transformToPut();
         IssueService.updateIssue(self.putIssue, description)
             .then(
-                self.fetchAllIssues(self.page.currentPage,self.page.pageSize),
+                self.fetchAllIssues(),
                 function(errResponse){
                     console.error('Error while updating Issue');
                 }
@@ -293,7 +260,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
         if(check==true) {
             IssueService.deleteIssue(self.currentIssue.issueNumber)
                 .then(
-                    self.fetchAllIssues(self.page.currentPage,self.page.pageSize),
+                    self.fetchAllIssues(),
                     function (errResponse) {
                         console.error('Error while deleting Issue');
                     }
