@@ -44,8 +44,8 @@ public class IssueService {
 	public int getIssueCount(){
 		return issueRepo.findIssueCount();
 	}
-	public List<Issue> getAllIssues(Pageable pageable, String search, IssueStatus status, Enums.IssueCategory category, IssuePriority priority){
-		return issueRepo.searchIssue(pageable,search,status,category,priority);
+	public List<Issue> getAllIssues(Pageable pageable, String search){
+		return issueRepo.searchIssue(pageable,search);
 	}
 	public List<Comment> getAllComments(int number){
 		return commentRepo.getAllComments(number);

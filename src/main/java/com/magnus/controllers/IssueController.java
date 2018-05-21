@@ -64,9 +64,8 @@ public class IssueController {
 	//View issue list
 	@JsonView(Views.Issue.class)
 	@GetMapping(value = "/view/list/")
-	public ResponseEntity<List<Issue>> getAllIssues(Pageable pageable, @RequestParam String search, @RequestParam String status,
-													@RequestParam String category, @RequestParam String priority){
-		List <Issue> list= service.getAllIssues(pageable,search,toStatus(status),toCategory(category),toPriority(priority));
+	public ResponseEntity<List<Issue>> getAllIssues(Pageable pageable, @RequestParam String search){
+		List <Issue> list= service.getAllIssues(pageable,search);
 		if(list.isEmpty()) {
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}

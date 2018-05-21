@@ -18,6 +18,6 @@ public interface IssueRepository extends JpaRepository<Issue, Long> {
 	@Query("select count(i) from Issue i")
 	int findIssueCount();
 
-	@Query("select i from Issue i where i.title like :search% and i.status like :status% and i.category like :category% and i.priority like :priority%")
-	List<Issue> searchIssue(Pageable pageable, @Param("search") String search, @Param("status") Enums.IssueStatus status, @Param("category") Enums.IssueCategory category, @Param("priority") Enums.IssuePriority priority);
+	@Query("select i from Issue i where i.title like :search%")
+	List<Issue> searchIssue(Pageable pageable, @Param("search") String search);
 }

@@ -41,8 +41,7 @@ angular.module('myapp').controller('IssueController', ['$q','$window','$state','
     };
 
     self.fetchAllIssues = function fetchAllIssues(){
-        IssueService.fetchAllIssues(self.page.currentPage-1, self.page.pageSize, self.search,self.status,
-            self.category,self.priority)
+        IssueService.fetchAllIssues(self.page.currentPage-1, self.page.pageSize, self.search)
             .then(
             function(data) {
                 self.issues= data;
