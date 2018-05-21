@@ -8,19 +8,24 @@
     <body>
         <div class="wrapper" ng-controller="login">
             <div class="header">
-                <div class="smallbar">
-                    <label><i class="fas fa-user"></i> My Account |</label>
-                    <label ng-click="logout()"> <i class="fas fa-sign-out-alt"></i>Logout</label>
-                </div>
                 <div class="navigation">
                     <div class="product-name">
-                        MagnusIT
+                        <div class="show">Magnus IT &nbsp;<i class="fas fa-chevron-circle-right"></i></div>
+                        <div class="hidden">
+                            <span ui-sref="home.dashboard">Dashboard</span>
+                            <span ui-sref="home.viewIssueList">View Issue</span>
+                            <span ui-sref="home.userList">User Management</span>
+                            <span ui-sref="home.projectList">Project Management</span>
+                        </div>
                     </div>
-                    <div class="navbar">
-                        <div class="tabs" ui-sref="home.dashboard">Dashboard <i class="fas fa-angle-down"></i></div>
-                        <div class="tabs" ui-sref="home.viewIssueList">View Issues <i class="fas fa-angle-down"></i></div>
-                        <div class="tabs" ui-sref="home.userList">User Management <i class="fas fa-angle-down"></i></div>
-                        <div class="tabs" ui-sref="home.projectList">Project Management <i class="fas fa-angle-down"></i></div>
+                </div>
+                <div class="account">
+                    <div class="account-dropdown">
+                        <div class="account-show">Account &nbsp;<i class="fas fa-chevron-circle-down"></i></div>
+                        <div class="account-hidden">
+                            <span><i class="fas fa-user"></i> My Account</span>
+                            <span ng-click="logout()"> <i class="fas fa-sign-out-alt"></i> Logout</span>
+                        </div>
                     </div>
                 </div>
             </div>

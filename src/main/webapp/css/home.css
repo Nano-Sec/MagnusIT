@@ -24,55 +24,96 @@ body{
     background:transparent;
 }
 .header{
-    height: 15%;
+    height: 10%;
     background:transparent;
-    border-bottom: #4484ce solid 3px;
-}
-.smallbar{
-    height: 25%;
-    color: white;
-    text-align: right;
-    padding-right: 5px;
-    background-color: #4484ce;
-}
-.smallbar label:hover{
-    cursor: pointer;
+    /* border-bottom: #4484ce solid 3px; */
+    min-height: 65px;
 }
 .navigation{
-    height: 75%;
-    color: #494d4b;
-    overflow: hidden;
-}
-.tabs{
-    height: 100%;
-    width: 20%;
-    padding: 2% 0;
     float: left;
-    text-align: center;
-}
-.tabs:hover{
-    cursor: pointer;
-    background: #4484ce;
-    color: ghostwhite;
+    /* background: wheat; */
 }
 .product-name{
-    width: 25%;
-    height: 100%;
-    text-align: center;
-    font-size: 2.75em;
-    float: left;
+    margin: 15px 0 0 15px;
+    /* padding-left: 10px; */
+    width: 195px;
+    height: 75%;
+    color: azure;
+    background: #4484ce;
+    transition: width 0.5s ease 0s;
+    overflow: hidden;
+    border-radius: 4px ;
 }
-.navbar{
-    width: 75%;
+.product-name:hover{
+    width: 880px;
+}
+.show{
     height: 100%;
+    width: 185px;
+    padding: 5px 0 0 10px;
+    font-size: 2em;
     float: left;
+    /* background: yellowgreen; */
+}
+.hidden{
+    margin-left: 175px;
+    height: 100%;
+    width: 675px;
+    font-size: 1.2em;
+    padding: 14px 0 0 10px;
+    /* background: thistle; */
+}
+.hidden span{
+    padding: 5px 15px;
+    margin-left: 20px;
+    border-radius: 30px;
+    transition: all 0.5s ease 0s;
+}
+.hidden span:hover{
+    background: rgba(0, 0, 0, 0.404);
+    cursor: pointer;
+}
+.account{
+    float: right;
+    /* background: teal; */
+}
+.account-dropdown{
+    margin: 20px 20px 0 0;
+    height: 40px;
+    overflow: hidden;
+    background: #4484ce;
+    color: azure;
+    border-radius: 4px;
+    transition: height 0.5s ease 0s;
+    /* background: thistle; */
+}
+.account-dropdown:hover{
+    height: 115px;
+}
+.account-show{
+    padding: 5px 0 5px 14px;
+    font-size: 1.5em;
+    /* background: skyblue; */
+}
+.account-hidden{
+    padding: 5px 10px;
+    font-size: 1em;
+    /* background: slateblue; */
+}
+.account-hidden span{
+    float: left;
+    clear: left;
+    padding: 5px 15px;
+    margin-bottom: 5px;
+    border-radius: 30px;
+    transition: all 0.5s ease 0s;
+}
+.account-hidden span:hover{
+    background: rgba(0, 0, 0, 0.404);
+    cursor: pointer;
 }
 .view{
     min-height: 400px;
     margin: 0% 1%;
     background:transparent;
-}
-.navbar div:active{
-    background: #4484ce;
-    color: ghostwhite;
 }
