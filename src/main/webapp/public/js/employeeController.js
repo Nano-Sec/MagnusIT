@@ -71,7 +71,7 @@ angular.module('myapp').controller('EmployeeController', ['$window','$state','Em
             );
     };
 
-    if(localStorage.getItem("empNumber")!=null){
+    if(localStorage.getItem("empNumber")!=null && $state.current.name=='home.viewEmployee'){
         self.fetchEmployee(localStorage.getItem("empNumber"));
     }
 

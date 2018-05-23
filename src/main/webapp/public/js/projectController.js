@@ -38,7 +38,8 @@ angular.module('myapp').controller('ProjectController', ['$window','$state','Pro
             );
     };
 
-    if(localStorage.getItem("projectNumber")!=null && localStorage.getItem("projectNumber")!= undefined){
+    if(localStorage.getItem("projectNumber")!=null && localStorage.getItem("projectNumber")!= undefined &&
+        $state.current.name=='home.viewProject'){
         self.fetchProject(localStorage.getItem("projectNumber"));
     }
 
